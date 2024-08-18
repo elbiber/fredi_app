@@ -1,4 +1,4 @@
-package com.example.fredi_app
+package com.fredi_shop.fredi_app
 
 import android.app.PendingIntent
 import android.content.Intent
