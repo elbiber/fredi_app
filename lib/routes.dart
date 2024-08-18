@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components.dart';
+import 'package:fredi_app/modals/transfer_modals.dart';
 import 'package:fredi_app/pages/about_page.dart';
 import 'package:fredi_app/pages/home_page.dart';
-import 'package:fredi_app/pages/show_actual_programm_page.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -18,11 +18,8 @@ class Routes {
           settings: settings,
         );
       case '/actual-programm':
-        final args = settings.arguments;
         return MaterialPageRoute(
-          builder: (_) => ShowActualProgrammPage(
-            actualProgramm: args,
-          ),
+          builder: (_) => const TransferReadModal(),
           settings: settings,
         );
       default:

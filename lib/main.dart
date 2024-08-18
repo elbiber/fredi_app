@@ -15,18 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: (settings) => Routes.generateRoute(settings),
-      /* routes: {
-        '/': (_) => const HomePage(),
-        '/about': (_) => const AboutPage(),
-      }, */
-      /* onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case '/':
-            return MaterialPageRoute(builder: (_) => const HomePage());
-          default:
-        }
-        return null;
-      }, */
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -35,7 +23,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialRoute: '/',
-      //home: const HomePage(),
     );
   }
 }

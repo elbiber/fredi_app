@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fredi_app/components.dart';
 import 'package:fredi_app/modals/show_actual_programm_modal.dart';
 import 'package:fredi_app/modals/transfer_modals.dart';
-import 'package:fredi_app/programm_view.dart';
+import 'package:fredi_app/pages/programm_list_page.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
 
@@ -41,7 +41,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     void readNfcTag() {
       showModalBottomSheet(
-          context: context, builder: (ctx) => const TransferReadModal());
+        context: context,
+        builder: (ctx) => const TransferReadModal(),
+      );
       NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
         var ndef = Ndef.from(badge);
 
@@ -56,8 +58,6 @@ class _HomePageState extends State<HomePage> {
                 builder: (ctx) => ShowActualProgrammModal(
                       actualProgramm: tempRecord,
                     ));
-            /*  Navigator.of(context)
-                .pushNamed('/actual-programm', arguments: tempRecord); */
           }
         } else {
           // Show a snackbar for example
