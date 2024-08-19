@@ -42,6 +42,7 @@ dependencies:
   youtube_player_flutter: ^9.0.3
   url_strategy: ^0.3.0
   video_player: ^2.9.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:

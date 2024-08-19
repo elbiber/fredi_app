@@ -54,7 +54,7 @@ class FredAppBarDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Colors.white,
-      child: ListView(
+      child: Column(
         children: [
           DrawerHeader(
             child: Image.asset(
@@ -63,7 +63,45 @@ class FredAppBarDrawer extends StatelessWidget {
               height: 12,
             ),
           ),
-          ListTile(
+          const TabsMobile(
+            'Home',
+            '/',
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          const TabsMobile(
+            'Über Uns',
+            '/about',
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          const TabsMobile(
+            'FAQ',
+            '/faq',
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          const TabsMobile(
+            'Kontakt',
+            '/contact',
+          ),
+          const SizedBox(
+            height: 40.0,
+          ),
+          /*  Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () async =>
+                    await launch("https://www.instagram.com/vetmedicum/"),
+                icon: icon,
+              ),
+            ],
+          ) */
+          /*  ListTile(
             leading: const Icon(Icons.chevron_right),
             title: const Sans('Aktuelle Frequenz anzeigen', 16.0, Colors.black),
             onTap: () {
@@ -97,9 +135,34 @@ class FredAppBarDrawer extends StatelessWidget {
             leading: const Icon(Icons.chevron_right),
             title: const Sans('Kontakt', 16.0, Colors.black),
             onTap: () {},
-          ),
+          ), */
         ],
       ),
+    );
+  }
+}
+
+class TabsMobile extends StatefulWidget {
+  final String text;
+  final String route;
+  const TabsMobile(this.text, this.route, {super.key});
+
+  @override
+  State<TabsMobile> createState() => _TabsMobileState();
+}
+
+class _TabsMobileState extends State<TabsMobile> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      elevation: 20.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      height: 50,
+      minWidth: 200.0,
+      child: Sans(widget.text, 20, Colors.black),
+      onPressed: () {},
     );
   }
 }
