@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
@@ -16,11 +17,11 @@ class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image.asset(
-            'assets/icon/fredi-logo-long.png',
+          SvgPicture.asset(
+            'assets/icons/fredi-logo-long.svg',
             fit: BoxFit.contain,
-            height: 42,
-          )
+            width: 120,
+          ),
         ],
       ),
     );
@@ -57,10 +58,10 @@ class FredAppBarDrawer extends StatelessWidget {
       child: Column(
         children: [
           DrawerHeader(
-            child: Image.asset(
-              'assets/icon/fredi-logo-square.png',
+            child: SvgPicture.asset(
+              'assets/icons/fredi-logo-square.svg',
               fit: BoxFit.contain,
-              height: 12,
+              width: 120,
             ),
           ),
           const TabsMobile(
@@ -91,51 +92,6 @@ class FredAppBarDrawer extends StatelessWidget {
           const SizedBox(
             height: 40.0,
           ),
-          /*  Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () async =>
-                    await launch("https://www.instagram.com/vetmedicum/"),
-                icon: icon,
-              ),
-            ],
-          ) */
-          /*  ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans('Aktuelle Frequenz anzeigen', 16.0, Colors.black),
-            onTap: () {
-              Navigator.of(context).pushNamed('/actual-programm');
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans('Neue Frequenz übertragen', 16.0, Colors.black),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans(
-                'Alle Frequenzpakete im Überblick', 16.0, Colors.black),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans('Über uns', 16.0, Colors.black),
-            onTap: () {
-              Navigator.of(context).pushNamed('/about');
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans('FAQ', 16.0, Colors.black),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.chevron_right),
-            title: const Sans('Kontakt', 16.0, Colors.black),
-            onTap: () {},
-          ), */
         ],
       ),
     );
