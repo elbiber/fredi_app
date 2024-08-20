@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:fredi_app/components.dart';
+/* import 'package:flutter/material.dart';
+import 'package:fredi_app/components/components.dart';
 
 class TransferView extends StatefulWidget {
   const TransferView({super.key});
@@ -64,10 +64,11 @@ class TransferViewFinished extends StatelessWidget {
                 18,
                 Colors.black,
               ),
-            ],
+            ],å
           ),
         ),
       ),
     );
   }
 }
+ */

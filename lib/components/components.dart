@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fredi_app/components/app_colors.dart';
+import 'package:fredi_app/pages/programm_list_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
@@ -9,10 +11,9 @@ class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff005B96);
     return AppBar(
       shadowColor: Colors.black,
-      backgroundColor: color,
+      backgroundColor: AppColors.primary,
       elevation: 3.0,
       iconTheme: const IconThemeData(color: Colors.white),
       title: Row(
@@ -53,7 +54,37 @@ class FrediAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: const Icon(Icons.arrow_back, color: Colors.white),
       ),
       title: SansBold(titel, 18.0, Colors.white),
-      backgroundColor: const Color(0xff005B96),
+      backgroundColor: AppColors.primary,
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
+}
+
+class FrediAppBarLight extends StatelessWidget implements PreferredSizeWidget {
+  final String titel;
+  const FrediAppBarLight(this.titel, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+        onPressed: () {
+          context.go('/');
+        },
+        icon: Icon(Icons.arrow_back, color: AppColors.primary),
+      ),
+      title: Align(
+        alignment: Alignment.centerRight,
+        child: SvgPicture.asset(
+          'assets/icons/fredi-logo-long.svg',
+          fit: BoxFit.contain,
+          width: 120,
+          colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
+        ),
+      ),
+      backgroundColor: AppColors.white,
     );
   }
 
@@ -240,6 +271,119 @@ class ControlsOverlay extends StatelessWidget {
             controller.value.isPlaying ? controller.pause() : controller.play();
           },
         ),
+      ],
+    );
+  }
+}
+
+class FrequencyPackages extends StatelessWidget {
+  const FrequencyPackages({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
+              25.0, AppColors.primary),
+        ),
+        const Sans(
+          'Dein(e)FrediFrequenzpaket(e)',
+          18.0,
+          Colors.black,
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProgrammView()));
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/cat-and-dog-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold(
+                      'Frequenzwelt\nfür Hunde und Katzen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProgrammView()));
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/horse-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Pferde', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProgrammView()));
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/human-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        )
       ],
     );
   }

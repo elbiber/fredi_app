@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components.dart';
+import 'package:fredi_app/components/components.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});

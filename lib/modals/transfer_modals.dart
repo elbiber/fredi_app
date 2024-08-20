@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components.dart';
+import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/pages/programm_list_page.dart';
 
 class GetActualProgrammModal extends StatelessWidget {

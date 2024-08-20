@@ -1,7 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components.dart';
-import 'package:fredi_app/transfer_view.dart';
+import 'package:fredi_app/components/components.dart';
+// import 'package:fredi_app/transfer_view.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
 class ProgrammView extends StatelessWidget {
@@ -11,9 +11,9 @@ class ProgrammView extends StatelessWidget {
   Widget build(BuildContext context) {
     void writeNfcTag(String progammName, String pathToAudioFile) {
       final player = AudioPlayer();
-      const trans = TransferView();
+      // const trans = TransferView();
 
-      showModalBottomSheet(context: context, builder: (ctx) => trans);
+      // showModalBottomSheet(context: context, builder: (ctx) => trans);
       NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
         var ndef = Ndef.from(badge);
         debugPrint(ndef.toString());
@@ -28,9 +28,9 @@ class ProgrammView extends StatelessWidget {
             await Future.delayed(const Duration(seconds: 5));
             if (!context.mounted) return;
             Navigator.pop(context);
-            showModalBottomSheet(
+            /* showModalBottomSheet(
                 context: context,
-                builder: (ctx) => const TransferViewFinished());
+                builder: (ctx) => const TransferViewFinished()); */
           } catch (e) {
             NfcManager.instance
                 .stopSession(errorMessage: "Error while writing to badge");

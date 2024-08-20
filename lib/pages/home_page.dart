@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components.dart';
-import 'package:fredi_app/modals/transfer_modals.dart';
+import 'package:fredi_app/components/app_colors.dart';
+import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/pages/programm_list_page.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,41 +37,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    void readNfcTag() {
-      showModalBottomSheet(
-        context: context,
-        builder: (ctx) => const GetActualProgrammModal(),
-      );
-
-      /*  NfcManager.instance.startSession(
-        onDiscovered: (NfcTag badge) async {
-          var ndef = Ndef.from(badge);
-          // TODO: add Regex to test string
-          if (ndef != null && ndef.cachedMessage != null) {
-            debugPrint('--------------Close---------------');
-            String tempRecord = "";
-            for (var record in ndef.cachedMessage!.records) {
-              tempRecord =
-                  "$tempRecord ${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
-              Navigator.pop(context);
-              showModalBottomSheet(
-                  context: context,
-                  builder: (ctx) => ShowActualProgrammModal(
-                        actualProgramm: tempRecord,
-                      ));
-            }
-          } else {
-            Navigator.pop(context);
-            showModalBottomSheet(
-                context: context,
-                builder: (ctx) => const ShowNoProgrammModal());
-          }
-
-          NfcManager.instance.stopSession();
-        },
-      ); */
-    }
-
     return Scaffold(
       appBar: const FrediAppBarLogo(),
       drawer: const FredAppBarDrawer(),
@@ -110,140 +74,19 @@ class _HomePageState extends State<HomePage> {
                     context.go('/nfc-read');
                   },
                   style: ButtonStyle(
-                    side: WidgetStateProperty.all(const BorderSide(
-                      color: Color(0xff005B96),
+                    side: WidgetStateProperty.all(BorderSide(
+                      color: AppColors.complementary,
                     )),
-                    backgroundColor: WidgetStateProperty.all(mainColor),
+                    backgroundColor:
+                        WidgetStateProperty.all(AppColors.complementary),
                   ),
-                  child: const Sans(
-                      'Aktuelle Frequenz anzeigen', 18.0, Colors.white),
-                ),
-                const SizedBox(
-                  height: 5.0,
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProgrammView()));
-                  },
-                  style: ButtonStyle(
-                    side: WidgetStateProperty.all(const BorderSide(
-                      color: Color(0xff005B96),
-                    )),
-                    backgroundColor: WidgetStateProperty.all(mainColor),
-                  ),
-                  child: const Sans(
-                      'Neue Frequenz übertragen', 18.0, Colors.white),
-                ),
-                const SizedBox(
-                  height: 25.0,
-                ),
-                const Sans(
-                  'Dein(e)FrediFrequenzpaket(e)',
-                  18.0,
-                  Colors.black,
+                  child:
+                      Sans('Aktuelle Frequenz anzeigen', 18.0, AppColors.white),
                 ),
                 const SizedBox(
                   height: 15.0,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProgrammView()));
-                  },
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/cat-and-dog-dark.png'),
-                      fit: BoxFit.cover,
-                    )),
-                    child: const Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SansBold('Frequenzwelt\nfür Hunde und Katzen', 18.0,
-                              Colors.white),
-                          Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.orange,
-                            size: 50.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 5.0,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProgrammView()));
-                  },
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/horse-dark.png'),
-                      fit: BoxFit.cover,
-                    )),
-                    child: const Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SansBold(
-                              'Frequenzwelt\nfür Pferde', 18.0, Colors.white),
-                          Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.orange,
-                            size: 50.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 5.0,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProgrammView()));
-                  },
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage('assets/images/human-dark.png'),
-                      fit: BoxFit.cover,
-                    )),
-                    child: const Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SansBold(
-                              'Frequenzwelt\nfür Menschen', 18.0, Colors.white),
-                          Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.orange,
-                            size: 50.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                const FrequencyPackages(),
               ],
             ),
           ),
