@@ -11,9 +11,9 @@ class ProgrammView extends StatelessWidget {
   Widget build(BuildContext context) {
     void writeNfcTag(String progammName, String pathToAudioFile) {
       final player = AudioPlayer();
+      const trans = TransferView();
 
-      showModalBottomSheet(
-          context: context, builder: (ctx) => const TransferView());
+      showModalBottomSheet(context: context, builder: (ctx) => trans);
       NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
         var ndef = Ndef.from(badge);
         debugPrint(ndef.toString());

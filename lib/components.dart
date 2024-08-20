@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,16 +12,23 @@ class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
     const color = Color(0xff005B96);
     return AppBar(
       shadowColor: Colors.black,
-      backgroundColor: Colors.white,
+      backgroundColor: color,
       elevation: 3.0,
-      iconTheme: const IconThemeData(color: color),
+      iconTheme: const IconThemeData(color: Colors.white),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          SvgPicture.asset(
-            'assets/icons/fredi-logo-long.svg',
-            fit: BoxFit.contain,
-            width: 120,
+          GestureDetector(
+            onTap: () {
+              context.go('/');
+            },
+            child: SvgPicture.asset(
+              'assets/icons/fredi-logo-long.svg',
+              fit: BoxFit.contain,
+              width: 120,
+              colorFilter:
+                  const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
           ),
         ],
       ),
@@ -38,7 +46,12 @@ class FrediAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const BackButton(color: Colors.white),
+      leading: IconButton(
+        onPressed: () {
+          context.go('/');
+        },
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
+      ),
       title: SansBold(titel, 18.0, Colors.white),
       backgroundColor: const Color(0xff005B96),
     );
@@ -118,7 +131,10 @@ class _TabsMobileState extends State<TabsMobile> {
       height: 50,
       minWidth: 200.0,
       child: Sans(widget.text, 20, Colors.black),
-      onPressed: () {},
+      onPressed: () {
+        context.go(widget.route);
+        // Navigator.of(context).pushNamed(widget.route);
+      },
     );
   }
 }

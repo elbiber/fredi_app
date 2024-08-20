@@ -13,16 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateRoute: (settings) => Routes.generateRoute(settings),
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Fredi',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      routerConfig: router,
     );
   }
 }

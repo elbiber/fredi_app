@@ -71,36 +71,3 @@ class TransferViewFinished extends StatelessWidget {
     );
   }
 }
-
-class TransferViewRead extends StatelessWidget {
-  const TransferViewRead({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const FrediAppBar('Übertragung'),
-      body: Container(
-        padding: const EdgeInsets.all(30.0),
-        child: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.rss_feed,
-                size: 50.0,
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Sans(
-                'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
-                18,
-                Colors.black,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

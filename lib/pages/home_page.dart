@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components.dart';
-import 'package:fredi_app/modals/show_actual_programm_modal.dart';
 import 'package:fredi_app/modals/transfer_modals.dart';
 import 'package:fredi_app/pages/programm_list_page.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
 
@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //late YoutubePlayerController _controller;
   late VideoPlayerController _controller;
 
   static const mainColor = Color(0xff005B96);
@@ -42,29 +41,36 @@ class _HomePageState extends State<HomePage> {
     void readNfcTag() {
       showModalBottomSheet(
         context: context,
-        builder: (ctx) => const TransferReadModal(),
+        builder: (ctx) => const GetActualProgrammModal(),
       );
-      NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
-        var ndef = Ndef.from(badge);
 
-        if (ndef != null && ndef.cachedMessage != null) {
-          String tempRecord = "";
-          for (var record in ndef.cachedMessage!.records) {
-            tempRecord =
-                "$tempRecord ${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
+      /*  NfcManager.instance.startSession(
+        onDiscovered: (NfcTag badge) async {
+          var ndef = Ndef.from(badge);
+          // TODO: add Regex to test string
+          if (ndef != null && ndef.cachedMessage != null) {
+            debugPrint('--------------Close---------------');
+            String tempRecord = "";
+            for (var record in ndef.cachedMessage!.records) {
+              tempRecord =
+                  "$tempRecord ${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
+              Navigator.pop(context);
+              showModalBottomSheet(
+                  context: context,
+                  builder: (ctx) => ShowActualProgrammModal(
+                        actualProgramm: tempRecord,
+                      ));
+            }
+          } else {
             Navigator.pop(context);
             showModalBottomSheet(
                 context: context,
-                builder: (ctx) => ShowActualProgrammModal(
-                      actualProgramm: tempRecord,
-                    ));
+                builder: (ctx) => const ShowNoProgrammModal());
           }
-        } else {
-          // Show a snackbar for example
-        }
 
-        NfcManager.instance.stopSession();
-      });
+          NfcManager.instance.stopSession();
+        },
+      ); */
     }
 
     return Scaffold(
@@ -100,7 +106,9 @@ class _HomePageState extends State<HomePage> {
                       Colors.black),
                 ),
                 OutlinedButton(
-                  onPressed: readNfcTag,
+                  onPressed: () {
+                    context.go('/nfc-read');
+                  },
                   style: ButtonStyle(
                     side: WidgetStateProperty.all(const BorderSide(
                       color: Color(0xff005B96),
