@@ -164,7 +164,6 @@ class _TabsMobileState extends State<TabsMobile> {
       child: Sans(widget.text, 20, Colors.black),
       onPressed: () {
         context.go(widget.route);
-        // Navigator.of(context).pushNamed(widget.route);
       },
     );
   }
@@ -298,8 +297,7 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ProgrammView()));
+            context.go('/freq-dog-cat');
           },
           child: Container(
             decoration: const BoxDecoration(

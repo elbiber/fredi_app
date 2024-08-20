@@ -41,7 +41,6 @@ class _GetActualFreqState extends State<GetActualFreq> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     NfcManager.instance.stopSession();
     debugPrint('--------------NFC Instance Closed---------------');

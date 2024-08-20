@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
-import 'package:fredi_app/pages/programm_list_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
@@ -15,7 +14,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late VideoPlayerController _controller;
 
-  static const mainColor = Color(0xff005B96);
   @override
   void initState() {
     super.initState();
@@ -63,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(18.0),
+                  padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
                   child: SansCentered(
                       'Herzlichen Willkommen in derApp von Fredi! Lorem ipsum dolor sit amet,consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut laboreet dolore magna aliquyam erat, sed diam voluptua',
                       16.0,
@@ -80,11 +78,11 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor:
                         WidgetStateProperty.all(AppColors.complementary),
                   ),
-                  child:
-                      Sans('Aktuelle Frequenz anzeigen', 18.0, AppColors.white),
+                  child: SansBoldCentered(
+                      'Aktuelle Frequenz anzeigen', 18.0, AppColors.white),
                 ),
                 const SizedBox(
-                  height: 15.0,
+                  height: 5.0,
                 ),
                 const FrequencyPackages(),
               ],
