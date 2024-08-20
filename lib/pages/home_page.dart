@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/video/demo.mov');
+    _controller = VideoPlayerController.asset('assets/video/demo.mp4');
 
     _controller.addListener(() {
       setState(() {});
