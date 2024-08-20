@@ -147,32 +147,149 @@ class SetActualFreq extends StatefulWidget {
 }
 
 class _SetActualFreqState extends State<SetActualFreq> {
+  bool transfering = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const FrediAppBarLight(),
-      body: Container(
-        padding: const EdgeInsets.all(30.0),
-        child: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.rss_feed,
-                size: 50.0,
+      body: FutureBuilder<bool>(
+        future: NfcManager.instance.isAvailable(),
+        builder: (context, ss) => ss.data != true
+            ? Center(
+                child: SansBoldCentered(
+                    'Leider verfügt Dein Smartphone keine NFC Funktion bzw. diese ist deaktiviert.',
+                    22,
+                    AppColors.black))
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  transfering
+                      ? Container(
+                          padding: const EdgeInsets.all(30),
+                          color: AppColors.primary,
+                          child: Column(
+                            children: [
+                              SansCentered(
+                                'Folgende Frequenz wird jetzt übertragen:',
+                                18,
+                                AppColors.white,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              CircularProgressIndicator(
+                                backgroundColor: AppColors.white,
+                                color: Colors.grey,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              SansBoldCentered(
+                                  'Frequenz 1', 25.0, AppColors.white),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              SansBoldCentered(
+                                'Bitte warten, bist die Übertragung abgeschlossen ist.',
+                                18,
+                                AppColors.white,
+                              ),
+                            ],
+                          ),
+                        )
+                      : const Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.phonelink_ring_rounded,
+                                size: 50.0,
+                              ),
+                              SizedBox(
+                                height: 30.0,
+                              ),
+                              SansCentered(
+                                'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                18,
+                                Colors.black,
+                              ),
+                            ],
+                          ),
+                        ),
+                ],
               ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Sans(
-                'Halte dein SmartphoneJetzt für ca. 1 Minute an Dein Fredi-Produkt. Jetzt wird dein Fredi-Produkt neu programmiert.',
-                18,
-                Colors.black,
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
 }
+/* SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage('assets/images/cat-and-dog-dark.png'),
+                fit: BoxFit.cover,
+              )),
+              child: const Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SansBold('Frequenzwelt\nfür Hunde und Katzen', 20.0,
+                        Colors.white),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.phonelink_ring_rounded,
+                    size: 50.0,
+                  ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  SansCentered(
+                    'Halte dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                    18,
+                    Colors.black,
+                  ),
+                ],
+              ),
+            ), /*  */
+          ],
+        ), */
+
+/*             Container(
+              padding: const EdgeInsets.all(30),
+              color: AppColors.primary,
+              child: Column(
+                children: [
+                  SansCentered(
+                    'Folgende Frequenz wird jetzt übertragen:',
+                    18,
+                    AppColors.white,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SansBoldCentered('Frequenz 1', 25.0, AppColors.white),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SansBoldCentered(
+                    'Bitte warten, bist die Übertragung abgeschlossen ist.',
+                    18,
+                    AppColors.white,
+                  ),
+                ],
+              ),
+            ), */
