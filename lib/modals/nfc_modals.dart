@@ -49,7 +49,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const FrediAppBarLight('Anzeigen'),
+      appBar: const FrediAppBarLight(),
       body: !gotResult
           ? Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,7 +88,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                   child: Column(
                     children: [
                       SansCentered(
-                        'Du willst eine neueFrequenz übertragen?',
+                        'Du willst eine neue Frequenz übertragen?',
                         18,
                         AppColors.white,
                       ),
@@ -102,10 +102,10 @@ class _GetActualFreqState extends State<GetActualFreq> {
                             color: AppColors.white,
                           )),
                           backgroundColor:
-                              WidgetStateProperty.all(AppColors.white),
+                              WidgetStateProperty.all(AppColors.complementary),
                         ),
-                        child: Sans('Neue Frequenz übertragen', 18.0,
-                            AppColors.primary),
+                        child: SansBold(
+                            'Neue Frequenz übertragen', 18.0, AppColors.white),
                       ),
                     ],
                   ),
@@ -119,26 +119,60 @@ class _GetActualFreqState extends State<GetActualFreq> {
                   Container(
                     padding: const EdgeInsets.all(30.0),
                     color: AppColors.secondary,
-                    child: Column(
-                        //padding: const EdgeInsets.all(30),
-                        // color: const Color(0xffFEC401),
-                        //color: AppColors.secondary,
-                        children: [
-                          SansCentered(
-                            'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
-                            18,
-                            AppColors.white,
-                          ),
-                          const SizedBox(
-                            height: 25,
-                          ),
-                          SansBoldCentered(result, 28.0, AppColors.white),
-                        ]),
+                    child: Column(children: [
+                      SansCentered(
+                        'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
+                        18,
+                        AppColors.white,
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      SansBoldCentered(result, 28.0, AppColors.white),
+                    ]),
                   ),
                   const FrequencyPackages(),
                 ],
               ),
             ),
+    );
+  }
+}
+
+class SetActualFreq extends StatefulWidget {
+  const SetActualFreq({super.key});
+
+  @override
+  State<SetActualFreq> createState() => _SetActualFreqState();
+}
+
+class _SetActualFreqState extends State<SetActualFreq> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const FrediAppBarLight(),
+      body: Container(
+        padding: const EdgeInsets.all(30.0),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.rss_feed,
+                size: 50.0,
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Sans(
+                'Halte dein SmartphoneJetzt für ca. 1 Minute an Dein Fredi-Produkt. Jetzt wird dein Fredi-Produkt neu programmiert.',
+                18,
+                Colors.black,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

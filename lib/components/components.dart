@@ -63,8 +63,7 @@ class FrediAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class FrediAppBarLight extends StatelessWidget implements PreferredSizeWidget {
-  final String titel;
-  const FrediAppBarLight(this.titel, {super.key});
+  const FrediAppBarLight({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -383,6 +382,37 @@ class FrequencyPackages extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class FrediOutlinedButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final Color? bgColor;
+  const FrediOutlinedButton(
+      {super.key,
+      required this.onPressed,
+      required this.text,
+      this.bgColor = const Color(0xff005B96)});
+
+  @override
+  Widget build(BuildContext context) {
+    /* return ButtonTheme(
+        minWidth: 500,
+        child: OutlinedButton(
+            onPressed: () {},
+            child: SansBoldCentered(text, 18, AppColors.black))); */
+    return OutlinedButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        fixedSize: WidgetStateProperty.all<Size>(const Size(250.0, 50.0)),
+        side: WidgetStateProperty.all(BorderSide(
+          color: AppColors.white,
+        )),
+        backgroundColor: WidgetStateProperty.all(bgColor),
+      ),
+      child: SansBoldCentered(text, 18.0, AppColors.white),
     );
   }
 }

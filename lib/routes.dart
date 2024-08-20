@@ -24,8 +24,8 @@ GoRouter router = GoRouter(routes: [
     builder: (context, state) => const ContactPage(),
   ),
   GoRoute(
-    path: '/nfc-read',
-    builder: (context, state) => const GetActualFreq(),
+    path: '/nfc-write',
+    builder: (context, state) => const SetActualFreq(),
   ),
   GoRoute(
     path: '/freq-dog-cat',
