@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
 class SetActualFreq extends StatefulWidget {
@@ -19,6 +18,7 @@ class SetActualFreq extends StatefulWidget {
 
 class _SetActualFreqState extends State<SetActualFreq> {
   bool transfering = false;
+  bool transferSuccess = false;
   @override
   void initState() {
     super.initState();
@@ -43,7 +43,10 @@ class _SetActualFreqState extends State<SetActualFreq> {
                   debugPrint(value?.inMilliseconds.toString());
                   Future.delayed(Duration(milliseconds: value!.inMilliseconds),
                       () {
-                    context.go('/transfer-success');
+                    setState(() {
+                      transfering = false;
+                      transferSuccess = true;
+                    });
                   });
                 }),
               );
@@ -117,7 +120,10 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                 height: 10,
                               ),
                               SansBoldCentered(
-                                  'Frequenz 1', 25.0, AppColors.white),
+                                widget.selectedFrequency,
+                                25.0,
+                                AppColors.white,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
@@ -129,24 +135,47 @@ class _SetActualFreqState extends State<SetActualFreq> {
                             ],
                           ),
                         )
-                      : const Padding(
-                          padding: EdgeInsets.all(30.0),
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.phonelink_ring_rounded,
-                                size: 50.0,
-                              ),
-                              SizedBox(
-                                height: 30.0,
-                              ),
-                              SansCentered(
-                                'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
-                                18,
-                                Colors.black,
-                              ),
-                            ],
-                          ),
+                      : Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: !transferSuccess
+                              ? const Column(
+                                  children: [
+                                    Icon(
+                                      Icons.phonelink_ring_rounded,
+                                      size: 50.0,
+                                    ),
+                                    SizedBox(
+                                      height: 30.0,
+                                    ),
+                                    SansCentered(
+                                      'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                      18,
+                                      Colors.black,
+                                    ),
+                                  ],
+                                )
+                              : Center(
+                                  child: Column(
+                                    children: [
+                                      SansBoldCentered(
+                                          'Herzlichen Glückwunsch!',
+                                          20,
+                                          AppColors.secondary),
+                                      const SizedBox(
+                                        height: 25,
+                                      ),
+                                      SansCentered(
+                                          'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
+                                          20,
+                                          AppColors.black),
+                                      const SizedBox(
+                                        height: 25,
+                                      ),
+                                      SansBoldCentered(widget.selectedFrequency,
+                                          32, AppColors.secondary),
+                                    ],
+                                  ),
+                                ),
                         ),
                 ],
               ),
@@ -187,71 +216,3 @@ class TransferViewFinished extends StatelessWidget {
     );
   }
 }
-/* SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage('assets/images/cat-and-dog-dark.png'),
-                fit: BoxFit.cover,
-              )),
-              child: const Padding(
-                padding: EdgeInsets.all(25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SansBold('Frequenzwelt\nfür Hunde und Katzen', 20.0,
-                        Colors.white),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.phonelink_ring_rounded,
-                    size: 50.0,
-                  ),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  SansCentered(
-                    'Halte dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
-                    18,
-                    Colors.black,
-                  ),
-                ],
-              ),
-            ), /*  */
-          ],
-        ), */
-
-/*             Container(
-              padding: const EdgeInsets.all(30),
-              color: AppColors.primary,
-              child: Column(
-                children: [
-                  SansCentered(
-                    'Folgende Frequenz wird jetzt übertragen:',
-                    18,
-                    AppColors.white,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SansBoldCentered('Frequenz 1', 25.0, AppColors.white),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SansBoldCentered(
-                    'Bitte warten, bist die Übertragung abgeschlossen ist.',
-                    18,
-                    AppColors.white,
-                  ),
-                ],
-              ),
-            ), */

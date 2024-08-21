@@ -76,66 +76,43 @@ class _GetActualFreqState extends State<GetActualFreq> {
                 ),
               )
             : !gotResult
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(30),
-                        // color: const Color(0xffFEC401),
-                        color: AppColors.secondary,
-                        child: SansCentered(
-                          'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
-                          18,
-                          AppColors.white,
+                ? SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(30),
+                          // color: const Color(0xffFEC401),
+                          color: AppColors.secondary,
+                          child: SansCentered(
+                            'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
+                            18,
+                            AppColors.white,
+                          ),
                         ),
-                      ),
-                      Column(
-                        children: [
-                          Icon(
-                            Icons.phonelink_ring_rounded,
-                            size: 50.0,
-                            color: AppColors.black,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(30.0),
-                            child: SansCentered(
-                              'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
-                              18,
-                              AppColors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(30),
-                        // color: const Color(0xffFEC401),
-                        color: AppColors.secondary,
-                        child: Column(
+                        Column(
                           children: [
-                            SansCentered(
-                              'Du willst eine neue Frequenz übertragen?',
-                              18,
-                              AppColors.white,
-                            ),
                             const SizedBox(
-                              height: 25.0,
+                              height: 30,
                             ),
-                            OutlinedButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                side: WidgetStateProperty.all(BorderSide(
-                                  color: AppColors.white,
-                                )),
-                                backgroundColor: WidgetStateProperty.all(
-                                    AppColors.complementary),
+                            Icon(
+                              Icons.phonelink_ring_rounded,
+                              size: 50.0,
+                              color: AppColors.black,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(30.0),
+                              child: SansCentered(
+                                'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
+                                18,
+                                AppColors.black,
                               ),
-                              child: SansBold('Neue Frequenz übertragen', 18.0,
-                                  AppColors.white),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        const FrequencyPackages(),
+                      ],
+                    ),
                   )
                 : SingleChildScrollView(
                     child: Column(

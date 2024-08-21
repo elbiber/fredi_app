@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
+import 'package:fredi_app/pages/frequencies_cats_and_dogs_page.dart';
+import 'package:fredi_app/pages/frequencies_horses_page.dart';
+import 'package:fredi_app/pages/frequencies_humans_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
@@ -188,7 +191,7 @@ class FrequencyPackages extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(30.0),
           child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
-              25.0, AppColors.primary),
+              25.0, AppColors.secondary),
         ),
         const Sans(
           'Dein(e)FrediFrequenzpaket(e)',
@@ -200,7 +203,80 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            context.go('/freq-dog-cat');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesHumansPage(),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/human-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesHorsesPage(),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/horse-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Pferde', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesCatsAndDogsPage(),
+              ),
+            );
           },
           child: Container(
             decoration: const BoxDecoration(
@@ -228,57 +304,6 @@ class FrequencyPackages extends StatelessWidget {
         const SizedBox(
           height: 5.0,
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/horse-dark.png'),
-              fit: BoxFit.cover,
-            )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SansBold('Frequenzwelt\nfür Pferde', 18.0, Colors.white),
-                  Icon(
-                    Icons.arrow_circle_right,
-                    color: Colors.orange,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 5.0,
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/human-dark.png'),
-              fit: BoxFit.cover,
-            )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
-                  Icon(
-                    Icons.arrow_circle_right,
-                    color: Colors.orange,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        )
       ],
     );
   }
