@@ -5,8 +5,8 @@ import 'package:fredi_app/components/font_components.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
-class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
-  const FrediAppBarLogo({super.key});
+class FrediAppBarMain extends StatelessWidget implements PreferredSizeWidget {
+  const FrediAppBarMain({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,39 +39,14 @@ class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(60);
 }
 
-class FrediAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String titel;
-  const FrediAppBar(this.titel, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      leading: IconButton(
-        onPressed: () {
-          context.go('/');
-        },
-        icon: const Icon(Icons.arrow_back, color: Colors.white),
-      ),
-      title: SansBold(titel, 18.0, Colors.white),
-      backgroundColor: AppColors.primary,
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(50);
-}
-
 class FrediAppBarLight extends StatelessWidget implements PreferredSizeWidget {
   const FrediAppBarLight({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        onPressed: () {
-          context.go('/');
-        },
-        icon: Icon(Icons.arrow_back, color: AppColors.primary),
+      iconTheme: IconThemeData(
+        color: AppColors.primary, //change your color here
       ),
       title: Align(
         alignment: Alignment.centerRight,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:go_router/go_router.dart';
+import 'package:fredi_app/modals/get_actual_frequency_modal.dart';
 import 'package:video_player/video_player.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const FrediAppBarLogo(),
+      appBar: const FrediAppBarMain(),
       drawer: const FredAppBarDrawer(),
       body: SingleChildScrollView(
         child: Center(
@@ -64,13 +64,17 @@ class _HomePageState extends State<HomePage> {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
                   child: SansCentered(
-                      'Herzlichen Willkommen in derApp von Fredi! Lorem ipsum dolor sit amet,consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut laboreet dolore magna aliquyam erat, sed diam voluptua',
+                      'Herzlichen Willkommen in der App von Fredi! Lorem ipsum dolor sit amet,consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut laboreet dolore magna aliquyam erat, sed diam voluptua',
                       16.0,
                       Colors.black),
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    context.go('/nfc-read');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GetActualFreq()),
+                    );
                   },
                   style: ButtonStyle(
                     side: WidgetStateProperty.all(BorderSide(

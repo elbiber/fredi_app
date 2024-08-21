@@ -1,4 +1,4 @@
-import 'package:fredi_app/modals/nfc_modals.dart';
+import 'package:fredi_app/modals/set_actual_frequency_modal.dart';
 import 'package:fredi_app/pages/about_page.dart';
 import 'package:fredi_app/pages/contact_page.dart';
 import 'package:fredi_app/pages/faq_page.dart';
@@ -24,12 +24,8 @@ GoRouter router = GoRouter(routes: [
     builder: (context, state) => const ContactPage(),
   ),
   GoRoute(
-    path: '/nfc-read',
-    builder: (context, state) => const GetActualFreq(),
-  ),
-  GoRoute(
-    path: '/nfc-write',
-    builder: (context, state) => const SetActualFreq(),
+    path: '/transfer-success',
+    builder: (context, state) => const TransferViewFinished(),
   ),
   GoRoute(
     path: '/freq-dog-cat',

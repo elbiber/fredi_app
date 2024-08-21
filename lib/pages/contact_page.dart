@@ -7,7 +7,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        appBar: FrediAppBarLogo(),
+        appBar: FrediAppBarMain(),
         drawer: FredAppBarDrawer(),
         body: SingleChildScrollView(
           child: Text('Kontakt'),
