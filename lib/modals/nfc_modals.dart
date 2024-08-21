@@ -1,6 +1,8 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/app_colors.dart';
+import 'package:fredi_app/components/font_components.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
 class GetActualFreq extends StatefulWidget {
@@ -33,9 +35,9 @@ class _GetActualFreqState extends State<GetActualFreq> {
             gotResult = true;
           });
         }
-      } else {}
-
-      // NfcManager.instance.stopSession();
+      } else {
+        // TODO:No or invalid String from Produkt
+      }
     });
   }
 
@@ -50,91 +52,100 @@ class _GetActualFreqState extends State<GetActualFreq> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const FrediAppBarLight(),
-      body: !gotResult
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(30),
-                  // color: const Color(0xffFEC401),
-                  color: AppColors.secondary,
-                  child: SansCentered(
-                    'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
-                    18,
-                    AppColors.white,
-                  ),
-                ),
-                Column(
-                  children: [
-                    Icon(
-                      Icons.phonelink_ring_rounded,
-                      size: 50.0,
-                      color: AppColors.black,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: SansCentered(
-                        'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
-                        18,
-                        AppColors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(30),
-                  // color: const Color(0xffFEC401),
-                  color: AppColors.secondary,
-                  child: Column(
+      body: FutureBuilder<bool>(
+        future: NfcManager.instance.isAvailable(),
+        builder: (context, ss) => ss.data != true
+            ? Center(
+                child: SansBoldCentered(
+                    'Leider verfügt Dein Smartphone keine NFC Funktion bzw. diese ist deaktiviert.',
+                    22,
+                    AppColors.black))
+            : !gotResult
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SansCentered(
-                        'Du willst eine neue Frequenz übertragen?',
-                        18,
-                        AppColors.white,
-                      ),
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      OutlinedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          side: WidgetStateProperty.all(BorderSide(
-                            color: AppColors.white,
-                          )),
-                          backgroundColor:
-                              WidgetStateProperty.all(AppColors.complementary),
+                      Container(
+                        padding: const EdgeInsets.all(30),
+                        // color: const Color(0xffFEC401),
+                        color: AppColors.secondary,
+                        child: SansCentered(
+                          'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
+                          18,
+                          AppColors.white,
                         ),
-                        child: SansBold(
-                            'Neue Frequenz übertragen', 18.0, AppColors.white),
+                      ),
+                      Column(
+                        children: [
+                          Icon(
+                            Icons.phonelink_ring_rounded,
+                            size: 50.0,
+                            color: AppColors.black,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(30.0),
+                            child: SansCentered(
+                              'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
+                              18,
+                              AppColors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(30),
+                        // color: const Color(0xffFEC401),
+                        color: AppColors.secondary,
+                        child: Column(
+                          children: [
+                            SansCentered(
+                              'Du willst eine neue Frequenz übertragen?',
+                              18,
+                              AppColors.white,
+                            ),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            OutlinedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                side: WidgetStateProperty.all(BorderSide(
+                                  color: AppColors.white,
+                                )),
+                                backgroundColor: WidgetStateProperty.all(
+                                    AppColors.complementary),
+                              ),
+                              child: SansBold('Neue Frequenz übertragen', 18.0,
+                                  AppColors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
+                  )
+                : SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(30.0),
+                          color: AppColors.secondary,
+                          child: Column(children: [
+                            SansCentered(
+                              'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
+                              18,
+                              AppColors.white,
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            SansBoldCentered(result, 28.0, AppColors.white),
+                          ]),
+                        ),
+                        const FrequencyPackages(),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            )
-          : SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(30.0),
-                    color: AppColors.secondary,
-                    child: Column(children: [
-                      SansCentered(
-                        'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
-                        18,
-                        AppColors.white,
-                      ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      SansBoldCentered(result, 28.0, AppColors.white),
-                    ]),
-                  ),
-                  const FrequencyPackages(),
-                ],
-              ),
-            ),
+      ),
     );
   }
 }
@@ -148,6 +159,51 @@ class SetActualFreq extends StatefulWidget {
 
 class _SetActualFreqState extends State<SetActualFreq> {
   bool transfering = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    debugPrint('--------------NFC Instance Opened---------------');
+    final player = AudioPlayer();
+    // const trans = TransferView();
+
+    // showModalBottomSheet(context: context, builder: (ctx) => trans);
+    NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
+      var ndef = Ndef.from(badge);
+      debugPrint(ndef.toString());
+      if (ndef != null && ndef.isWritable) {
+        NdefRecord ndefRecord = NdefRecord.createText('Frequenz 1');
+        NdefMessage message = NdefMessage([ndefRecord]);
+        debugPrint(message.records.toString());
+
+        try {
+          await ndef.write(message);
+          await player.play(AssetSource('audio/programm_004.mp3'));
+          await Future.delayed(const Duration(seconds: 5));
+          if (!context.mounted) return;
+          Navigator.pop(context);
+          /* showModalBottomSheet(
+                context: context,
+                builder: (ctx) => const TransferViewFinished()); */
+        } catch (e) {
+          NfcManager.instance
+              .stopSession(errorMessage: "Error while writing to badge");
+        }
+      }
+
+      NfcManager.instance.stopSession();
+    });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    NfcManager.instance.stopSession();
+    debugPrint('--------------NFC Instance Closed---------------');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

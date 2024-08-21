@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
-import 'package:fredi_app/pages/programm_list_page.dart';
+import 'package:fredi_app/components/font_components.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
 class FrediAppBarLogo extends StatelessWidget implements PreferredSizeWidget {
@@ -168,76 +167,6 @@ class _TabsMobileState extends State<TabsMobile> {
   }
 }
 
-class SansBold extends StatelessWidget {
-  final String text;
-  final double size;
-  final Color fontColor;
-  const SansBold(this.text, this.size, this.fontColor, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-        fontWeight: FontWeight.bold,
-        color: fontColor,
-      ),
-    );
-  }
-}
-
-class SansBoldCentered extends Sans {
-  const SansBoldCentered(super.text, super.size, super.fontColor, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-        color: fontColor,
-        fontWeight: FontWeight.bold,
-      ),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
-class Sans extends StatelessWidget {
-  final String text;
-  final double size;
-  final Color fontColor;
-  const Sans(this.text, this.size, this.fontColor, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-        color: fontColor,
-      ),
-    );
-  }
-}
-
-class SansCentered extends Sans {
-  const SansCentered(super.text, super.size, super.fontColor, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontSize: size,
-        color: fontColor,
-      ),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
 class ControlsOverlay extends StatelessWidget {
   const ControlsOverlay({super.key, required this.controller});
 
@@ -325,10 +254,7 @@ class FrequencyPackages extends StatelessWidget {
           height: 5.0,
         ),
         GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ProgrammView()));
-          },
+          onTap: () {},
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -355,10 +281,7 @@ class FrequencyPackages extends StatelessWidget {
           height: 5.0,
         ),
         GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ProgrammView()));
-          },
+          onTap: () {},
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(

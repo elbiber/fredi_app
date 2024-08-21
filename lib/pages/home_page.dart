@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
+import 'package:fredi_app/components/font_components.dart';
 import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
