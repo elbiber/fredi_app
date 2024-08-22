@@ -191,7 +191,7 @@ class FrequencyPackages extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(30.0),
           child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
-              25.0, AppColors.secondary),
+              25.0, AppColors.primary),
         ),
         const Sans(
           'Dein(e)FrediFrequenzpaket(e)',

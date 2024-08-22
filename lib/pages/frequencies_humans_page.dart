@@ -47,8 +47,7 @@ class _FrequenciesHumansPageState extends State<FrequenciesHumansPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => SetActualFreq(
-                          selectedFrequency:
-                              'Hund und Katze Frequenz ${1 + index}',
+                          selectedFrequency: 'Mensch Frequenz ${1 + index}',
                           audioAsset: 'audio/frequency_001.mp3',
                         ),
                       ),

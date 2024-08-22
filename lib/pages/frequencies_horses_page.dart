@@ -17,7 +17,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: AppColors.secondary,
+            backgroundColor: AppColors.primary,
             foregroundColor: AppColors.white,
             stretch: true,
             pinned: true,
@@ -26,7 +26,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
             flexibleSpace: FlexibleSpaceBar(
               title: Sans('Frequenzwelt für Pferde', 18, AppColors.white),
               background: Image.asset(
-                'assets/images/horses-full-dark.png',
+                'assets/images/horse-dark.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,7 +38,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                 padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                 child: ListTile(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: AppColors.secondary, width: 1),
+                      side: BorderSide(color: AppColors.primary, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
                   onTap: () {
@@ -55,7 +55,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                   title: SansCentered(
                     'Pferd Frequenz ${1 + index}',
                     18,
-                    AppColors.secondary,
+                    AppColors.primary,
                   ),
                 ),
               );

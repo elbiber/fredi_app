@@ -160,7 +160,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                       SansBoldCentered(
                                           'Herzlichen Glückwunsch!',
                                           20,
-                                          AppColors.secondary),
+                                          AppColors.primary),
                                       const SizedBox(
                                         height: 25,
                                       ),
@@ -172,7 +172,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                         height: 25,
                                       ),
                                       SansBoldCentered(widget.selectedFrequency,
-                                          32, AppColors.secondary),
+                                          32, AppColors.primary),
                                     ],
                                   ),
                                 ),

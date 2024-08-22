@@ -83,7 +83,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                         Container(
                           padding: const EdgeInsets.all(30),
                           // color: const Color(0xffFEC401),
-                          color: AppColors.secondary,
+                          color: AppColors.primary,
                           child: SansCentered(
                             'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
                             18,
@@ -120,7 +120,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                       children: [
                         Container(
                           padding: const EdgeInsets.all(30.0),
-                          color: AppColors.secondary,
+                          color: AppColors.primary,
                           child: Column(children: [
                             SansCentered(
                               'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
