@@ -39,7 +39,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
 
         if (ndef != null && ndef.isWritable) {
           NdefRecord ndefRecord =
-              NdefRecord.createText(widget.selectedFrequency);
+              NdefRecord.createText('fsp_${widget.selectedFrequency}');
           NdefMessage message = NdefMessage([ndefRecord]);
 
           try {
@@ -88,7 +88,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
             ? Center(
                 child: Column(
                   children: [
-                    SansBoldCentered(
+                    const SansBoldCentered(
                         'Leider verfügt Dein Smartphone keine NFC Funktion bzw. diese ist deaktiviert.',
                         22,
                         AppColors.black),
@@ -117,7 +117,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                           color: widget.loadingColor,
                           child: Column(
                             children: [
-                              SansCentered(
+                              const SansCentered(
                                 'Folgende Frequenz wird jetzt übertragen:',
                                 18,
                                 AppColors.white,
@@ -125,7 +125,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              CircularProgressIndicator(
+                              const CircularProgressIndicator(
                                 backgroundColor: AppColors.white,
                                 color: Colors.grey,
                               ),
@@ -140,7 +140,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              SansBoldCentered(
+                              const SansBoldCentered(
                                 'Bitte warten, bist die Übertragung abgeschlossen ist.',
                                 18,
                                 AppColors.white,
@@ -177,7 +177,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                       const SizedBox(
                                         height: 25,
                                       ),
-                                      SansCentered(
+                                      const SansCentered(
                                           'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
                                           20,
                                           AppColors.black),
