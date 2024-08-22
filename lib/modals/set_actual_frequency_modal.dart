@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -19,50 +21,57 @@ class SetActualFreq extends StatefulWidget {
 class _SetActualFreqState extends State<SetActualFreq> {
   bool transfering = false;
   bool transferSuccess = false;
+  final player = AudioPlayer();
+  late Timer timer;
+
   @override
   void initState() {
     super.initState();
     debugPrint('--------------NFC Instance Opened---------------');
-    final player = AudioPlayer();
-    NfcManager.instance.startSession(onDiscovered: (NfcTag badge) async {
-      var ndef = Ndef.from(badge);
+    NfcManager.instance.startSession(
+      onDiscovered: (NfcTag badge) async {
+        var ndef = Ndef.from(badge);
+        debugPrint('--------------Delayed---------------');
 
-      if (ndef != null && ndef.isWritable) {
-        NdefRecord ndefRecord = NdefRecord.createText(widget.selectedFrequency);
-        NdefMessage message = NdefMessage([ndefRecord]);
-        debugPrint(message.records.toString());
+        if (ndef != null && ndef.isWritable) {
+          NdefRecord ndefRecord =
+              NdefRecord.createText(widget.selectedFrequency);
+          NdefMessage message = NdefMessage([ndefRecord]);
 
-        try {
-          setState(() {
-            transfering = true;
-          });
-          await ndef.write(message);
-          await player.play(AssetSource(widget.audioAsset));
-          await player.getDuration().then(
-                (value) => setState(() {
-                  debugPrint(value?.inMilliseconds.toString());
-                  Future.delayed(Duration(milliseconds: value!.inMilliseconds),
-                      () {
-                    setState(() {
-                      transfering = false;
-                      transferSuccess = true;
-                    });
-                  });
-                }),
-              );
-        } catch (e) {
-          NfcManager.instance
-              .stopSession(errorMessage: "Error while writing to badge");
+          try {
+            setState(() {
+              transfering = true;
+            });
+            await ndef.write(message);
+            debugPrint('--------------NFC Instance Written---------------');
+            setState(() {
+              transfering = true;
+            });
+            await player.play(AssetSource(widget.audioAsset));
+            timer = Timer(const Duration(seconds: 5), () {
+              setState(() {
+                transfering = false;
+                transferSuccess = true;
+              });
+            });
+          } catch (e) {
+            NfcManager.instance
+                .stopSession(errorMessage: "Error while writing to badge");
+          }
+          NfcManager.instance.stopSession();
+          debugPrint('--------------NFC Instance Closed 1---------------');
         }
-      }
-    });
+      },
+    );
   }
 
   @override
   void dispose() {
     super.dispose();
+    player.dispose();
+    timer.cancel();
     NfcManager.instance.stopSession();
-    debugPrint('--------------NFC Instance Closed---------------');
+    debugPrint('--------------NFC Instance Closed 2---------------');
   }
 
   @override

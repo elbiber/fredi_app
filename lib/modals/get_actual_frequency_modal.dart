@@ -38,6 +38,8 @@ class _GetActualFreqState extends State<GetActualFreq> {
       } else {
         // TODO:No or invalid String from Produkt
       }
+      NfcManager.instance.stopSession();
+      debugPrint('--------------NFC Instance Closed 1---------------');
     });
   }
 
@@ -45,7 +47,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
   void dispose() {
     super.dispose();
     NfcManager.instance.stopSession();
-    debugPrint('--------------NFC Instance Closed---------------');
+    debugPrint('--------------NFC Instance Closed 2---------------');
   }
 
   @override
