@@ -28,18 +28,27 @@ class _GetActualFreqState extends State<GetActualFreq> {
         String tempRecord = "";
         for (var record in ndef.cachedMessage!.records) {
           tempRecord =
-              "$tempRecord ${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
+              "$tempRecord${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
           debugPrint('--------------$tempRecord---------------');
           //result.value = tempRecord;
-          setState(() {
-            result = tempRecord;
-            resultValid = true;
-            gotResult = true;
-          });
+          final prefix = RegExp(r'^fsp_');
+
+          if (prefix.hasMatch(tempRecord)) {
+            debugPrint('-------------Regex-----------------');
+            setState(() {
+              result = tempRecord.substring(4);
+              resultValid = true;
+              gotResult = true;
+            });
+          } else {
+            debugPrint('--------------NFC Instance Invalid---------------');
+            setState(() {
+              gotResult = true;
+              resultValid = false;
+            });
+          }
         }
       } else {
-        // TODO:No or invalid String from Produkt
-
         debugPrint('--------------NFC Instance Invalid---------------');
         debugPrint('${ndef?.cachedMessage}');
         setState(() {
@@ -47,8 +56,8 @@ class _GetActualFreqState extends State<GetActualFreq> {
           resultValid = false;
         });
       }
-      NfcManager.instance.stopSession();
-      debugPrint('--------------NFC Instance Closed 1---------------');
+      //NfcManager.instance.stopSession();
+      //debugPrint('--------------NFC Instance Closed 1---------------');
     });
   }
 
@@ -69,7 +78,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
             ? Center(
                 child: Column(
                   children: [
-                    SansBoldCentered(
+                    const SansBoldCentered(
                         'Leider verfügt Dein Smartphone keine NFC Funktion bzw. diese ist deaktiviert.',
                         22,
                         AppColors.black),
@@ -93,10 +102,10 @@ class _GetActualFreqState extends State<GetActualFreq> {
                       children: [
                         Container(
                           color: AppColors.primary,
-                          child: Column(
+                          child: const Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(30.0),
+                                padding: EdgeInsets.all(30.0),
                                 child: SansCentered(
                                   'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
                                   18,
@@ -109,7 +118,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                                 color: AppColors.white,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(30.0),
+                                padding: EdgeInsets.all(30.0),
                                 child: SansCentered(
                                   'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
                                   18,
@@ -132,7 +141,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                                 padding: const EdgeInsets.all(30.0),
                                 color: AppColors.primary,
                                 child: Column(children: [
-                                  SansCentered(
+                                  const SansCentered(
                                     'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
                                     18,
                                     AppColors.white,
@@ -147,7 +156,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
                             : Container(
                                 padding: const EdgeInsets.all(30.0),
                                 color: AppColors.complementary,
-                                child: Column(children: [
+                                child: const Column(children: [
                                   SansBoldCentered(
                                     'Auf Deinem Fredi Produkt befindet sich im Moment keine gültige Frequenz. Bitte übertrage erst eine Frequenz!',
                                     20,
