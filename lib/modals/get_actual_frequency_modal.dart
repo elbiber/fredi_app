@@ -16,6 +16,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
   // ValueNotifier<dynamic> result = ValueNotifier(null);
   String result = '';
   bool gotResult = false;
+  bool resultValid = true;
   @override
   void initState() {
     super.initState();
@@ -32,11 +33,19 @@ class _GetActualFreqState extends State<GetActualFreq> {
           //result.value = tempRecord;
           setState(() {
             result = tempRecord;
+            resultValid = true;
             gotResult = true;
           });
         }
       } else {
         // TODO:No or invalid String from Produkt
+
+        debugPrint('--------------NFC Instance Invalid---------------');
+        debugPrint('${ndef?.cachedMessage}');
+        setState(() {
+          gotResult = true;
+          resultValid = false;
+        });
       }
       NfcManager.instance.stopSession();
       debugPrint('--------------NFC Instance Closed 1---------------');
@@ -83,34 +92,32 @@ class _GetActualFreqState extends State<GetActualFreq> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(30),
-                          // color: const Color(0xffFEC401),
                           color: AppColors.primary,
-                          child: SansCentered(
-                            'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
-                            18,
-                            AppColors.white,
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            Icon(
-                              Icons.phonelink_ring_rounded,
-                              size: 50.0,
-                              color: AppColors.black,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(30.0),
-                              child: SansCentered(
-                                'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
-                                18,
-                                AppColors.black,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(30.0),
+                                child: SansCentered(
+                                  'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
+                                  18,
+                                  AppColors.white,
+                                ),
                               ),
-                            ),
-                          ],
+                              Icon(
+                                Icons.phonelink_ring_rounded,
+                                size: 50.0,
+                                color: AppColors.white,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(30.0),
+                                child: SansCentered(
+                                  'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
+                                  18,
+                                  AppColors.white,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const FrequencyPackages(),
                       ],
@@ -120,21 +127,34 @@ class _GetActualFreqState extends State<GetActualFreq> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(30.0),
-                          color: AppColors.primary,
-                          child: Column(children: [
-                            SansCentered(
-                              'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
-                              18,
-                              AppColors.white,
-                            ),
-                            const SizedBox(
-                              height: 25,
-                            ),
-                            SansBoldCentered(result, 28.0, AppColors.white),
-                          ]),
-                        ),
+                        resultValid
+                            ? Container(
+                                padding: const EdgeInsets.all(30.0),
+                                color: AppColors.primary,
+                                child: Column(children: [
+                                  SansCentered(
+                                    'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
+                                    18,
+                                    AppColors.white,
+                                  ),
+                                  const SizedBox(
+                                    height: 25,
+                                  ),
+                                  SansBoldCentered(
+                                      result, 28.0, AppColors.white),
+                                ]),
+                              )
+                            : Container(
+                                padding: const EdgeInsets.all(30.0),
+                                color: AppColors.complementary,
+                                child: Column(children: [
+                                  SansBoldCentered(
+                                    'Auf Deinem Fredi Produkt befindet sich im Moment keine gültige Frequenz. Bitte übertrage erst eine Frequenz!',
+                                    20,
+                                    AppColors.white,
+                                  ),
+                                ]),
+                              ),
                         const FrequencyPackages(),
                       ],
                     ),

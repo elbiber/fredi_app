@@ -203,6 +203,137 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesHumansPage(),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/human-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesHorsesPage(),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/horse-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Pferde', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FrequenciesCatsAndDogsPage(),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/cat-and-dog-dark.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold(
+                      'Frequenzwelt\nfür Hunde und Katzen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+      ],
+    );
+  }
+}
+
+class FrequencyPackagesHome extends StatelessWidget {
+  const FrequencyPackagesHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
+              25.0, AppColors.primary),
+        ),
+        const Sans(
+          'Dein(e)FrediFrequenzpaket(e)',
+          18.0,
+          Colors.black,
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        GestureDetector(
+          onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(

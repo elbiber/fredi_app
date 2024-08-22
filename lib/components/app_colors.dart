@@ -10,3 +10,7 @@ class AppColors {
   static var white = const Color(0xffffffff);
   static var black = const Color(0xff000000);
 }
+
+class Constants {
+  static const String freqPrefix = "FSP_";
+}

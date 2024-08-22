@@ -49,6 +49,7 @@ class _FrequenciesHumansPageState extends State<FrequenciesHumansPage> {
                         builder: (context) => SetActualFreq(
                           selectedFrequency: 'Mensch Frequenz ${1 + index}',
                           audioAsset: 'audio/frequency_001.mp3',
+                          loadingColor: AppColors.complementary,
                         ),
                       ),
                     );

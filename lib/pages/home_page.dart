@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 5.0,
                 ),
-                const FrequencyPackages(),
+                const FrequencyPackagesHome(),
               ],
             ),
           ),

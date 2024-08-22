@@ -11,8 +11,12 @@ import 'package:nfc_manager/nfc_manager.dart';
 class SetActualFreq extends StatefulWidget {
   final String selectedFrequency;
   final String audioAsset;
+  final Color loadingColor;
   const SetActualFreq(
-      {super.key, required this.selectedFrequency, required this.audioAsset});
+      {super.key,
+      required this.selectedFrequency,
+      required this.audioAsset,
+      required this.loadingColor});
 
   @override
   State<SetActualFreq> createState() => _SetActualFreqState();
@@ -22,8 +26,8 @@ class _SetActualFreqState extends State<SetActualFreq> {
   bool transfering = false;
   bool transferSuccess = false;
   final player = AudioPlayer();
-  late Timer timer;
-
+  // ignore: prefer_typing_uninitialized_variables
+  var timer;
   @override
   void initState() {
     super.initState();
@@ -69,7 +73,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
   void dispose() {
     super.dispose();
     player.dispose();
-    timer.cancel();
+    if (timer != null) timer.cancel();
     NfcManager.instance.stopSession();
     debugPrint('--------------NFC Instance Closed 2---------------');
   }
@@ -110,7 +114,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                   transfering
                       ? Container(
                           padding: const EdgeInsets.all(30),
-                          color: AppColors.primary,
+                          color: widget.loadingColor,
                           child: Column(
                             children: [
                               SansCentered(
@@ -169,7 +173,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                       SansBoldCentered(
                                           'Herzlichen Glückwunsch!',
                                           20,
-                                          AppColors.primary),
+                                          widget.loadingColor),
                                       const SizedBox(
                                         height: 25,
                                       ),
@@ -181,7 +185,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                         height: 25,
                                       ),
                                       SansBoldCentered(widget.selectedFrequency,
-                                          32, AppColors.primary),
+                                          24, widget.loadingColor),
                                     ],
                                   ),
                                 ),

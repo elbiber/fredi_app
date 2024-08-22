@@ -52,6 +52,7 @@ class _FrequenciesCatsAndDogsPageState
                           selectedFrequency:
                               'Hund und Katze Frequenz ${1 + index}',
                           audioAsset: 'audio/frequency_001.mp3',
+                          loadingColor: AppColors.green,
                         ),
                       ),
                     );
