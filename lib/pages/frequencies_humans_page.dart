@@ -24,7 +24,8 @@ class _FrequenciesHumansPageState extends State<FrequenciesHumansPage> {
             floating: true,
             expandedHeight: 160.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: Sans('Frequenzwelt für Menschen', 18, AppColors.white),
+              title:
+                  const Sans('Frequenzwelt für Menschen', 18, AppColors.white),
               background: Image.asset(
                 'assets/images/human-full-dark.png',
                 fit: BoxFit.cover,
@@ -38,8 +39,8 @@ class _FrequenciesHumansPageState extends State<FrequenciesHumansPage> {
                 padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                 child: ListTile(
                   shape: RoundedRectangleBorder(
-                      side:
-                          BorderSide(color: AppColors.complementary, width: 1),
+                      side: const BorderSide(
+                          color: AppColors.complementary, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
                   onTap: () {

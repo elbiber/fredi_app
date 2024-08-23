@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_open_app_settings/flutter_open_app_settings.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
@@ -6,6 +7,7 @@ import 'package:fredi_app/pages/frequencies_cats_and_dogs_page.dart';
 import 'package:fredi_app/pages/frequencies_horses_page.dart';
 import 'package:fredi_app/pages/frequencies_humans_page.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
 
 class FrediAppBarMain extends StatelessWidget implements PreferredSizeWidget {
@@ -48,7 +50,7 @@ class FrediAppBarLight extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: AppColors.primary, //change your color here
       ),
       title: Align(
@@ -57,7 +59,8 @@ class FrediAppBarLight extends StatelessWidget implements PreferredSizeWidget {
           'assets/icons/fredi-logo-long.svg',
           fit: BoxFit.contain,
           width: 120,
-          colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
+          colorFilter:
+              const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
         ),
       ),
       backgroundColor: AppColors.white,
@@ -188,8 +191,8 @@ class FrequencyPackages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(30.0),
+        const Padding(
+          padding: EdgeInsets.all(30.0),
           child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
               25.0, AppColors.primary),
         ),
@@ -319,8 +322,8 @@ class FrequencyPackagesHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(30.0),
+        const Padding(
+          padding: EdgeInsets.all(30.0),
           child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
               25.0, AppColors.primary),
         ),
@@ -461,12 +464,82 @@ class FrediOutlinedButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         fixedSize: WidgetStateProperty.all<Size>(const Size(250.0, 50.0)),
-        side: WidgetStateProperty.all(BorderSide(
+        side: WidgetStateProperty.all(const BorderSide(
           color: AppColors.white,
         )),
         backgroundColor: WidgetStateProperty.all(bgColor),
       ),
       child: SansBoldCentered(text, 18.0, AppColors.white),
+    );
+  }
+}
+
+class NFCErrorMessage extends StatelessWidget {
+  const NFCErrorMessage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Padding(
+          padding: EdgeInsets.all(30.0),
+          child: SansBoldCentered(
+              'Leider ist die NFC Funktion Deines Smartphones im Moment deaktiviert. Du kannst diese in den Einstellungen deines Smartphones aktivieren. Drücke auf den Button um direkt dorthin zu gelangen.',
+              20,
+              AppColors.complementary),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                foregroundColor: AppColors.white,
+                minimumSize: const Size(200, 50)),
+            onPressed: () {
+              FlutterOpenAppSettings.openAppsSettings(
+                  settingsCode: SettingsCode.NFC,
+                  onCompletion: () {
+                    debugPrint('NFC Menu left');
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NFCActivated()),
+                    );
+                  });
+            },
+            child: const Text("NFC aktivieren")),
+      ],
+    );
+  }
+}
+
+class NFCActivated extends StatelessWidget {
+  const NFCActivated({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const FrediAppBarLight(),
+      body: FutureBuilder<bool>(
+        future: NfcManager.instance.isAvailable(),
+        builder: (context, ss) => ss.data == true
+            ? const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(30.0),
+                    child: SansBoldCentered(
+                        'NFC wurde erfolgreich aktiviert. Du kannst die Fredi App jetzt im vollem Umfang nutzen.',
+                        20,
+                        AppColors.primary),
+                  ),
+                ],
+              )
+            : const NFCErrorMessage(),
+      ),
     );
   }
 }

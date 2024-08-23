@@ -26,7 +26,7 @@ class _FrequenciesCatsAndDogsPageState
             floating: true,
             expandedHeight: 160.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: Sans(
+              title: const Sans(
                   'Frequenzwelt für Hunde und Katzen', 18, AppColors.white),
               background: Image.asset(
                 'assets/images/cat-and-dog-dark.png',
@@ -41,7 +41,7 @@ class _FrequenciesCatsAndDogsPageState
                 padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                 child: ListTile(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: AppColors.green, width: 1),
+                      side: const BorderSide(color: AppColors.green, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
                   onTap: () {

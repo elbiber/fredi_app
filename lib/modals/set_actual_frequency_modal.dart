@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:android_intent_plus/android_intent.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/components.dart';
@@ -85,26 +83,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
       body: FutureBuilder<bool>(
         future: NfcManager.instance.isAvailable(),
         builder: (context, ss) => ss.data != true
-            ? Center(
-                child: Column(
-                  children: [
-                    const SansBoldCentered(
-                        'Leider verfügt Dein Smartphone keine NFC Funktion bzw. diese ist deaktiviert.',
-                        22,
-                        AppColors.black),
-                    TextButton(
-                      onPressed: () {
-                        if (true) {
-                          AndroidIntent intent = const AndroidIntent(
-                              action: 'action_location_source_settings');
-                          intent.launch();
-                        }
-                      },
-                      child: const Text('NFC Einstellungen'),
-                    ),
-                  ],
-                ),
-              )
+            ? const NFCErrorMessage()
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

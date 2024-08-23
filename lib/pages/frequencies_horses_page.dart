@@ -24,7 +24,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
             floating: true,
             expandedHeight: 160.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: Sans('Frequenzwelt für Pferde', 18, AppColors.white),
+              title: const Sans('Frequenzwelt für Pferde', 18, AppColors.white),
               background: Image.asset(
                 'assets/images/horse-dark.png',
                 fit: BoxFit.cover,
@@ -38,7 +38,8 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                 padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                 child: ListTile(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: AppColors.primary, width: 1),
+                      side:
+                          const BorderSide(color: AppColors.primary, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
                   onTap: () {

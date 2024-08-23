@@ -77,13 +77,13 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                   style: ButtonStyle(
-                    side: WidgetStateProperty.all(BorderSide(
+                    side: WidgetStateProperty.all(const BorderSide(
                       color: AppColors.complementary,
                     )),
                     backgroundColor:
                         WidgetStateProperty.all(AppColors.complementary),
                   ),
-                  child: SansBoldCentered(
+                  child: const SansBoldCentered(
                       'Aktuelle Frequenz anzeigen', 18.0, AppColors.white),
                 ),
                 const SizedBox(
