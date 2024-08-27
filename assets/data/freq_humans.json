@@ -159,66 +159,131 @@
     ]
   },
   {
-    "name": "Erweiterungsoption Atemwege und Haut",
+    "name": "Erweiterungsoption Organe",
     "frequencies": [
       {
-        "name": "Lungenstruktur stärken",
+        "name": "Metabolisches System harmonisieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Detox von Toxinen unterstützen",
+        "name": "Leberstoffwechsel anregen",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Detox von Bakterien unterstützen",
+        "name": "Nierenstoffwechsel anregen",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Detox von Viren unterstützen",
+        "name": "Magengeschwür harmonisieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Emotionen rund um die Lunge",
+        "name": "Magenschleimhaut pflegen",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Schleim lösen unterstützen",
+        "name": "Entzündung",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Equines Asthma",
+        "name": "Stressreduktion bei Magenproblemen",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "COPD",
+        "name": "Cushing harmonisieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Lungenmeridian stärken",
+        "name": "MIM harmonisieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Husten",
+        "name": "Darmpflege",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Mauke",
+        "name": "Bauchpflege nach einer Kolik",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Sommerekzem",
+        "name": "Detoxprozesse aktivieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Juckreiz harmonisieren",
+        "name": "Mikrobiom stärken",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Hautbild verfeinern",
+        "name": "Leaky-gut Syndrom harmonisieren",
         "audio_file": "frequency_001.mp3"
       },
       {
-        "name": "Histamin Produktion regulieren",
+        "name": "Fellwechsel unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Umweltgiften unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Medikamenten unterstützen",
+        "audio_file": "frequency_001.mp3"
+      }
+    ]
+  },
+  {
+    "name": "Erweiterungsoption Trauma und Emotionen",
+    "frequencies": [
+      {
+        "name": "Trauma auflösen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Parasympathikus stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Sympahtikus beruhigen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Verlassens Ängste harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Ruhe finden",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Dominanzverhalten harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Ängstlichkeit harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Stressbewältigung verbessern",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Stallwechsel Begleitung",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hängerfahrt Begleitung",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Lebensfreude gewinnen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Solfeggio-Harmonisierung",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Meridian-Harmonisierung",
         "audio_file": "frequency_001.mp3"
       }
     ]
