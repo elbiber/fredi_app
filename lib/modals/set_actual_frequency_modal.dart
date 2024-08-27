@@ -60,7 +60,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
             NfcManager.instance
                 .stopSession(errorMessage: "Error while writing to badge");
           }
-          NfcManager.instance.stopSession();
+          // NfcManager.instance.stopSession();
           debugPrint('--------------NFC Instance Closed 1---------------');
         }
       },
