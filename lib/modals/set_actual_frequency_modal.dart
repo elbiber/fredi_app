@@ -174,23 +174,26 @@ class TransferViewFinished extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const FrediAppBarLight(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SansBoldCentered('Herzlichen Glückwunsch!', 20, packageColor),
-            const SizedBox(
-              height: 25,
-            ),
-            const SansCentered(
-                'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
-                20,
-                AppColors.black),
-            const SizedBox(
-              height: 25,
-            ),
-            SansBoldCentered(selectedFrequency, 24, packageColor),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SansBoldCentered('Herzlichen Glückwunsch!', 20, packageColor),
+              const SizedBox(
+                height: 25,
+              ),
+              const SansCentered(
+                  'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
+                  20,
+                  AppColors.black),
+              const SizedBox(
+                height: 25,
+              ),
+              SansBoldCentered(selectedFrequency, 24, packageColor),
+            ],
+          ),
         ),
       ),
     );

@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Grundprogramm",
+    "frequencies": [
+      {
+        "name": "Immunsystem stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Rücken stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Bauchharmonie",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Entspannung finden",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Sehne stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Genicklockerheit fördern",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hinterhand stärken",
+        "audio_file": "frequency_001.mp3"
+      }
+    ]
+  },
+  {
+    "name": "Erweiterungsoption Bewegungsapparat",
+    "frequencies": [
+      {
+        "name": "Knie knöchern stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Kniebänder stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Spatpflege",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hufrollenpflege",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Entzündung",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Arthrose Pflege",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Arthritis Pflege",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Gallen harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hufregeneration unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Brustwirbelsäule stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Halswirbelsäule stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Lendenwirbelsäule stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "ISG stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Shivering harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      }
+    ]
+  },
+  {
+    "name": "Erweiterungsoption Atemwege und Haut",
+    "frequencies": [
+      {
+        "name": "Lungenstruktur stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Toxinen unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Bakterien unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Viren unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Emotionen rund um die Lunge",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Schleim lösen unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Equines Asthma",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "COPD",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Lungenmeridian stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Husten",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Mauke",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Sommerekzem",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Juckreiz harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hautbild verfeinern",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Histamin Produktion regulieren",
+        "audio_file": "frequency_001.mp3"
+      }
+    ]
+  },
+  {
+    "name": "Erweiterungsoption Atemwege und Haut",
+    "frequencies": [
+      {
+        "name": "Lungenstruktur stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Toxinen unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Bakterien unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Detox von Viren unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Emotionen rund um die Lunge",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Schleim lösen unterstützen",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Equines Asthma",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "COPD",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Lungenmeridian stärken",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Husten",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Mauke",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Sommerekzem",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Juckreiz harmonisieren",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Hautbild verfeinern",
+        "audio_file": "frequency_001.mp3"
+      },
+      {
+        "name": "Histamin Produktion regulieren",
+        "audio_file": "frequency_001.mp3"
+      }
+    ]
+  }
+]
