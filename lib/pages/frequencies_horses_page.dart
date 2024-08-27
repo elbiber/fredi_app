@@ -49,7 +49,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                         builder: (context) => SetActualFreq(
                           selectedFrequency: 'Pferd Frequenz ${1 + index}',
                           audioAsset: 'audio/frequency_001.mp3',
-                          loadingColor: AppColors.primary,
+                          packageColor: AppColors.primary,
                         ),
                       ),
                     );

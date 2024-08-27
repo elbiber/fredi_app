@@ -1,31 +1,34 @@
 import 'dart:async';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/app_colors.dart';
+import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
 class SetActualFreq extends StatefulWidget {
   final String selectedFrequency;
   final String audioAsset;
-  final Color loadingColor;
+  final Color packageColor;
+
   const SetActualFreq(
       {super.key,
       required this.selectedFrequency,
       required this.audioAsset,
-      required this.loadingColor});
+      required this.packageColor});
 
   @override
   State<SetActualFreq> createState() => _SetActualFreqState();
 }
 
 class _SetActualFreqState extends State<SetActualFreq> {
-  bool transfering = false;
-  bool transferSuccess = false;
+  bool transferring = false;
   final player = AudioPlayer();
+
   // ignore: prefer_typing_uninitialized_variables
   var timer;
+
   @override
   void initState() {
     super.initState();
@@ -42,18 +45,26 @@ class _SetActualFreqState extends State<SetActualFreq> {
 
           try {
             setState(() {
-              transfering = true;
+              transferring = true;
             });
             await ndef.write(message);
             debugPrint('--------------NFC Instance Written---------------');
             setState(() {
-              transfering = true;
+              transferring = true;
             });
             await player.play(AssetSource(widget.audioAsset));
             timer = Timer(const Duration(seconds: 5), () {
               setState(() {
-                transfering = false;
-                transferSuccess = true;
+                transferring = false;
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TransferViewFinished(
+                        selectedFrequency: widget.selectedFrequency,
+                        packageColor: widget.packageColor),
+                  ),
+                );
               });
             });
           } catch (e) {
@@ -90,10 +101,10 @@ class _SetActualFreqState extends State<SetActualFreq> {
                   const SizedBox(
                     height: 25,
                   ),
-                  transfering
+                  transferring
                       ? Container(
                           padding: const EdgeInsets.all(30),
-                          color: widget.loadingColor,
+                          color: widget.packageColor,
                           child: Column(
                             children: [
                               const SansCentered(
@@ -127,48 +138,24 @@ class _SetActualFreqState extends State<SetActualFreq> {
                             ],
                           ),
                         )
-                      : Padding(
-                          padding: const EdgeInsets.all(30.0),
-                          child: !transferSuccess
-                              ? const Column(
-                                  children: [
-                                    Icon(
-                                      Icons.phonelink_ring_rounded,
-                                      size: 50.0,
-                                    ),
-                                    SizedBox(
-                                      height: 30.0,
-                                    ),
-                                    SansCentered(
-                                      'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
-                                      18,
-                                      Colors.black,
-                                    ),
-                                  ],
-                                )
-                              : Center(
-                                  child: Column(
-                                    children: [
-                                      SansBoldCentered(
-                                          'Herzlichen Glückwunsch!',
-                                          20,
-                                          widget.loadingColor),
-                                      const SizedBox(
-                                        height: 25,
-                                      ),
-                                      const SansCentered(
-                                          'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
-                                          20,
-                                          AppColors.black),
-                                      const SizedBox(
-                                        height: 25,
-                                      ),
-                                      SansBoldCentered(widget.selectedFrequency,
-                                          24, widget.loadingColor),
-                                    ],
-                                  ),
-                                ),
-                        ),
+                      : const Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.phonelink_ring_rounded,
+                                size: 50.0,
+                              ),
+                              SizedBox(
+                                height: 30.0,
+                              ),
+                              SansCentered(
+                                'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                18,
+                                Colors.black,
+                              ),
+                            ],
+                          )),
                 ],
               ),
       ),
@@ -177,32 +164,33 @@ class _SetActualFreqState extends State<SetActualFreq> {
 }
 
 class TransferViewFinished extends StatelessWidget {
-  const TransferViewFinished({super.key});
+  final String selectedFrequency;
+  final Color packageColor;
+
+  const TransferViewFinished(
+      {super.key, required this.selectedFrequency, required this.packageColor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const FrediAppBarLight(),
-      body: Container(
-        padding: const EdgeInsets.all(30.0),
-        child: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.rss_feed,
-                size: 50.0,
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Sans(
-                'Übertragung erfolgreich!',
-                18,
-                Colors.black,
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SansBoldCentered('Herzlichen Glückwunsch!', 20, packageColor),
+            const SizedBox(
+              height: 25,
+            ),
+            const SansCentered(
+                'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
+                20,
+                AppColors.black),
+            const SizedBox(
+              height: 25,
+            ),
+            SansBoldCentered(selectedFrequency, 24, packageColor),
+          ],
         ),
       ),
     );

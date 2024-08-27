@@ -23,10 +23,10 @@ GoRouter router = GoRouter(routes: [
     path: '/contact',
     builder: (context, state) => const ContactPage(),
   ),
-  GoRoute(
+/*  GoRoute(
     path: '/transfer-success',
     builder: (context, state) => const TransferViewFinished(),
-  ),
+  ),*/
   GoRoute(
     path: '/horses',
     builder: (context, state) => const FrequenciesHorsesPage(),
