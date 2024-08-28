@@ -23,13 +23,16 @@ class ProgrammsOverviewPage extends StatefulWidget {
 
 class _ProgrammsOverviewPageState extends State<ProgrammsOverviewPage> {
   List _items = [];
+  String _packageID = '';
 
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('assets/data/${widget.jsonFile}');
     final data = await json.decode(response);
     setState(() {
+      _packageID = data["package_id"];
       _items = data["programms"];
+      debugPrint(_packageID);
     });
   }
 
@@ -77,7 +80,7 @@ class _ProgrammsOverviewPageState extends State<ProgrammsOverviewPage> {
                           frequencies: _items[index]['frequencies'],
                           titel: widget.titel,
                           titelImage: widget.titelImage,
-                          package: 'horses',
+                          packageID: _packageID,
                           packageColor: widget.packageColor,
                         ),
                       ),

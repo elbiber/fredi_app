@@ -1,7 +1,9 @@
 {
+  "package_id": "horses",
   "programms": [
     {
       "name": "Grundprogramm",
+      "id": "horses",
       "frequencies": [
         {
           "name": "Immunsystem stärken",

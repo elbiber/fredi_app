@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -53,18 +52,18 @@ class _SetActualFreqState extends State<SetActualFreq> {
             setState(() {
               transferring = true;
             });
-            debugPrint(
-                '--------------Playing: ${widget.audioAsset}---------------');
-
-            File audioFile = File(widget.audioAsset);
+            await player.play(AssetSource(widget.audioAsset));
+            /*debugPrint(
+                '--------------AudioFile: assets/${widget.audioAsset}---------------');
+            File audioFile = File('assets/audio/humans/frequency_001.mp3');
             if (audioFile.existsSync()) {
               debugPrint(
                   '--------------Playing: ${widget.audioAsset}---------------');
               await player.play(AssetSource(widget.audioAsset));
             } else {
-              debugPrint('--------------Playing: Default---------------');
+              debugPrint('--------------Playing: Default Fuck---------------');
               await player.play(AssetSource('audio/default.mp3'));
-            }
+            }*/
 
             timer = Timer(const Duration(seconds: 5), () {
               setState(() {

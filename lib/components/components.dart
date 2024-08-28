@@ -345,7 +345,7 @@ class FrequencyPackagesHome extends StatelessWidget {
                 builder: (context) => const ProgrammsOverviewPage(
                     jsonFile: 'frequencies_humans.json',
                     titel: 'Frequenzwelt für Menschen',
-                    titelImage: 'human-full-dark.png',
+                    titelImage: 'humans.png',
                     packageColor: AppColors.complementary),
               ),
             );
@@ -353,7 +353,7 @@ class FrequencyPackagesHome extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/human-dark.png'),
+              image: AssetImage('assets/images/humans.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(
@@ -380,14 +380,18 @@ class FrequencyPackagesHome extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsHorsesPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_horses.json',
+                    titel: 'Frequenzwelt für Pferde',
+                    titelImage: 'horses.png',
+                    packageColor: AppColors.primary),
               ),
             );
           },
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/horse-dark.png'),
+              image: AssetImage('assets/images/horses.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(
@@ -414,14 +418,18 @@ class FrequencyPackagesHome extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesCatsAndDogsPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_cats_and_dogs.json',
+                    titel: 'Frequenzwelt für Hunde und Katzen',
+                    titelImage: 'cats_and_dogs.png',
+                    packageColor: AppColors.green),
               ),
             );
           },
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/cat-and-dog-dark.png'),
+              image: AssetImage('assets/images/cats_and_dogs.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(

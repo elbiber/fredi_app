@@ -4,7 +4,7 @@ import 'package:fredi_app/components/font_components.dart';
 import 'package:fredi_app/modals/set_actual_frequency_modal.dart';
 
 class FrequenciesOverviewPage extends StatefulWidget {
-  final String titel, titelImage, package;
+  final String titel, titelImage, packageID;
   final List frequencies;
   final Color packageColor;
 
@@ -13,7 +13,7 @@ class FrequenciesOverviewPage extends StatefulWidget {
       required this.frequencies,
       required this.titel,
       required this.titelImage,
-      required this.package,
+      required this.packageID,
       required this.packageColor});
 
   @override
@@ -59,7 +59,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                         builder: (context) => SetActualFreq(
                           selectedFrequency: widget.frequencies[index]['name'],
                           audioAsset:
-                              'audio/horses/${widget.frequencies[index]["audio_file"]}',
+                              'audio/${widget.packageID}/${widget.frequencies[index]["audio_file"]}',
                           packageColor: widget.packageColor,
                         ),
                       ),
