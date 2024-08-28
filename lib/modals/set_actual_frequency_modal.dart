@@ -55,14 +55,16 @@ class _SetActualFreqState extends State<SetActualFreq> {
             });
             debugPrint(
                 '--------------Playing: ${widget.audioAsset}---------------');
+
             File audioFile = File(widget.audioAsset);
             if (audioFile.existsSync()) {
               debugPrint(
                   '--------------Playing: ${widget.audioAsset}---------------');
+              await player.play(AssetSource(widget.audioAsset));
             } else {
               debugPrint('--------------Playing: Default---------------');
+              await player.play(AssetSource('audio/default.mp3'));
             }
-            await player.play(AssetSource(widget.audioAsset));
 
             timer = Timer(const Duration(seconds: 5), () {
               setState(() {

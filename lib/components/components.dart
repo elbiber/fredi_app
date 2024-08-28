@@ -6,6 +6,7 @@ import 'package:fredi_app/components/font_components.dart';
 import 'package:fredi_app/pages/frequencies_cats_and_dogs_page.dart';
 import 'package:fredi_app/pages/frequencies_humans_page.dart';
 import 'package:fredi_app/pages/programms_horses_page.dart';
+import 'package:fredi_app/pages/programms_overview_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
@@ -341,7 +342,11 @@ class FrequencyPackagesHome extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesHumansPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_humans.json',
+                    titel: 'Frequenzwelt für Menschen',
+                    titelImage: 'human-full-dark.png',
+                    packageColor: AppColors.complementary),
               ),
             );
           },
