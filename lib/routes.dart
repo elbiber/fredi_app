@@ -1,8 +1,6 @@
-import 'package:fredi_app/modals/set_actual_frequency_modal.dart';
 import 'package:fredi_app/pages/about_page.dart';
 import 'package:fredi_app/pages/contact_page.dart';
 import 'package:fredi_app/pages/faq_page.dart';
-import 'package:fredi_app/pages/frequencies_horses_page.dart';
 import 'package:fredi_app/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -27,8 +25,8 @@ GoRouter router = GoRouter(routes: [
     path: '/transfer-success',
     builder: (context, state) => const TransferViewFinished(),
   ),*/
-  GoRoute(
+  /*GoRoute(
     path: '/horses',
     builder: (context, state) => const FrequenciesHorsesPage(),
-  ),
+  ),*/
 ]);

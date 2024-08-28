@@ -1,18 +1,36 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:fredi_app/modals/set_actual_frequency_modal.dart';
+import 'package:fredi_app/pages/frequencies_horses_page.dart';
 
-class FrequenciesHorsesPage extends StatefulWidget {
-  final List frequencies;
-
-  const FrequenciesHorsesPage({super.key, required this.frequencies});
+class ProgrammsHorsesPage extends StatefulWidget {
+  const ProgrammsHorsesPage({super.key});
 
   @override
-  State<FrequenciesHorsesPage> createState() => _FrequenciesHorsesPageState();
+  State<ProgrammsHorsesPage> createState() => _ProgrammsHorsesPageState();
 }
 
-class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
+class _ProgrammsHorsesPageState extends State<ProgrammsHorsesPage> {
+  List _items = [];
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/data/frequencies_horses.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["programms"];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJson();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,23 +66,20 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SetActualFreq(
-                          selectedFrequency: widget.frequencies[index]['name'],
-                          audioAsset:
-                              'audio/${widget.frequencies[index]["audio_file"]}',
-                          packageColor: AppColors.primary,
+                        builder: (context) => FrequenciesHorsesPage(
+                          frequencies: _items[index]['frequencies'],
                         ),
                       ),
                     );
                   },
                   title: SansCentered(
-                    widget.frequencies[index]['name'],
+                    _items[index]["name"],
                     18,
                     AppColors.primary,
                   ),
                 ),
               );
-            }, childCount: widget.frequencies.length),
+            }, childCount: _items.length),
           )
         ],
       ),

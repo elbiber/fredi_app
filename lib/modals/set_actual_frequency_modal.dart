@@ -52,6 +52,8 @@ class _SetActualFreqState extends State<SetActualFreq> {
             setState(() {
               transferring = true;
             });
+            debugPrint(
+                '--------------Playing: ${widget.audioAsset}---------------');
             await player.play(AssetSource(widget.audioAsset));
             timer = Timer(const Duration(seconds: 5), () {
               setState(() {

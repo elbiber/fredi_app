@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
 import 'package:fredi_app/pages/frequencies_cats_and_dogs_page.dart';
-import 'package:fredi_app/pages/frequencies_horses_page.dart';
 import 'package:fredi_app/pages/frequencies_humans_page.dart';
+import 'package:fredi_app/pages/programms_horses_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
@@ -124,6 +124,7 @@ class FredAppBarDrawer extends StatelessWidget {
 class TabsMobile extends StatefulWidget {
   final String text;
   final String route;
+
   const TabsMobile(this.text, this.route, {super.key});
 
   @override
@@ -245,7 +246,7 @@ class FrequencyPackages extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesHorsesPage(),
+                builder: (context) => const ProgrammsHorsesPage(),
               ),
             );
           },
@@ -374,7 +375,7 @@ class FrequencyPackagesHome extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesHorsesPage(),
+                builder: (context) => const ProgrammsHorsesPage(),
               ),
             );
           },
@@ -447,6 +448,7 @@ class FrediOutlinedButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color? bgColor;
+
   const FrediOutlinedButton(
       {super.key,
       required this.onPressed,
