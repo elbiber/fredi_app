@@ -51,7 +51,7 @@ class _FrequenciesHorsesPageState extends State<FrequenciesHorsesPage> {
                         builder: (context) => SetActualFreq(
                           selectedFrequency: widget.frequencies[index]['name'],
                           audioAsset:
-                              'audio/${widget.frequencies[index]["audio_file"]}',
+                              'audio/horses/${widget.frequencies[index]["audio_file"]}',
                           packageColor: AppColors.primary,
                         ),
                       ),

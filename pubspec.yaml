@@ -73,6 +73,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/audio/
+    - assets/audio/horses/
     - assets/video/
     - assets/icons/
     - assets/images/
