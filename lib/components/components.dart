@@ -3,9 +3,6 @@ import 'package:flutter_open_app_settings/flutter_open_app_settings.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:fredi_app/pages/frequencies_cats_and_dogs_page.dart';
-import 'package:fredi_app/pages/frequencies_humans_page.dart';
-import 'package:fredi_app/pages/programms_horses_page.dart';
 import 'package:fredi_app/pages/programms_overview_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
@@ -208,18 +205,23 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesHumansPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_humans.json',
+                    titel: 'Frequenzwelt für Menschen',
+                    titelImage: 'humans.png',
+                    packageColor: AppColors.complementary),
               ),
             );
           },
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/human-dark.png'),
+              image: AssetImage('assets/images/humans.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(
@@ -243,18 +245,23 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsHorsesPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_horses.json',
+                    titel: 'Frequenzwelt für Pferde',
+                    titelImage: 'horses.png',
+                    packageColor: AppColors.primary),
               ),
             );
           },
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/horse-dark.png'),
+              image: AssetImage('assets/images/horses.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(
@@ -278,18 +285,23 @@ class FrequencyPackages extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FrequenciesCatsAndDogsPage(),
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_cats_and_dogs.json',
+                    titel: 'Frequenzwelt für Hunde und Katzen',
+                    titelImage: 'cats_and_dogs.png',
+                    packageColor: AppColors.green),
               ),
             );
           },
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/cat-and-dog-dark.png'),
+              image: AssetImage('assets/images/cats_and_dogs.png'),
               fit: BoxFit.cover,
             )),
             child: const Padding(
@@ -317,7 +329,7 @@ class FrequencyPackages extends StatelessWidget {
   }
 }
 
-class FrequencyPackagesHome extends StatelessWidget {
+/*class FrequencyPackagesHome extends StatelessWidget {
   const FrequencyPackagesHome({super.key});
 
   @override
@@ -339,6 +351,7 @@ class FrequencyPackagesHome extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -455,7 +468,7 @@ class FrequencyPackagesHome extends StatelessWidget {
       ],
     );
   }
-}
+}*/
 
 class FrediOutlinedButton extends StatelessWidget {
   final String text;
