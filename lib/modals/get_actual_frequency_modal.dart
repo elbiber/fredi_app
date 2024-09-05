@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/app_colors.dart';
+import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
@@ -16,6 +16,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
   String result = '';
   bool gotResult = false;
   bool resultValid = true;
+
   @override
   void initState() {
     super.initState();
@@ -26,10 +27,29 @@ class _GetActualFreqState extends State<GetActualFreq> {
         debugPrint('--------------NFC Message Read---------------');
         String tempRecord = "";
         for (var record in ndef.cachedMessage!.records) {
-          tempRecord =
-              "$tempRecord${String.fromCharCodes(record.payload.sublist(record.payload[0] + 1))}";
+          List<int> rawRecord = [];
+          List<int> rawRecordTemp =
+              record.payload.sublist(record.payload[0] + 1);
+          debugPrint(
+              '${record.payload.sublist(record.payload[0] + 1).runtimeType}');
+          for (int i = 0; i < rawRecordTemp.length; i++) {
+            rawRecord.add(rawRecordTemp[i]);
+          }
+          debugPrint('----$rawRecord');
+          for (int i = 0; i < rawRecord.length; i++) {
+            if (rawRecord[i] == 195) {
+              if (rawRecord[i + 1] == 132) rawRecord[i + 1] = 0x00C4;
+              if (rawRecord[i + 1] == 164) rawRecord[i + 1] = 0x00E4;
+              if (rawRecord[i + 1] == 150) rawRecord[i + 1] = 0x00D6;
+              if (rawRecord[i + 1] == 182) rawRecord[i + 1] = 0x00F6;
+              if (rawRecord[i + 1] == 156) rawRecord[i + 1] = 0x00DC;
+              if (rawRecord[i + 1] == 188) rawRecord[i + 1] = 0x00FC;
+              rawRecord.removeAt(i);
+            }
+          }
+
+          tempRecord = "$tempRecord${String.fromCharCodes(rawRecord)}";
           debugPrint('--------------$tempRecord---------------');
-          //result.value = tempRecord;
           final prefix = RegExp(r'^fsp_');
 
           if (prefix.hasMatch(tempRecord)) {
