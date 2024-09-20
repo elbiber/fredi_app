@@ -98,7 +98,6 @@ class _GetActualFreqState extends State<GetActualFreq> {
             : !gotResult
                 ? SingleChildScrollView(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           color: AppColors.primary,
