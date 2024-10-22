@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fredi_app/routes.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+void main() async {
   setPathUrlStrategy();
   runApp(const MyApp());
+  await _configureSDK();
+}
+
+Future<void> _configureSDK() async {
+  debugPrint('SDK Config');
 }
 
 class MyApp extends StatelessWidget {

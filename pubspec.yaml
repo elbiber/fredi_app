@@ -47,6 +47,8 @@ dependencies:
   go_router: ^14.2.3
   open_settings_plus: ^0.3.3
   flutter_open_app_settings: ^0.1.4
+  purchases_flutter: ^8.1.6
+  purchases_ui_flutter: ^8.1.6
 
 dev_dependencies:
   flutter_test:
