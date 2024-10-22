@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
                   child: SansCentered(
-                      'Herzlichen Willkommen in der App von Fredi! Lorem ipsum dolor sit amet,consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut laboreet dolore magna aliquyam erat, sed diam voluptua',
+                      'Herzlich willkommen in der APP von Fredi! Du möchtest dich und dein Tier mit der feinsten Art der Bioresonanzregulation unterstützen? Dann bist du hier genau richtig! Hier findest du alle Programme für dein Fredi-Produkt.',
                       16.0,
                       Colors.black),
                 ),
@@ -72,8 +72,9 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const GetActualFreq()),
+                      MaterialPageRoute(builder: (context) {
+                        return const GetActualFreq();
+                      }),
                     );
                   },
                   style: ButtonStyle(

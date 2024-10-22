@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
@@ -75,7 +77,7 @@ class _GetActualFreqState extends State<GetActualFreq> {
           resultValid = false;
         });
       }
-      //NfcManager.instance.stopSession();
+      if (Platform.isIOS) NfcManager.instance.stopSession();
       //debugPrint('--------------NFC Instance Closed 1---------------');
     });
   }

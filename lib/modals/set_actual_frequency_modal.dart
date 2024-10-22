@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -53,17 +54,6 @@ class _SetActualFreqState extends State<SetActualFreq> {
               transferring = true;
             });
             await player.play(AssetSource(widget.audioAsset));
-            /*debugPrint(
-                '--------------AudioFile: assets/${widget.audioAsset}---------------');
-            File audioFile = File('assets/audio/humans/frequency_001.mp3');
-            if (audioFile.existsSync()) {
-              debugPrint(
-                  '--------------Playing: ${widget.audioAsset}---------------');
-              await player.play(AssetSource(widget.audioAsset));
-            } else {
-              debugPrint('--------------Playing: Default Fuck---------------');
-              await player.play(AssetSource('audio/default.mp3'));
-            }*/
 
             timer = Timer(const Duration(seconds: 5), () {
               setState(() {
@@ -83,7 +73,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
             NfcManager.instance
                 .stopSession(errorMessage: "Error while writing to badge");
           }
-          // NfcManager.instance.stopSession();
+          if (Platform.isIOS) NfcManager.instance.stopSession();
           debugPrint('--------------NFC Instance Closed 1---------------');
         }
       },
@@ -108,7 +98,9 @@ class _SetActualFreqState extends State<SetActualFreq> {
         builder: (context, ss) => ss.data != true
             ? const NFCErrorMessage()
             : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: Platform.isIOS
+                    ? MainAxisAlignment.start
+                    : MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                     height: 25,
