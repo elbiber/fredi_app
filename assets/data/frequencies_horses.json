@@ -70,6 +70,68 @@
           "audio_file": "Vorhand_staerken_30.mp3"
         }
       ]
+    },
+    {
+      "name": "Bewegungsapparat",
+      "program_name": "bewegungsapparat",
+      "frequencies": [
+        {
+          "name": "Arthritis Pflege",
+          "audio_file": "Arthritis_Pflege_30.mp3"
+        },
+        {
+          "name": "Arthrose Pflege",
+          "audio_file": "Arthrose_Pflege_30.mp3"
+        },
+        {
+          "name": "Brustwirbelsäule stärken",
+          "audio_file": "Brustwirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Durchblutung fördern",
+          "audio_file": "Durchblutung_foerdern_30.mp3"
+        },
+        {
+          "name": "Gallen harmonisieren",
+          "audio_file": "Gallen_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Halswirbelsäule stärken",
+          "audio_file": "Halswirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Hufregeneration fördern",
+          "audio_file": "Hufregeneration_foerdern_30.mp3"
+        },
+        {
+          "name": "Hufrollenpflege",
+          "audio_file": "Hufrollenpflege_30.mp3"
+        },
+        {
+          "name": "ISG stärken",
+          "audio_file": "ISG_staerken_30.mp3"
+        },
+        {
+          "name": "Kniebänder stärken",
+          "audio_file": "Kniebaender_staerken_30.mp3"
+        },
+        {
+          "name": "Kniegelenk unterstützen",
+          "audio_file": "Kniegelenk_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Lendenwirbelsäule stärken",
+          "audio_file": "Lendenwirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Rückenmuskulatur fördern",
+          "audio_file": "Rueckenmuskulatur_foerdern_30.mp3"
+        },
+        {
+          "name": "Spatpflege",
+          "audio_file": "Spatpflege_30.mp3"
+        }
+      ]
     }
   ]
 }
