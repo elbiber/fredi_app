@@ -73,7 +73,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/audio/
-    - assets/audio/horses/
+    - assets/audio/horses/atemwege_und_haut/
+    - assets/audio/horses/bewegungsapparat/
+    - assets/audio/horses/emotionen_und_traumata/
+    - assets/audio/horses/stoffwechsel_und_organe/
+    - assets/audio/horses/grundprogramm/
     - assets/audio/humans/grundprogramm/
     - assets/audio/cats_and_dogs/
     - assets/video/
