@@ -82,6 +82,7 @@ class _ProgrammsOverviewPageState extends State<ProgrammsOverviewPage> {
                           titelImage: widget.titelImage,
                           packageID: _packageID,
                           packageColor: widget.packageColor,
+                          programName: _items[index]['program_name'],
                         ),
                       ),
                     );

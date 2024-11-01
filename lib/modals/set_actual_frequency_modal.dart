@@ -34,6 +34,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
   void initState() {
     super.initState();
     debugPrint('--------------NFC Instance Opened---------------');
+    debugPrint(widget.audioAsset);
     NfcManager.instance.startSession(
       onDiscovered: (NfcTag badge) async {
         var ndef = Ndef.from(badge);

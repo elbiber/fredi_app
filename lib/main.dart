@@ -1,10 +1,5 @@
-import 'dart:developer';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:fredi_app/routes.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
@@ -15,7 +10,7 @@ void main() async {
 
 Future<void> _configureSDK() async {
   debugPrint('SDK Config');
-  await Purchases.setLogLevel(LogLevel.debug);
+  /*await Purchases.setLogLevel(LogLevel.debug);
   PurchasesConfiguration? configuration;
   if (Platform.isAndroid) {
   } else if (Platform.isIOS) {
@@ -26,7 +21,7 @@ Future<void> _configureSDK() async {
     await Purchases.configure(configuration);
     final paywallResult = await RevenueCatUI.presentPaywallIfNeeded('Premium');
     log('Paywall result: $paywallResult');
-  }
+  }*/
 }
 
 class MyApp extends StatelessWidget {

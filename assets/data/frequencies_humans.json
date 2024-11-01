@@ -3,350 +3,71 @@
   "programms": [
     {
       "name": "Grundprogramm",
+      "program_name": "grundprogramm",
       "frequencies": [
         {
-          "name": "Immunsystem stärken",
-          "audio_file": "frequency_001.mp3"
+          "name": "Ängste harmonisieren",
+          "audio_file": "Aengste_harmonisieren_30.mp3"
         },
         {
-          "name": "Rücken stärken",
-          "audio_file": "frequency_001.mp3"
+          "name": "Angstfrei Reiten",
+          "audio_file": "Angstfrei_Reiten_30.mp3"
         },
         {
-          "name": "Bauchharmonie",
-          "audio_file": "frequency_001.mp3"
+          "name": "Arbeitsstress harmonisieren",
+          "audio_file": "Arbeitsstress_harmonisieren_30.mp3"
         },
         {
-          "name": "Entspannung finden",
-          "audio_file": "frequency_001.mp3"
+          "name": "Balance finden",
+          "audio_file": "Balance_finden_30.mp3"
         },
         {
-          "name": "Sehne stärken",
-          "audio_file": "frequency_001.mp3"
+          "name": "Entspannung fördern",
+          "audio_file": "Entspannung_foerdern_30.mp3"
         },
         {
-          "name": "Gelenke stärken",
-          "audio_file": "frequency_001.mp3"
+          "name": "Gelassenheit fördern (Arbeitsstress)",
+          "audio_file": "Gelassenheit_foerdern_30.mp3"
         },
         {
-          "name": "Hinterhand stärken",
-          "audio_file": "frequency_001.mp3"
+          "name": "Guter Schlaf",
+          "audio_file": "Guter_Schlaf_30.mp3"
         },
         {
-          "name": "Genicklockerheit fördern",
-          "audio_file": "frequency_001.mp3"
+          "name": "Immunsystem unterstützen",
+          "audio_file": "Immunsystem_unterstuetzen_30.mp3"
         },
         {
-          "name": "Vorhand stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Energie tanken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Faszien lockern",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Schwunggenerator",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Rechts/Links Ausgleich",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Muskelentspannung",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Relaxing",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Zellaktivität steigern",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Stoffwechselaktivator",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Lymphe anregen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Stutenprobleme lösen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Rückenmuskel harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Chakren Aktivierung",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Raumgriff erhöhen",
-          "audio_file": "frequency_001.mp3"
-        }
-      ]
-    },
-    {
-      "name": "Erweiterungsoption Bewegungsapparat",
-      "frequencies": [
-        {
-          "name": "Knie knöchern stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Kniebänder stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Spatpflege",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Hufrollenpflege",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Entzündung",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Arthrose Pflege",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Arthritis Pflege",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Gallen harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Hufregeneration unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Brustwirbelsäule stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Halswirbelsäule stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Lendenwirbelsäule stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "ISG stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Shivering harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        }
-      ]
-    },
-    {
-      "name": "Erweiterungsoption Atemwege und Haut",
-      "frequencies": [
-        {
-          "name": "Lungenstruktur stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detox von Toxinen unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detox von Bakterien unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detox von Viren unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Emotionen rund um die Lunge",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Schleim lösen unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Equines Asthma",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "COPD",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Lungenmeridian stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Husten",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Mauke",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Sommerekzem",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Juckreiz harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Hautbild verfeinern",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Histamin Produktion regulieren",
-          "audio_file": "frequency_001.mp3"
-        }
-      ]
-    },
-    {
-      "name": "Erweiterungsoption Organe",
-      "frequencies": [
-        {
-          "name": "Metabolisches System harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Leberstoffwechsel anregen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Nierenstoffwechsel anregen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Magengeschwür harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Magenschleimhaut pflegen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Entzündung",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Stressreduktion bei Magenproblemen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Cushing harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "MIM harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Darmpflege",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Bauchpflege nach einer Kolik",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detoxprozesse aktivieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Mikrobiom stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Leaky-gut Syndrom harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Fellwechsel unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detox von Umweltgiften unterstützen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Detox von Medikamenten unterstützen",
-          "audio_file": "frequency_001.mp3"
-        }
-      ]
-    },
-    {
-      "name": "Erweiterungsoption Trauma und Emotionen",
-      "frequencies": [
-        {
-          "name": "Trauma auflösen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Parasympathikus stärken",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Sympahtikus beruhigen",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Verlassens Ängste harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Ruhe finden",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Dominanzverhalten harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Ängstlichkeit harmonisieren",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Stressbewältigung verbessern",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Stallwechsel Begleitung",
-          "audio_file": "frequency_001.mp3"
-        },
-        {
-          "name": "Hängerfahrt Begleitung",
-          "audio_file": "frequency_001.mp3"
+          "name": "Lebensenergie tanken",
+          "audio_file": "Lebensenergie_tanken_30.mp3"
         },
         {
           "name": "Lebensfreude gewinnen",
-          "audio_file": "frequency_001.mp3"
+          "audio_file": "Lebensfreude_gewinnen_30.mp3"
         },
         {
-          "name": "Solfeggio-Harmonisierung",
-          "audio_file": "frequency_001.mp3"
+          "name": "Rücken stärken",
+          "audio_file": "Ruecken_staerken_30.mp3"
         },
         {
-          "name": "Meridian-Harmonisierung",
-          "audio_file": "frequency_001.mp3"
+          "name": "Ruhe finden",
+          "audio_file": "Ruhe_finden_30.mp3"
+        },
+        {
+          "name": "Sichere Hundeführung",
+          "audio_file": "Sichere_Hundefuehrung_30.mp3"
+        },
+        {
+          "name": "Traumata harmonisieren",
+          "audio_file": "Traumata_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Zellaktivität anregen",
+          "audio_file": "Zellaktivitaet_anregen_30.mp3"
+        },
+        {
+          "name": "Zirbeldrüse aktivieren",
+          "audio_file": "Zirbeldruese_aktivieren_30.mp3"
         }
       ]
     }
