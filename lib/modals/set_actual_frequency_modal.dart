@@ -56,7 +56,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
             });
             await player.play(AssetSource(widget.audioAsset));
 
-            timer = Timer(const Duration(seconds: 5), () {
+            timer = Timer(const Duration(seconds: 30), () {
               setState(() {
                 transferring = false;
                 Navigator.pop(context);

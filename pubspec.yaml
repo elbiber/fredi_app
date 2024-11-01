@@ -74,7 +74,7 @@ flutter:
   assets:
     - assets/audio/
     - assets/audio/horses/
-    - assets/audio/humans/
+    - assets/audio/humans/grundprogramm/
     - assets/audio/cats_and_dogs/
     - assets/video/
     - assets/icons/
