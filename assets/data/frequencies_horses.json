@@ -132,6 +132,56 @@
           "audio_file": "Spatpflege_30.mp3"
         }
       ]
+    },
+    {
+      "name": "Atemwege und Haut",
+      "program_name": "atemwege_und_haut",
+      "frequencies": [
+        {
+          "name": "COPD begleiten",
+          "audio_file": "COPD_begleiten_30.mp3"
+        },
+        {
+          "name": "Detoxprozesse anregen",
+          "audio_file": "Detoxprozesse_anregen_30.mp3"
+        },
+        {
+          "name": "Equines Asthma begleiten",
+          "audio_file": "Equines_Asthma_begleiten_30.mp3"
+        },
+        {
+          "name": "Fellwechseln unterstützen",
+          "audio_file": "Fellwechseln_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Husten Pflege",
+          "audio_file": "Husten_Pflege_30.mp3"
+        },
+        {
+          "name": "Immunsystem anregen",
+          "audio_file": "Immunsystem_anregen_30.mp3"
+        },
+        {
+          "name": "Juckreiz harmonisieren",
+          "audio_file": "Juckreiz_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Lungenstruktur stärken",
+          "audio_file": "Lungenstruktur_staerken_30.mp3"
+        },
+        {
+          "name": "Mauke Pflege",
+          "audio_file": "Mauke_Pflege_30.mp3"
+        },
+        {
+          "name": "Schleimlösen anregen",
+          "audio_file": "Schleimloesen_anregen_30.mp3"
+        },
+        {
+          "name": "Sommerekzem harmonisieren",
+          "audio_file": "Sommerekzem_harmonisieren_30.mp3"
+        }
+      ]
     }
   ]
 }
