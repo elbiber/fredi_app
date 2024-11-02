@@ -182,6 +182,98 @@
           "audio_file": "Sommerekzem_harmonisieren_30.mp3"
         }
       ]
+    },
+    {
+      "name": "Stoffwechsel und Organe",
+      "program_name": "stoffwechsel_und_organe",
+      "frequencies": [
+        {
+          "name": "Bauchpflege nach einer Kolik",
+          "audio_file": "Bauchpflege_nach_einer_Kolik_30.mp3"
+        },
+        {
+          "name": "Cushing harmonisieren",
+          "audio_file": "Cushing_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Darmpflege",
+          "audio_file": "Darmpflege_30.mp3"
+        },
+        {
+          "name": "EMS harmonisieren",
+          "audio_file": "EMS_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Entspannung für den Magen",
+          "audio_file": "Entspannung_fuer_den_Magen_30.mp3"
+        },
+        {
+          "name": "Entzündung eindämmen",
+          "audio_file": "Entzuendung_eindaemmen_30.mp3"
+        },
+        {
+          "name": "Leberstoffwechsel anregen",
+          "audio_file": "Leberstoffwechsel_anregen_30.mp3"
+        },
+        {
+          "name": "Magengeschwür harmonisieren",
+          "audio_file": "Magengeschwuer_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Magenschleimhaut Pflege",
+          "audio_file": "Magenschleimhaut_Pflege_30.mp3"
+        },
+        {
+          "name": "MIM harmonisieren",
+          "audio_file": "MIM_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Nierenstoffwechsel anregen",
+          "audio_file": "Nierenstoffwechsel_anregen_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Emotionen und Traumata",
+      "program_name": "emotionen_und_traumata",
+      "frequencies": [
+        {
+          "name": "Dominanzverhalten harmonisieren",
+          "audio_file": "Dominanzverhalten_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Hängerfahrt begleiten",
+          "audio_file": "Haengerfahrt_begleiten_30.mp3"
+        },
+        {
+          "name": "Lebensfreude gewinnen",
+          "audio_file": "Lebensfreude_gewinnen_30.mp3"
+        },
+        {
+          "name": "Ruhe finden",
+          "audio_file": "Ruhe_finden_30.mp3"
+        },
+        {
+          "name": "Sicherheit gewinnen",
+          "audio_file": "Sicherheit_gewinnen_30.mp3"
+        },
+        {
+          "name": "Stallwechsel begleiten",
+          "audio_file": "Stallwechsel_begleiten_30.mp3"
+        },
+        {
+          "name": "Stressbewältigung verbessern",
+          "audio_file": "Stressbewaeltigung_verbessern_30.mp3"
+        },
+        {
+          "name": "Traumata harmonisieren",
+          "audio_file": "Traumata_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Verlassensängste harmonisieren",
+          "audio_file": "Verlassensaengste_harmonisieren_30.mp3"
+        }
+      ]
     }
   ]
 }
