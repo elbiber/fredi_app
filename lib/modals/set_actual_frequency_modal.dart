@@ -71,8 +71,11 @@ class _SetActualFreqState extends State<SetActualFreq> {
               });
             });
           } catch (e) {
-            NfcManager.instance
-                .stopSession(errorMessage: "Error while writing to badge");
+            NfcManager.instance.stopSession(
+                errorMessage:
+                    "Es gab einen Fehler bei der Übtragung. Bitte versuche es noch einmal");
+            debugPrint('ERRo');
+            transferring = false;
           }
           if (Platform.isIOS) NfcManager.instance.stopSession();
           debugPrint('--------------NFC Instance Closed 1---------------');

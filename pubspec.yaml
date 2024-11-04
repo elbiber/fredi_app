@@ -80,6 +80,10 @@ flutter:
     - assets/audio/horses/grundprogramm/
     - assets/audio/humans/grundprogramm/
     - assets/audio/cats_and_dogs/
+    - assets/audio/cats_and_dogs/grundprogramm/
+    - assets/audio/cats_and_dogs/bewegungsapparat/
+    - assets/audio/cats_and_dogs/emotionen_und_traumata/
+    - assets/audio/cats_and_dogs/haut_ohren_darm/
     - assets/video/
     - assets/icons/
     - assets/images/
