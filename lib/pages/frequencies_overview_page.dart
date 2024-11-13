@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
 import '../modals/set_actual_frequency_modal.dart';
 
@@ -55,8 +59,58 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                       side: BorderSide(color: widget.packageColor, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
-                  onTap: () async {
-                    Navigator.push(
+                  onTap: () {
+                    Purchases.addCustomerInfoUpdateListener(
+                        (customerInfo) async {
+                      CustomerInfo customerInfo =
+                          await Purchases.getCustomerInfo();
+                      EntitlementInfo? entitlement =
+                          customerInfo.entitlements.all['Pferd Komplett'];
+                      if (entitlement != null &&
+                          entitlement.isActive &&
+                          context.mounted) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SetActualFreq(
+                              selectedFrequency: widget.frequencies[index]
+                                  ['name'],
+                              audioAsset:
+                                  'audio/${widget.packageID}/${widget.programName}/${widget.frequencies[index]["audio_file"]}',
+                              packageColor: widget.packageColor,
+                            ),
+                          ),
+                        );
+                      } else {
+                        final paywallResult =
+                            await RevenueCatUI.presentPaywallIfNeeded(
+                                'Pferd Komplett',
+                                displayCloseButton: true);
+                        log('Paywall result: $paywallResult');
+                      }
+                      debugPrint('sdf${entitlement?.isActive}');
+                    });
+                    /*if (Platform.isAndroid) {
+                      final paywallResult =
+                          await RevenueCatUI.presentPaywallIfNeeded(
+                              'Pferd Komplett');
+                      log('Paywall result: $paywallResult');
+                    } else if (Platform.isIOS) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SetActualFreq(
+                            selectedFrequency: widget.frequencies[index]
+                                ['name'],
+                            audioAsset:
+                                'audio/${widget.packageID}/${widget.programName}/${widget.frequencies[index]["audio_file"]}',
+                            packageColor: widget.packageColor,
+                          ),
+                        ),
+                      );
+                    }*/
+
+                    /* Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => SetActualFreq(
@@ -66,7 +120,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                           packageColor: widget.packageColor,
                         ),
                       ),
-                    );
+                    );*/
                   },
                   title: SansCentered(
                     widget.frequencies[index]['name'],
