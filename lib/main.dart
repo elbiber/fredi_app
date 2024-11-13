@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fredi_app/routes.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
@@ -10,18 +13,30 @@ void main() async {
 
 Future<void> _configureSDK() async {
   debugPrint('SDK Config');
-  /*await Purchases.setLogLevel(LogLevel.debug);
+  await Purchases.setLogLevel(LogLevel.debug);
   PurchasesConfiguration? configuration;
   if (Platform.isAndroid) {
+    debugPrint('Platform is Android');
+    configuration = PurchasesConfiguration('goog_ltulhjNoKGzJSSfQLSWEQcLdBev');
   } else if (Platform.isIOS) {
+    debugPrint('Platform is IOS');
     configuration = PurchasesConfiguration('appl_HwdKOvSTWvYKlGbdYusgBTXIDSW');
   }
 
   if (configuration != null) {
     await Purchases.configure(configuration);
-    final paywallResult = await RevenueCatUI.presentPaywallIfNeeded('Premium');
-    log('Paywall result: $paywallResult');
-  }*/
+    /*try {
+      Offerings offerings = await Purchases.getOfferings();
+      if (offerings.current != null &&
+          offerings.current!.availablePackages.isNotEmpty) {
+        // Display packages for sale
+      }
+    } on PlatformException catch (e) {
+      debugPrint('Revenue Cat config no Offering');
+    }*/
+  } else {
+    debugPrint('Revenue Cat config not loaded');
+  }
 }
 
 class MyApp extends StatelessWidget {

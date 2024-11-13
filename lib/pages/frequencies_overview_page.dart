@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:fredi_app/modals/set_actual_frequency_modal.dart';
+
+import '../modals/set_actual_frequency_modal.dart';
 
 class FrequenciesOverviewPage extends StatefulWidget {
   final String titel, titelImage, packageID, programName;
@@ -54,7 +55,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                       side: BorderSide(color: widget.packageColor, width: 1),
                       borderRadius: BorderRadius.circular(5)),
                   tileColor: AppColors.white,
-                  onTap: () {
+                  onTap: () async {
                     Navigator.push(
                       context,
                       MaterialPageRoute(

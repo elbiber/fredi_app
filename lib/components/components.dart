@@ -211,46 +211,6 @@ class FrequencyPackages extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const ProgrammsOverviewPage(
-                    jsonFile: 'frequencies_humans.json',
-                    titel: 'Frequenzwelt für Menschen',
-                    titelImage: 'humans.png',
-                    packageColor: AppColors.complementary),
-              ),
-            );
-          },
-          child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/humans.png'),
-              fit: BoxFit.cover,
-            )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
-                  Icon(
-                    Icons.arrow_circle_right,
-                    color: Colors.orange,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 5.0,
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
-            //Navigator.pop(context);
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
                     jsonFile: 'frequencies_horses.json',
                     titel: 'Frequenzwelt für Pferde',
                     titelImage: 'horses.png',
@@ -311,6 +271,46 @@ class FrequencyPackages extends StatelessWidget {
                 children: [
                   SansBold(
                       'Frequenzwelt\nfür Hunde und Katzen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_humans.json',
+                    titel: 'Frequenzwelt für Menschen',
+                    titelImage: 'humans.png',
+                    packageColor: AppColors.complementary),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/humans.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
                   Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,
