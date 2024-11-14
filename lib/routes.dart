@@ -2,12 +2,17 @@ import 'package:fredi_app/pages/about_page.dart';
 import 'package:fredi_app/pages/contact_page.dart';
 import 'package:fredi_app/pages/faq_page.dart';
 import 'package:fredi_app/pages/home_page.dart';
+import 'package:fredi_app/pages/shop_page.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter router = GoRouter(routes: [
   GoRoute(
     path: '/',
     builder: (context, state) => const HomePage(),
+  ),
+  GoRoute(
+    path: '/shop',
+    builder: (context, state) => const ShopPage(),
   ),
   GoRoute(
     path: '/about',

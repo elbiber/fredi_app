@@ -8,6 +8,7 @@ class AppColors {
   //static var complementary = const Color(0xff963B00);
   static const complementary = Color(0xffC94F00);
   static const green = Color(0xff01ad2c);
+  static const gold = Color(0xffb29146);
 
   //static const green = Color.fromARGB(255, 1, 173, 44);
   static const white = Color(0xffffffff);

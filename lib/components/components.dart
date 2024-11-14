@@ -93,6 +93,13 @@ class FredAppBarDrawer extends StatelessWidget {
             height: 20.0,
           ),
           const TabsMobile(
+            'Shop',
+            '/shop',
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          const TabsMobile(
             'Über Uns',
             '/about',
           ),
@@ -342,11 +349,6 @@ class FrediOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /* return ButtonTheme(
-        minWidth: 500,
-        child: OutlinedButton(
-            onPressed: () {},
-            child: SansBoldCentered(text, 18, AppColors.black))); */
     return OutlinedButton(
       onPressed: onPressed,
       style: ButtonStyle(
@@ -357,6 +359,32 @@ class FrediOutlinedButton extends StatelessWidget {
         backgroundColor: WidgetStateProperty.all(bgColor),
       ),
       child: SansBoldCentered(text, 18.0, AppColors.white),
+    );
+  }
+}
+
+class FrediOutlinedButtonLight extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final Color bgColor;
+
+  const FrediOutlinedButtonLight(
+      {super.key,
+      required this.onPressed,
+      required this.text,
+      this.bgColor = const Color(0xff005B96)});
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        side: WidgetStateProperty.all(BorderSide(
+          color: bgColor,
+        )),
+        backgroundColor: WidgetStateProperty.all(AppColors.white),
+      ),
+      child: SansBoldCentered(text, 18.0, bgColor),
     );
   }
 }
