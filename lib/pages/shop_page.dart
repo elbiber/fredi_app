@@ -19,13 +19,23 @@ class _ShopPageState extends State<ShopPage> {
   bool _horseIsActive = false;
   bool _humanIsActive = false;
   bool _premiumIsActive = false;
+  bool _horseBasicIsActive = false;
+  bool _dogBasicIsActive = false;
+  bool _humanBasicIsActive = false;
 
   @override
   void initState() {
+    updateEntitlementStatus();
+  }
+
+  void updateEntitlementStatus() {
     hasEntitlement('Hund Komplett');
     hasEntitlement('Pferd Komplett');
     hasEntitlement('Mensch Komplett');
     hasEntitlement('Premium');
+    hasEntitlement('Pferd Grundprogramm');
+    hasEntitlement('Mensch Grundprogramm');
+    hasEntitlement('Hund Grundprogramm');
   }
 
   void showOffering(offeringID) async {
@@ -33,7 +43,11 @@ class _ShopPageState extends State<ShopPage> {
       Offerings offerings = await Purchases.getOfferings();
       var toPrint = offerings.getOffering(offeringID);
       debugPrint('OFFERINGS: $toPrint');
-      RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true);
+      RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true)
+          .whenComplete(() {
+        updateEntitlementStatus();
+        debugPrint("Completed");
+      });
     } on PlatformException catch (e) {
       // optional error handling
     }
@@ -56,6 +70,15 @@ class _ShopPageState extends State<ShopPage> {
               break;
             case 'Premium':
               _premiumIsActive = true;
+              break;
+            case 'Pferd Grundprogramm':
+              _horseBasicIsActive = true;
+              break;
+            case 'Mensch Grundprogramm':
+              _humanBasicIsActive = true;
+              break;
+            case 'Hund Grundprogramm':
+              _dogBasicIsActive = true;
               break;
           }
         });
@@ -100,101 +123,8 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBold('Pferd Komplett Abo', 24, AppColors.primary),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Pferde freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _horseIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.primary)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Pferd Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.primary)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBold('Hund Komplett Abo', 24, AppColors.green),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Hunde freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _dogIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.green)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Hund Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.green)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBold(
-                      'Für Dich Komplett Abo', 24, AppColors.complementary),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Dich freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _humanIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.complementary)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Mensch Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.complementary)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBold('Fredi Premimum Abo', 24, AppColors.gold),
+                  const SansBoldCentered(
+                      'Fredi Premimum Abo', 24, AppColors.gold),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -217,17 +147,206 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                ],
+              ),
+              Column(
+                children: [
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansBoldCentered(
+                      'Pferd Komplett Abo', 24, AppColors.primary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Pferde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _horseIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.primary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Pferd Komplett'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.primary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const Divider(),
                   const SizedBox(
                     height: 25.0,
                   ),
                 ],
-              )
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Hund Komplett Abo', 24, AppColors.green),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Hunde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _dogIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.green)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Hund Komplett'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.green)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Für Dich Komplett Abo', 24, AppColors.complementary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Dich freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _humanIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.complementary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Mensch Komplett'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.complementary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Grundprogramm Pferd Abo', 24, AppColors.primary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo ist das Grundprogramm für Pferde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _horseBasicIsActive || _premiumIsActive || _horseIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.primary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Grundprogramm Pferd'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.primary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Grundprogramm Hund Abo', 24, AppColors.green),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo ist das Grundprogramm für Hunde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _dogBasicIsActive || _premiumIsActive || _dogIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.green)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Grundprogramm Hund'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.green)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered('Grundprogramm Für dich Abo', 24,
+                      AppColors.complementary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo ist das Grundprogramm für Dich freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _humanBasicIsActive || _premiumIsActive || _humanIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.complementary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Grundprogramm Mensch'),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.complementary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
             ],
           ),
-        )
-            /*SansBoldCentered('Du willst eine neue Frequenz übertragen?',
-              25.0, AppColors.primary),*/
-            ));
+        )));
   }
 }
