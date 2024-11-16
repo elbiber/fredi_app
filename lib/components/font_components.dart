@@ -5,6 +5,7 @@ class SansBold extends StatelessWidget {
   final String text;
   final double size;
   final Color fontColor;
+
   const SansBold(this.text, this.size, this.fontColor, {super.key});
 
   @override
@@ -41,6 +42,7 @@ class Sans extends StatelessWidget {
   final String text;
   final double size;
   final Color fontColor;
+
   const Sans(this.text, this.size, this.fontColor, {super.key});
 
   @override
@@ -65,6 +67,24 @@ class SansCentered extends Sans {
       style: GoogleFonts.openSans(
         fontSize: size,
         color: fontColor,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class SansCenteredLineThrough extends Sans {
+  const SansCenteredLineThrough(super.text, super.size, super.fontColor,
+      {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+        fontSize: size,
+        color: fontColor,
+        decoration: TextDecoration.lineThrough,
       ),
       textAlign: TextAlign.center,
     );

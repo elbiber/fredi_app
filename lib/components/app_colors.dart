@@ -13,6 +13,7 @@ class AppColors {
   //static const green = Color.fromARGB(255, 1, 173, 44);
   static const white = Color(0xffffffff);
   static const black = Color(0xff000000);
+  static const grey = Color(0xffb6b6b6);
 }
 
 class Constants {
