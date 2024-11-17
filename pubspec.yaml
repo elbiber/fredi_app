@@ -49,6 +49,7 @@ dependencies:
   flutter_open_app_settings: ^0.1.4
   purchases_flutter: ^8.2.0
   purchases_ui_flutter: ^8.2.0
+  flutter_faq: ^1.0.1+1
 
 dev_dependencies:
   flutter_test:

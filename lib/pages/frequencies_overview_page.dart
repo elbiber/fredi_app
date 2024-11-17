@@ -30,27 +30,14 @@ class FrequenciesOverviewPage extends StatefulWidget {
 
 class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
   bool _programmAvailable = false;
-  bool _dogIsActive = false;
-  bool _horseIsActive = false;
-  bool _humanIsActive = false;
-  bool _premiumIsActive = false;
-  bool _horseBasicIsActive = false;
-  bool _dogBasicIsActive = false;
-  bool _humanBasicIsActive = false;
 
   @override
   void initState() {
-    debugPrint('++++++++++++++++++++++++++++++++++++++++${widget.packageID}');
     updateEntitlementStatus();
-    switch (widget.packageID) {
-      case 'horses':
-        debugPrint(widget.packageID);
-        debugPrint(widget.programName);
-        break;
-    }
   }
 
   void updateEntitlementStatus() {
+    hasEntitlement('Pferd Komplett');
     hasEntitlement('Hund Komplett');
     hasEntitlement('Mensch Komplett');
     hasEntitlement('Premium');
@@ -66,31 +53,44 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
         setState(() {
           switch (entitlementID) {
             case 'Pferd Komplett':
-              _horseIsActive = true;
+              if (widget.packageID == 'horses') {
+                _programmAvailable = true;
+              }
               break;
             case 'Hund Komplett':
-              _dogIsActive = true;
+              if (widget.packageID == 'cats_and_dogs') {
+                _programmAvailable = true;
+              }
               break;
             case 'Mensch Komplett':
-              _humanIsActive = true;
+              if (widget.packageID == 'humans') {
+                _programmAvailable = true;
+              }
               break;
             case 'Premium':
-              _premiumIsActive = true;
+              _programmAvailable = true;
               break;
             case 'Pferd Grundprogramm':
-              _horseBasicIsActive = true;
+              if (widget.packageID == 'horses' &&
+                  widget.programName == 'grundprogramm') {
+                _programmAvailable = true;
+              }
               break;
             case 'Mensch Grundprogramm':
-              _humanBasicIsActive = true;
+              if (widget.packageID == 'humans' &&
+                  widget.programName == 'grundprogramm') {
+                _programmAvailable = true;
+              }
               break;
             case 'Hund Grundprogramm':
-              _dogBasicIsActive = true;
+              if (widget.packageID == 'cats_and_dogs' &&
+                  widget.programName == 'grundprogramm') {
+                _programmAvailable = true;
+              }
               break;
           }
         });
       }
-      debugPrint(
-          'INFO: ${customerInfo.entitlements.all[entitlementID]?.isActive}');
       // access latest customerInfo
     } on PlatformException catch (e) {
       // Error fetching customer info

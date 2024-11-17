@@ -26,6 +26,7 @@ class _ShopPageState extends State<ShopPage> {
   @override
   void initState() {
     updateEntitlementStatus();
+    updatePrices();
   }
 
   void updateEntitlementStatus() {
@@ -38,6 +39,19 @@ class _ShopPageState extends State<ShopPage> {
     hasEntitlement('Hund Grundprogramm');
   }
 
+  void updatePrices() async {
+    try {
+      Offerings offerings = await Purchases.getOfferings();
+      debugPrint('${offerings.all['Pferd Komplett']}');
+      if (offerings.current != null &&
+          offerings.current!.availablePackages.isNotEmpty) {
+        // Display packages for sale
+      }
+    } on PlatformException catch (e) {
+      debugPrint('Revenue Cat config no Offering');
+    }
+  }
+
   void showOffering(offeringID) async {
     try {
       Offerings offerings = await Purchases.getOfferings();
@@ -45,7 +59,7 @@ class _ShopPageState extends State<ShopPage> {
       debugPrint('OFFERINGS: $toPrint');
       RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true)
           .whenComplete(() {
-        updateEntitlementStatus();
+        // updateEntitlementStatus();
         debugPrint("Completed");
       });
     } on PlatformException catch (e) {
