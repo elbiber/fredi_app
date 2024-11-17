@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
-import 'package:fredi_app/pages/shop_page.dart';
+import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
 import '../modals/set_actual_frequency_modal.dart';
@@ -37,13 +37,17 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
   }
 
   void updateEntitlementStatus() {
-    hasEntitlement('Pferd Komplett');
-    hasEntitlement('Hund Komplett');
-    hasEntitlement('Mensch Komplett');
-    hasEntitlement('Premium');
-    hasEntitlement('Pferd Grundprogramm');
-    hasEntitlement('Mensch Grundprogramm');
-    hasEntitlement('Hund Grundprogramm');
+    if (widget.packageID == 'free') {
+      _programmAvailable = true;
+    } else {
+      hasEntitlement('Pferd Komplett');
+      hasEntitlement('Hund Komplett');
+      hasEntitlement('Mensch Komplett');
+      hasEntitlement('Premium');
+      hasEntitlement('Pferd Grundprogramm');
+      hasEntitlement('Mensch Grundprogramm');
+      hasEntitlement('Hund Grundprogramm');
+    }
   }
 
   hasEntitlement(entitlementID) async {
@@ -141,12 +145,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                         ),
                         FrediOutlinedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const ShopPage(),
-                              ),
-                            );
+                            context.go('/shop');
                           },
                           text: 'Zum Shop',
                           bgColor: AppColors.complementary,
@@ -178,6 +177,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => SetActualFreq(
+                            packageID: widget.packageID,
                             selectedFrequency: widget.frequencies[index]
                                 ['name'],
                             audioAsset:

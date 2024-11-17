@@ -117,6 +117,10 @@ class FredAppBarDrawer extends StatelessWidget {
             'Kontakt',
             '/contact',
           ),
+          const TabsMobile(
+            'Succes',
+            '/purchase-success',
+          ),
           const SizedBox(
             height: 40.0,
           ),
@@ -318,6 +322,47 @@ class FrequencyPackages extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
+                  Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_free.json',
+                    titel: 'Frequenzwelt zum Testen',
+                    titelImage: 'free.png',
+                    packageColor: AppColors.black),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/free.png'),
+              fit: BoxFit.cover,
+            )),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold('Kostenlose Frequenzwelt\nzum testen', 18.0,
+                      Colors.white),
                   Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,

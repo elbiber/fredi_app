@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fredi_app/components/components.dart';
+import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
@@ -59,6 +60,8 @@ class _ShopPageState extends State<ShopPage> {
       debugPrint('OFFERINGS: $toPrint');
       RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true)
           .whenComplete(() {
+        if (!mounted) return;
+        context.go('/purchase-success');
         // updateEntitlementStatus();
         debugPrint("Completed");
       });
@@ -137,8 +140,7 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      'Fredi Premimum Abo', 24, AppColors.gold),
+                  const SansBoldCentered('Fredi Premimum', 24, AppColors.gold),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -156,6 +158,9 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.gold)
                       : ElevatedButton(
                           onPressed: () => showOffering('Premium'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(color: AppColors.gold)),
                           child: const SansBoldCentered(
                               'Zum Angebot', 20, AppColors.gold)),
                   const SizedBox(
@@ -170,103 +175,7 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansBoldCentered(
-                      'Pferd Komplett Abo', 24, AppColors.primary),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Pferde freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _horseIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.primary)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Pferd Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.primary)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBoldCentered(
-                      'Hund Komplett Abo', 24, AppColors.green),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Hunde freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _dogIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.green)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Hund Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.green)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBoldCentered(
-                      'Für Dich Komplett Abo', 24, AppColors.complementary),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Dich freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _humanIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.complementary)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Mensch Komplett'),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.complementary)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBoldCentered(
-                      'Grundprogramm Pferd Abo', 24, AppColors.primary),
+                      'Grundprogramm Pferd', 24, AppColors.primary),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -284,6 +193,44 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.primary)
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Pferd'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(color: AppColors.primary)),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.primary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansBoldCentered(
+                      'Pferd Komplett', 24, AppColors.primary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Pferde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _horseIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.primary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Pferd Komplett'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(color: AppColors.primary)),
                           child: const SansBoldCentered(
                               'Zum Angebot', 20, AppColors.primary)),
                   const SizedBox(
@@ -298,7 +245,7 @@ class _ShopPageState extends State<ShopPage> {
               Column(
                 children: [
                   const SansBoldCentered(
-                      'Grundprogramm Hund Abo', 24, AppColors.green),
+                      'Grundprogramm Hund', 24, AppColors.green),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -316,6 +263,9 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.green)
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Hund'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(color: AppColors.green)),
                           child: const SansBoldCentered(
                               'Zum Angebot', 20, AppColors.green)),
                   const SizedBox(
@@ -329,8 +279,42 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Column(
                 children: [
-                  const SansBoldCentered('Grundprogramm Für dich Abo', 24,
-                      AppColors.complementary),
+                  const SansBoldCentered('Hund Komplett', 24, AppColors.green),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Hunde freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _dogIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.green)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Hund Komplett'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(color: AppColors.green)),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.green)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Grundprogramm Für Dich', 24, AppColors.complementary),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -348,6 +332,46 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.complementary)
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Mensch'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(
+                                  color: AppColors.complementary)),
+                          child: const SansBoldCentered(
+                              'Zum Angebot', 20, AppColors.complementary)),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  const SansBoldCentered(
+                      'Für Dich Komplett', 24, AppColors.complementary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Mit diesem Abo sind alle Programme/Frequenzen für Dich freigeschaltet',
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _humanIsActive || _premiumIsActive
+                      ? const SansCentered(
+                          'Du bist bereits im Besitz dieses Abos!',
+                          20,
+                          AppColors.complementary)
+                      : ElevatedButton(
+                          onPressed: () => showOffering('Mensch Komplett'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.white,
+                              side: const BorderSide(
+                                  color: AppColors.complementary)),
                           child: const SansBoldCentered(
                               'Zum Angebot', 20, AppColors.complementary)),
                   const SizedBox(

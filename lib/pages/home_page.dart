@@ -3,6 +3,7 @@ import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
 import 'package:fredi_app/modals/get_actual_frequency_modal.dart';
+import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
 class HomePage extends StatefulWidget {
@@ -91,6 +92,33 @@ class _HomePageState extends State<HomePage> {
                   height: 5.0,
                 ),
                 const FrequencyPackages(),
+                const SizedBox(
+                  height: 25.0,
+                ),
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
+                  child: SansBoldCentered(
+                      'Du hast noch keine Frequenzen für dein Fredi Produkt?',
+                      22.0,
+                      AppColors.primary),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    context.go('/shop');
+                  },
+                  style: ButtonStyle(
+                    side: WidgetStateProperty.all(const BorderSide(
+                      color: AppColors.complementary,
+                    )),
+                    backgroundColor:
+                        WidgetStateProperty.all(AppColors.complementary),
+                  ),
+                  child: const SansBoldCentered(
+                      'Alle Frequenzpakette im Shop', 18.0, AppColors.white),
+                ),
+                const SizedBox(
+                  height: 5.0,
+                ),
               ],
             ),
           ),

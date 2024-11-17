@@ -9,12 +9,14 @@ import 'package:fredi_app/components/font_components.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
 class SetActualFreq extends StatefulWidget {
+  final String packageID;
   final String selectedFrequency;
   final String audioAsset;
   final Color packageColor;
 
   const SetActualFreq(
       {super.key,
+      required this.packageID,
       required this.selectedFrequency,
       required this.audioAsset,
       required this.packageColor});
@@ -41,8 +43,8 @@ class _SetActualFreqState extends State<SetActualFreq> {
         debugPrint('--------------Delayed---------------');
 
         if (ndef != null && ndef.isWritable) {
-          NdefRecord ndefRecord =
-              NdefRecord.createText('fsp_${widget.selectedFrequency}');
+          NdefRecord ndefRecord = NdefRecord.createText(
+              'fsp_${widget.packageID}_${widget.selectedFrequency}');
           NdefMessage message = NdefMessage([ndefRecord]);
 
           try {

@@ -18,6 +18,8 @@ class _GetActualFreqState extends State<GetActualFreq> {
   String result = '';
   bool gotResult = false;
   bool resultValid = true;
+  Color resultColor = AppColors.primary;
+  String resultPackage = '';
 
   @override
   void initState() {
@@ -55,9 +57,39 @@ class _GetActualFreqState extends State<GetActualFreq> {
           final prefix = RegExp(r'^fsp_');
 
           if (prefix.hasMatch(tempRecord)) {
-            debugPrint('-------------Regex-----------------');
+            String prefixRemoved = tempRecord.substring(4);
+            debugPrint('-------------Regex-----------------$prefixRemoved');
+
+            String finalRecord = '';
+
+            if (RegExp(r'^free_').hasMatch(prefixRemoved)) {
+              finalRecord = prefixRemoved.substring(5);
+              setState(() {
+                resultColor = AppColors.black;
+                resultPackage = '(Kostenlose Frequenzwelt)';
+              });
+            } else if (RegExp(r'^horses_').hasMatch(prefixRemoved)) {
+              finalRecord = prefixRemoved.substring(7);
+              setState(() {
+                resultColor = AppColors.primary;
+                resultPackage = '(Frequenzwelt für Pferde)';
+              });
+            } else if (RegExp(r'^cats_and_dogs_').hasMatch(prefixRemoved)) {
+              finalRecord = prefixRemoved.substring(14);
+              setState(() {
+                resultColor = AppColors.green;
+                resultPackage = '(Frequenzwelt für Hunde und Katzen)';
+              });
+            } else if (RegExp(r'^humans_').hasMatch(prefixRemoved)) {
+              finalRecord = prefixRemoved.substring(7);
+              setState(() {
+                resultColor = AppColors.complementary;
+                resultPackage = '(Frequenzwelt für Dich)';
+              });
+            }
+
             setState(() {
-              result = tempRecord.substring(4);
+              result = finalRecord;
               resultValid = true;
               gotResult = true;
             });
@@ -140,8 +172,11 @@ class _GetActualFreqState extends State<GetActualFreq> {
                         resultValid
                             ? Container(
                                 padding: const EdgeInsets.all(30.0),
-                                color: AppColors.primary,
+                                color: resultColor,
                                 child: Column(children: [
+                                  const SizedBox(
+                                    height: 25,
+                                  ),
                                   const SansCentered(
                                     'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
                                     18,
@@ -152,6 +187,14 @@ class _GetActualFreqState extends State<GetActualFreq> {
                                   ),
                                   SansBoldCentered(
                                       result, 28.0, AppColors.white),
+                                  SansCentered(
+                                    resultPackage,
+                                    18,
+                                    AppColors.white,
+                                  ),
+                                  const SizedBox(
+                                    height: 25,
+                                  ),
                                 ]),
                               )
                             : Container(
