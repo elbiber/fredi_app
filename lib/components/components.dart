@@ -117,10 +117,6 @@ class FredAppBarDrawer extends StatelessWidget {
             'Kontakt',
             '/contact',
           ),
-          const TabsMobile(
-            'Succes',
-            '/purchase-success',
-          ),
           const SizedBox(
             height: 40.0,
           ),

@@ -59,11 +59,18 @@ class _ShopPageState extends State<ShopPage> {
       var toPrint = offerings.getOffering(offeringID);
       debugPrint('OFFERINGS: $toPrint');
       RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true)
-          .whenComplete(() {
+          .whenComplete(() async {
+        // if (!mounted) return;
+        debugPrint(offeringID);
+        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+        debugPrint(
+            '**************** ${customerInfo.entitlements.all[offeringID]?.isActive}');
         if (!mounted) return;
-        context.go('/purchase-success');
+        if (customerInfo.entitlements.all[offeringID]!.isActive) {
+          context.go('/purchase-success');
+        }
+
         // updateEntitlementStatus();
-        debugPrint("Completed");
       });
     } on PlatformException catch (e) {
       // optional error handling
@@ -314,7 +321,7 @@ class _ShopPageState extends State<ShopPage> {
               Column(
                 children: [
                   const SansBoldCentered(
-                      'Grundprogramm Für Dich', 24, AppColors.complementary),
+                      'Fredi Für Dich', 24, AppColors.complementary),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -332,42 +339,6 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.complementary)
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Mensch'),
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.white,
-                              side: const BorderSide(
-                                  color: AppColors.complementary)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.complementary)),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const SansBoldCentered(
-                      'Für Dich Komplett', 24, AppColors.complementary),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Dich freigeschaltet',
-                      20,
-                      AppColors.black),
-                  const SizedBox(
-                    height: 25.0,
-                  ),
-                  _humanIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.complementary)
-                      : ElevatedButton(
-                          onPressed: () => showOffering('Mensch Komplett'),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(
