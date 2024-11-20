@@ -9,7 +9,7 @@
       }
     ]
   },
-  "identifier" : "A2BDB9B7",
+  "identifier" : "63BD2890",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -18,9 +18,14 @@
   ],
   "settings" : {
     "_applicationInternalID" : "6736939851",
+    "_compatibilityTimeRate" : {
+      "3" : 6
+    },
     "_developerTeamID" : "92VM99HC79",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 753126193.137514,
+    "_lastSynchronizedDate" : 753799542.730515,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -67,10 +72,997 @@
         "enabled" : false,
         "name" : "Offer Code Redeem Sheet"
       }
-    ]
+    ],
+    "_timeRate" : 1002
   },
   "subscriptionGroups" : [
+    {
+      "id" : "21563647",
+      "localizations" : [
 
+      ],
+      "name" : "Fredi Abos",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 12,
+          "internalID" : "6738392658",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (1 Monat)",
+              "displayName" : "Hund Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : " Hund Grundprogramm Monatlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 11,
+          "internalID" : "6738392132",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (6 Monate)",
+              "displayName" : "Hund GrundprogrammHalbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Hund Grundprogramm Halbjährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.9",
+          "familyShareable" : false,
+          "groupNumber" : 10,
+          "internalID" : "6738392015",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (1 Jahr)",
+              "displayName" : "Hund Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Hund Grundprogramm Jährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.0",
+          "familyShareable" : false,
+          "groupNumber" : 8,
+          "internalID" : "6738391607",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (6 Monate)",
+              "displayName" : "Hund Komplett Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_komplett_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Hund Komplett Halbjährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "79.99",
+          "familyShareable" : false,
+          "groupNumber" : 7,
+          "internalID" : "6738391594",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (1 Jahr)",
+              "displayName" : "Hund Komplett Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_komplett_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Hund Komplett Jährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "8.99",
+          "familyShareable" : false,
+          "groupNumber" : 9,
+          "internalID" : "6738391844",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (1 Monat)",
+              "displayName" : "Hund Komplett Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_hund_komplett_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Hund Komplett Monatlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 14,
+          "internalID" : "6738392647",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Mensch (6 Monate)",
+              "displayName" : "Mensch Gp Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_mensch_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Mensch Grundprogramm Halbjährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.9",
+          "familyShareable" : false,
+          "groupNumber" : 13,
+          "internalID" : "6738392471",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Mensch (1 Jahr)",
+              "displayName" : "Mensch Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_mensch_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Mensch Grundprogramm Jährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 15,
+          "internalID" : "6738392675",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Mensch (1 Monat)",
+              "displayName" : "Mensch Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_mensch_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Mensch Grundprogramm Monatlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 5,
+          "internalID" : "6738386338",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (6 Monate)",
+              "displayName" : "Pferd Grundprogramm 6 Monate",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Pferd Grundprogramm Halbjährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 4,
+          "internalID" : "6738387050",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (1 Jahr)",
+              "displayName" : "Pferd Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pferd Grundprogramm Jaehrlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 6,
+          "internalID" : "6738386085",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (1 Monat)",
+              "displayName" : "Pferd Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pferd Grundprogramm Monatlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "59.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738386064",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (6 Monate)",
+              "displayName" : "Pferd Komplett Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_komplett_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Pferd Komplett Halbjährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "89.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738386088",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (1 Jahr)",
+              "displayName" : "Pferd Komplett Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_komplett_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pferd Komplett Jährlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738385629",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (1 Monat)",
+              "displayName" : "Pferd Komplett Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_pferd_komplett_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pferd Komplett Monatlich 2",
+          "subscriptionGroupID" : "21563647",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585887",
+      "localizations" : [
+
+      ],
+      "name" : "Für Dich Grundprogramm",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738423222",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Mensch (6 Monate)",
+              "displayName" : "Mensch GP Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_mensch_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Mensch Grundprogramm Halbjährlich",
+          "subscriptionGroupID" : "21585887",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.9",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738423135",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Dich (1 Jahr)",
+              "displayName" : "Mensch Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_mensch_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Mensch Grundprogramm Jährlich",
+          "subscriptionGroupID" : "21585887",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738423372",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Mensch (1 Monat)",
+              "displayName" : "Mensch Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_mensch_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Mensch Grundprogramm Monatlich",
+          "subscriptionGroupID" : "21585887",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585800",
+      "localizations" : [
+
+      ],
+      "name" : "Hund Grundprogramm",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738422896",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (6 Monate)",
+              "displayName" : "Hund GrundprogrammHalbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Hund Grundprogramm Halbjährlich",
+          "subscriptionGroupID" : "21585800",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.9",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738422937",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (1 Jahr)",
+              "displayName" : "Hund Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Hund Grundprogramm Jährlich",
+          "subscriptionGroupID" : "21585800",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738422976",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Hund (1 Monat)",
+              "displayName" : "Hund Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Hund Grundprogramm Monatlich",
+          "subscriptionGroupID" : "21585800",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585788",
+      "localizations" : [
+
+      ],
+      "name" : "Hund Komplett",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.0",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738422674",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (6 Monate)",
+              "displayName" : "Hund Komplett Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_komplett_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Hund Komplett Halbjährlich",
+          "subscriptionGroupID" : "21585788",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "79.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738422462",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (1 Jahr)",
+              "displayName" : "Hund Komplett Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_komplett_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Hund Komplett Jährlich",
+          "subscriptionGroupID" : "21585788",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "8.99",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738422683",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Hund (1 Monat)",
+              "displayName" : "Hund Komplett Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_hund_komplett_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Hund Komplett Monatlich",
+          "subscriptionGroupID" : "21585788",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585798",
+      "localizations" : [
+
+      ],
+      "name" : "Pferd Grundprogramm",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738422016",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (6 Monate)",
+              "displayName" : "Pferd Grundprogramm 6 Monate",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_pferd_grundprogramm_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Pferd Grundprogramm Halbjährlich",
+          "subscriptionGroupID" : "21585798",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738421510",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (1 Jahr)",
+              "displayName" : "Pferd Grundprogramm Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_iosf_pferd_grundprogramm_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pferd Grundprogramm Jährlich",
+          "subscriptionGroupID" : "21585798",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738422388",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Grundprogramm für Pferd (1 Monat)",
+              "displayName" : "Pferd Grundprogramm Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_pferd_grundprogramm_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pferd Grundprogramm Monatlich",
+          "subscriptionGroupID" : "21585798",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585864",
+      "localizations" : [
+
+      ],
+      "name" : "Pferd Komplett",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "59.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738418542",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (6 Monate)",
+              "displayName" : "Pferd Komplett Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_pferd_komplett_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Pferd Komplett Halbjährlich",
+          "subscriptionGroupID" : "21585864",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "89.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738418410",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (1 Jahr)",
+              "displayName" : "Pferd Komplett Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_pferd_komplett_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pferd Komplett Jährlich",
+          "subscriptionGroupID" : "21585864",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738421113",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen für Pferd (1 Monat)",
+              "displayName" : "Pferd Komplett Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_pferd_komplett_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pferd Komplett Monatlich",
+          "subscriptionGroupID" : "21585864",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id" : "21585870",
+      "localizations" : [
+
+      ],
+      "name" : "Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "69.9",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6738423661",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen der Fredi App für (6 Monate)",
+              "displayName" : "Premium Halbjährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_premium_halbjaehrlich",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "Premium Halbjährlich",
+          "subscriptionGroupID" : "21585870",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "99.0",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6738423589",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen der Fredi App für (1 Jahr)",
+              "displayName" : "Premium Jährlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_premium_jaehrlich",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Premium Jährlich",
+          "subscriptionGroupID" : "21585870",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6738423747",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Alle Frequenzen der Fredi App für (1 Monat)",
+              "displayName" : "Premium Monatlich",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "fredi_app_ios_premium_monatlich",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Premium Monatlich",
+          "subscriptionGroupID" : "21585870",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 4,

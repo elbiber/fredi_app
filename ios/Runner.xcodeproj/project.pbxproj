@@ -14,6 +14,10 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		AE67DC432CECDF2B00A53334 /* StoreKitConfig.storekit in Resources */ = {isa = PBXBuildFile; fileRef = AE67DC422CECDF2B00A53334 /* StoreKitConfig.storekit */; };
+		AE67DC442CECDF2B00A53334 /* StoreKitConfig.storekit in Resources */ = {isa = PBXBuildFile; fileRef = AE67DC422CECDF2B00A53334 /* StoreKitConfig.storekit */; };
+		AE67DC462CECE08100A53334 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = AE67DC452CECE08100A53334 /* StoreKitTestCertificate.cer */; };
+		AE67DC472CECE08100A53334 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = AE67DC452CECE08100A53334 /* StoreKitTestCertificate.cer */; };
 		AECAF5192CE39DD400BF6E23 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECAF5182CE39DD400BF6E23 /* StoreKit.framework */; };
 		B8B8C88A0FA6C5BD5F5B5C0E /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2CF18B5760C616C7092414 /* Pods_Runner.framework */; };
 		DDA73BA2AE8E83B4E5BCED17 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A5340D12C27743584FDDD3 /* Pods_RunnerTests.framework */; };
@@ -62,6 +66,8 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE3160C62CBEA69800CA7233 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+		AE67DC422CECDF2B00A53334 /* StoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKitConfig.storekit; sourceTree = "<group>"; };
+		AE67DC452CECE08100A53334 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		AECAF5182CE39DD400BF6E23 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AF2CF18B5760C616C7092414 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB76246250DE73ABECC3CFD4 /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				AE67DC422CECDF2B00A53334 /* StoreKitConfig.storekit */,
+				AE67DC452CECE08100A53334 /* StoreKitTestCertificate.cer */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -258,6 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE67DC442CECDF2B00A53334 /* StoreKitConfig.storekit in Resources */,
+				AE67DC472CECE08100A53334 /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
+				AE67DC432CECDF2B00A53334 /* StoreKitConfig.storekit in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+				AE67DC462CECE08100A53334 /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

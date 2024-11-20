@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fredi_app/components/components.dart';
-import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
@@ -27,7 +28,6 @@ class _ShopPageState extends State<ShopPage> {
   @override
   void initState() {
     updateEntitlementStatus();
-    updatePrices();
   }
 
   void updateEntitlementStatus() {
@@ -40,78 +40,107 @@ class _ShopPageState extends State<ShopPage> {
     hasEntitlement('Hund Grundprogramm');
   }
 
-  void updatePrices() async {
-    try {
-      Offerings offerings = await Purchases.getOfferings();
-      debugPrint('${offerings.all['Pferd Komplett']}');
-      if (offerings.current != null &&
-          offerings.current!.availablePackages.isNotEmpty) {
-        // Display packages for sale
-      }
-    } on PlatformException catch (e) {
-      debugPrint('Revenue Cat config no Offering');
-    }
-  }
-
   void showOffering(offeringID) async {
     try {
+      debugPrint('Get OFFERINGS');
       Offerings offerings = await Purchases.getOfferings();
+      debugPrint('OFFERINGS: $offerings');
       var toPrint = offerings.getOffering(offeringID);
       debugPrint('OFFERINGS: $toPrint');
-      RevenueCatUI.presentPaywall(offering: toPrint, displayCloseButton: true)
+      final result = await RevenueCatUI.presentPaywall(
+              offering: toPrint, displayCloseButton: true)
           .whenComplete(() async {
-        // if (!mounted) return;
-        debugPrint(offeringID);
-        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-        debugPrint(
-            '**************** ${customerInfo.entitlements.all[offeringID]?.isActive}');
-        if (!mounted) return;
-        if (customerInfo.entitlements.all[offeringID]!.isActive) {
-          context.go('/purchase-success');
-        }
-
-        // updateEntitlementStatus();
+        updateEntitlementStatus();
       });
+      if (result == PaywallResult.purchased) {
+        if (!mounted) return;
+        // context.go('/');
+      }
     } on PlatformException catch (e) {
       // optional error handling
     }
   }
 
   hasEntitlement(entitlementID) async {
-    try {
-      CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-      if (customerInfo.entitlements.all[entitlementID]!.isActive) {
-        setState(() {
-          switch (entitlementID) {
-            case 'Pferd Komplett':
-              _horseIsActive = true;
-              break;
-            case 'Hund Komplett':
-              _dogIsActive = true;
-              break;
-            case 'Mensch Komplett':
-              _humanIsActive = true;
-              break;
-            case 'Premium':
-              _premiumIsActive = true;
-              break;
-            case 'Pferd Grundprogramm':
-              _horseBasicIsActive = true;
-              break;
-            case 'Mensch Grundprogramm':
-              _humanBasicIsActive = true;
-              break;
-            case 'Hund Grundprogramm':
-              _dogBasicIsActive = true;
-              break;
-          }
-        });
+    if (Platform.isAndroid) {
+      try {
+        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+        if (customerInfo.entitlements.all[entitlementID]!.isActive) {
+          setState(() {
+            switch (entitlementID) {
+              case 'Pferd Komplett':
+                _horseIsActive = true;
+                break;
+              case 'Hund Komplett':
+                _dogIsActive = true;
+                break;
+              case 'Mensch Komplett':
+                _humanIsActive = true;
+                break;
+              case 'Premium':
+                _premiumIsActive = true;
+                break;
+              case 'Pferd Grundprogramm':
+                _horseBasicIsActive = true;
+                break;
+              case 'Mensch Grundprogramm':
+                _humanBasicIsActive = true;
+                break;
+              case 'Hund Grundprogramm':
+                _dogBasicIsActive = true;
+                break;
+            }
+          });
+        }
+        debugPrint(
+            'INFO: ${customerInfo.entitlements.all[entitlementID]?.isActive}');
+        // access latest customerInfo
+      } on PlatformException catch (e) {
+        // Error fetching customer info
       }
-      debugPrint(
-          'INFO: ${customerInfo.entitlements.all[entitlementID]?.isActive}');
-      // access latest customerInfo
-    } on PlatformException catch (e) {
-      // Error fetching customer info
+    } else if (Platform.isIOS) {
+      debugPrint('INFO IOS +++++++++++++++++++++++++++++');
+      //CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+      // debugPrint('$customerInfo');
+      try {
+        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+        debugPrint('Checking. $entitlementID');
+        if (customerInfo.entitlements.all[entitlementID]?.isActive != null) {
+          if (customerInfo.entitlements.all[entitlementID]!.isActive) {
+            debugPrint('Checking. $entitlementID');
+            setState(() {
+              switch (entitlementID) {
+                case 'Pferd Komplett':
+                  _horseIsActive = true;
+                  break;
+                case 'Hund Komplett':
+                  _dogIsActive = true;
+                  break;
+                case 'Mensch Komplett':
+                  _humanIsActive = true;
+                  break;
+                case 'Premium':
+                  _premiumIsActive = true;
+                  break;
+                case 'Pferd Grundprogramm':
+                  _horseBasicIsActive = true;
+                  break;
+                case 'Mensch Grundprogramm':
+                  _humanBasicIsActive = true;
+                  break;
+                case 'Hund Grundprogramm':
+                  _dogBasicIsActive = true;
+                  break;
+              }
+            });
+          }
+          debugPrint(
+              'INFO: ${customerInfo.entitlements.all[entitlementID]?.isActive}');
+        }
+        // access latest customerInfo
+      } on PlatformException catch (e) {
+        debugPrint('Error: $e');
+      }
     }
   }
 
@@ -159,10 +188,25 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.gold)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.gold),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () => showOffering('Premium'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.gold)),
+                                child: const SansBoldCentered(
+                                    'Abo anpassen', 20, AppColors.gold)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Premium'),
                           style: ElevatedButton.styleFrom(
@@ -194,10 +238,26 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _horseBasicIsActive || _premiumIsActive || _horseIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.primary)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.primary),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () =>
+                                    showOffering('Grundprogramm Pferd'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.primary)),
+                                child: const SansBoldCentered(
+                                    'Abo anpassen', 20, AppColors.primary)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Pferd'),
                           style: ElevatedButton.styleFrom(
@@ -229,10 +289,25 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _horseIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.primary)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.primary),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () => showOffering('Pferd Komplett'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.primary)),
+                                child: const SansBoldCentered(
+                                    'Abo anpassen', 20, AppColors.primary)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Pferd Komplett'),
                           style: ElevatedButton.styleFrom(
@@ -264,10 +339,26 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _dogBasicIsActive || _premiumIsActive || _dogIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.green)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.green),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () =>
+                                    showOffering('Grundprogramm Hund'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.green)),
+                                child: const SansBoldCentered(
+                                    'Abo anpassen', 20, AppColors.green)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Hund'),
                           style: ElevatedButton.styleFrom(
@@ -298,10 +389,25 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _dogIsActive || _premiumIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.green)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.green),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () => showOffering('Hund Komplett'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.green)),
+                                child: const SansBoldCentered(
+                                    'Abo anpassen', 20, AppColors.green)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Hund Komplett'),
                           style: ElevatedButton.styleFrom(
@@ -333,10 +439,26 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _humanBasicIsActive || _premiumIsActive || _humanIsActive
-                      ? const SansCentered(
-                          'Du bist bereits im Besitz dieses Abos!',
-                          20,
-                          AppColors.complementary)
+                      ? Column(
+                          children: [
+                            const SansCentered(
+                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                20,
+                                AppColors.complementary),
+                            const SizedBox(
+                              height: 25.0,
+                            ),
+                            ElevatedButton(
+                                onPressed: () =>
+                                    showOffering('Grundprogramm Mensch'),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.white,
+                                    side: const BorderSide(
+                                        color: AppColors.complementary)),
+                                child: const SansBoldCentered('Abo anpassen',
+                                    20, AppColors.complementary)),
+                          ],
+                        )
                       : ElevatedButton(
                           onPressed: () => showOffering('Grundprogramm Mensch'),
                           style: ElevatedButton.styleFrom(

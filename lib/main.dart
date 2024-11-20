@@ -25,15 +25,7 @@ Future<void> _configureSDK() async {
 
   if (configuration != null) {
     await Purchases.configure(configuration);
-    /*try {
-      Offerings offerings = await Purchases.getOfferings();
-      if (offerings.current != null &&
-          offerings.current!.availablePackages.isNotEmpty) {
-        // Display packages for sale
-      }
-    } on PlatformException catch (e) {
-      debugPrint('Revenue Cat config no Offering');
-    }*/
+    debugPrint('++++++++++++++++Config Loaded+++++++++++++++++');
   } else {
     debugPrint('Revenue Cat config not loaded');
   }
