@@ -57,7 +57,8 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
         setState(() {
           switch (entitlementID) {
             case 'Pferd Komplett':
-              if (widget.packageID == 'horses') {
+              if (widget.packageID == 'horses' &&
+                  widget.programName != 'grundprogramm') {
                 _programmAvailable = true;
               }
               break;

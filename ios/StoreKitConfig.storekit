@@ -23,7 +23,7 @@
     },
     "_developerTeamID" : "92VM99HC79",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 753799542.730515,
+    "_lastSynchronizedDate" : 753892625.244048,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -519,7 +519,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "19.99",
+          "displayPrice" : "22.9",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738423222",
@@ -547,7 +547,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "39.9",
+          "displayPrice" : "34.9",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738423135",
@@ -612,7 +612,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "19.99",
+          "displayPrice" : "22.9",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738422896",
@@ -640,7 +640,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "39.9",
+          "displayPrice" : "34.9",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738422937",
@@ -696,7 +696,7 @@
       "localizations" : [
 
       ],
-      "name" : "Hund Komplett",
+      "name" : "Hund Zusatzprogramme",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -705,21 +705,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "49.0",
+          "displayPrice" : "34.9",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738422674",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Hund (6 Monate)",
-              "displayName" : "Hund Komplett Halbjährlich",
+              "description" : "Alle Zusatzprogramme für Hunde (6 Monate)",
+              "displayName" : "Hund Zusatzprogramme 6 Monate",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_hund_komplett_halbjaehrlich",
           "recurringSubscriptionPeriod" : "P6M",
-          "referenceName" : "Hund Komplett Halbjährlich",
+          "referenceName" : "Hund Zusatzprogramme Halbjährlich",
           "subscriptionGroupID" : "21585788",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -733,21 +733,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "79.99",
+          "displayPrice" : "59.9",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738422462",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Hund (1 Jahr)",
-              "displayName" : "Hund Komplett Jährlich",
+              "description" : "Alle Zusatzprogramme für Hunde (1 Jahr)",
+              "displayName" : "Hund Zusatzprogramm Jährlich",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_hund_komplett_jaehrlich",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Hund Komplett Jährlich",
+          "referenceName" : "Hund Zusatzprogramme Jährlich",
           "subscriptionGroupID" : "21585788",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -761,21 +761,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "8.99",
+          "displayPrice" : "6.9",
           "familyShareable" : false,
           "groupNumber" : 3,
           "internalID" : "6738422683",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Hund (1 Monat)",
-              "displayName" : "Hund Komplett Monatlich",
+              "description" : "Alle Zusatzprogramme für Hunde (1 Monat)",
+              "displayName" : "Hund Zusatzprogramme Monatlich",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_hund_komplett_monatlich",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Hund Komplett Monatlich",
+          "referenceName" : "Hund Zusatzprogramme Monatlich",
           "subscriptionGroupID" : "21585788",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -798,7 +798,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "19.99",
+          "displayPrice" : "22.9",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738422016",
@@ -826,7 +826,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "3.9",
+          "displayPrice" : "34.9",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738421510",
@@ -882,7 +882,7 @@
       "localizations" : [
 
       ],
-      "name" : "Pferd Komplett",
+      "name" : "Pferd Zusatzprogramme",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -891,21 +891,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "59.99",
+          "displayPrice" : "44.9",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738418542",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Pferd (6 Monate)",
-              "displayName" : "Pferd Komplett Halbjährlich",
+              "description" : "Alle Zusatzprogramme für Pferde (6 Monate)",
+              "displayName" : "Pferd Zusatzprogramme 6 Monate",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_pferd_komplett_halbjaehrlich",
           "recurringSubscriptionPeriod" : "P6M",
-          "referenceName" : "Pferd Komplett Halbjährlich",
+          "referenceName" : "Pferd Zusatzprogramm Halbjährlich",
           "subscriptionGroupID" : "21585864",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -919,21 +919,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "89.99",
+          "displayPrice" : "79.9",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738418410",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Pferd (1 Jahr)",
-              "displayName" : "Pferd Komplett Jährlich",
+              "description" : "Alle Zusatzprogramme für Pferde (1 Jahr)",
+              "displayName" : "Pferd Zusatzprogramm Jährlich",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_pferd_komplett_jaehrlich",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Pferd Komplett Jährlich",
+          "referenceName" : "Pferd Zusatzprogramme Jährlich",
           "subscriptionGroupID" : "21585864",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -947,21 +947,21 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "9.9",
+          "displayPrice" : "8.9",
           "familyShareable" : false,
           "groupNumber" : 3,
           "internalID" : "6738421113",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Frequenzen für Pferd (1 Monat)",
-              "displayName" : "Pferd Komplett Monatlich",
+              "description" : "Alle Zusatzprogramme für Pferde (1 Monat)",
+              "displayName" : "Pferd Zusatzprogramm Monatlich",
               "locale" : "de"
             }
           ],
           "productID" : "fredi_app_ios_pferd_komplett_monatlich",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Pferd Komplett Monatlich",
+          "referenceName" : "Pferd Zusatzprogramme Monatlich",
           "subscriptionGroupID" : "21585864",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
@@ -984,7 +984,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "69.9",
+          "displayPrice" : "99.0",
           "familyShareable" : false,
           "groupNumber" : 2,
           "internalID" : "6738423661",
@@ -1012,7 +1012,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "99.0",
+          "displayPrice" : "179.0",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "6738423589",
@@ -1040,7 +1040,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "12.9",
+          "displayPrice" : "22.9",
           "familyShareable" : false,
           "groupNumber" : 3,
           "internalID" : "6738423747",

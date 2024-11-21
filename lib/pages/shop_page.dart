@@ -19,7 +19,6 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   bool _dogIsActive = false;
   bool _horseIsActive = false;
-  bool _humanIsActive = false;
   bool _premiumIsActive = false;
   bool _horseBasicIsActive = false;
   bool _dogBasicIsActive = false;
@@ -74,8 +73,8 @@ class _ShopPageState extends State<ShopPage> {
               case 'Hund Komplett':
                 _dogIsActive = true;
                 break;
-              case 'Mensch Komplett':
-                _humanIsActive = true;
+              case 'Mensch Grundprogramm':
+                _humanBasicIsActive = true;
                 break;
               case 'Premium':
                 _premiumIsActive = true;
@@ -116,9 +115,6 @@ class _ShopPageState extends State<ShopPage> {
                 case 'Hund Komplett':
                   _dogIsActive = true;
                   break;
-                case 'Mensch Komplett':
-                  _humanIsActive = true;
-                  break;
                 case 'Premium':
                   _premiumIsActive = true;
                   break;
@@ -142,6 +138,14 @@ class _ShopPageState extends State<ShopPage> {
         debugPrint('Error: $e');
       }
     }
+  }
+
+  bool hasActivePackages() {
+    return _horseIsActive ||
+        _horseBasicIsActive ||
+        _dogIsActive ||
+        _dogBasicIsActive ||
+        _humanBasicIsActive;
   }
 
   @override
@@ -181,9 +185,20 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen der Fredi App freigeschaltet',
+                      "Mit diesem Abo sind alle Programme/Frequenzen der Fredi App freigeschaltet.",
                       20,
                       AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  hasActivePackages() && !_premiumIsActive
+                      ? const SansCentered(
+                          'Wenn du noch weitere Abonnements aktiviert hast, werden diese nicht automatisch gekündigt und laufen weiterhin. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -192,8 +207,8 @@ class _ShopPageState extends State<ShopPage> {
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
-                                AppColors.gold),
+                                16,
+                                AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
                             ),
@@ -204,7 +219,7 @@ class _ShopPageState extends State<ShopPage> {
                                     side: const BorderSide(
                                         color: AppColors.gold)),
                                 child: const SansBoldCentered(
-                                    'Abo anpassen', 20, AppColors.gold)),
+                                    'Abo ändern', 20, AppColors.gold)),
                           ],
                         )
                       : ElevatedButton(
@@ -231,19 +246,30 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo ist das Grundprogramm für Pferde freigeschaltet',
+                      'Mit diesem Abo werden 16 Frequenzreihen für Pferde freigeschaltet.',
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  _horseBasicIsActive || _premiumIsActive || _horseIsActive
+                  _premiumIsActive && !_horseBasicIsActive
+                      ? const SansCentered(
+                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _horseBasicIsActive
                       ? Column(
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
-                                AppColors.primary),
+                                16,
+                                AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
                             ),
@@ -277,24 +303,35 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansBoldCentered(
-                      'Pferd Komplett', 24, AppColors.primary),
+                      'Zusatzprogramme Pferd', 24, AppColors.primary),
                   const SizedBox(
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Pferde freigeschaltet',
+                      'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Atemwege und Haut\n- Stoffwechsel und Organe,\n- Emotion und Traumata',
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  _horseIsActive || _premiumIsActive
+                  _premiumIsActive && !_horseIsActive
+                      ? const SansCentered(
+                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _horseIsActive
                       ? Column(
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
-                                AppColors.primary),
+                                16,
+                                AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
                             ),
@@ -332,19 +369,30 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo ist das Grundprogramm für Hunde freigeschaltet',
+                      'Mit diesem Abo werden 16 Frequenzreihen für Hunde freigeschaltet.',
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  _dogBasicIsActive || _premiumIsActive || _dogIsActive
+                  _premiumIsActive && !_dogBasicIsActive
+                      ? const SansCentered(
+                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _dogBasicIsActive
                       ? Column(
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
-                                AppColors.green),
+                                16,
+                                AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
                             ),
@@ -377,24 +425,36 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Column(
                 children: [
-                  const SansBoldCentered('Hund Komplett', 24, AppColors.green),
+                  const SansBoldCentered(
+                      'Zusatzprogramme Hund', 24, AppColors.green),
                   const SizedBox(
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo sind alle Programme/Frequenzen für Hunde freigeschaltet',
+                      'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Haut Darm Ohren\n- Emotion und Traumata',
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  _dogIsActive || _premiumIsActive
+                  _premiumIsActive && !_dogIsActive
+                      ? const SansCentered(
+                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _dogIsActive
                       ? Column(
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
-                                AppColors.green),
+                                16,
+                                AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
                             ),
@@ -432,18 +492,29 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   const SansCentered(
-                      'Mit diesem Abo ist das Grundprogramm für Dich freigeschaltet',
+                      'Mit diesem Abo werden 16 Frequenzreihen für Dich freigeschaltet.',
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  _humanBasicIsActive || _premiumIsActive || _humanIsActive
+                  _premiumIsActive && !_humanBasicIsActive
+                      ? const SansCentered(
+                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          16,
+                          AppColors.complementary)
+                      : const SizedBox(
+                          height: 0.0,
+                        ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  _humanBasicIsActive
                       ? Column(
                           children: [
                             const SansCentered(
                                 'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
-                                20,
+                                16,
                                 AppColors.complementary),
                             const SizedBox(
                               height: 25.0,
