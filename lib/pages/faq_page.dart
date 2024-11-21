@@ -39,9 +39,9 @@ class FAQPage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20))),
               ),
               FAQ(
-                question: "Wie kündige Ich ein Abo?",
+                question: "Wie kündige Ich ein Abo? (Android)",
                 answer:
-                    '* Stelle sicher, dass du mit dem richtigen Google-Konto angemeldet bist.\n* Öffne die Google Play Store App auf deinem Gerät.\n* Tippe oben rechts auf dein Profilbild.\n* Wähle Zahlungen und Abos.\n* Klicke anschließend auf Abonnements.\n* Tippe auf das Abo, das du kündigen möchtest.\n* Tippe auf Abo kündigen.\n* Folge den angezeigten Anweisungen und gib, falls gefragt, einen Kündigungsgrund an. *\n Bestätige die Kündigung, um den Prozess abzuschließen.\n\nDein Abo bleibt bis zum Ende der bezahlten Laufzeit aktiv. Danach wird der Zugang automatisch beendet. Du kannst ein Abo jederzeit neu abschließen, falls du deine Meinung änderst.',
+                    '* Stelle sicher, dass du mit dem richtigen Google-Konto angemeldet bist.\n* Öffne die Google Play Store App auf deinem Gerät.\n* Tippe oben rechts auf dein Profilbild.\n* Wähle Zahlungen und Abos.\n* Klicke anschließend auf Abonnements.\n* Tippe auf das Abo, das du kündigen möchtest.\n* Tippe auf Abo kündigen.\n* Folge den angezeigten Anweisungen und gib, falls gefragt, einen Kündigungsgrund an. *\n Bestätige die Kündigung, um den Prozess abzuschließen.\n\nDein Abo bleibt bis zum Ende der bezahlten Laufzeit aktiv. Danach wird der Zugang automatisch beendet. Du kannst ein Abo jederzeit neu abschließen, falls du deine Meinung änderst. Für weitere Informationen oder Unterstützung besuche unsere Webseite fredi-shop.com.',
                 ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
                 queStyle: TextStyle(color: AppColors.primary, fontSize: 20),
                 queDecoration: BoxDecoration(
@@ -52,6 +52,19 @@ class FAQPage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20))),
               ),
               FAQ(
+                question: "Wie kündige Ich ein Abo? (IPhone/IOS)",
+                answer:
+                    '* Öffne die Einstellungen-App auf deinem iPhone.\n* Tippe auf deinen Apple-ID-Namen oben im Menü.\n* Wähle „Abonnements“ aus.\n* Suche das Fredi-Abo in der Liste und tippe darauf.\n* Wähle „Abo kündigen“ und bestätige deine Entscheidung.\n\nDein Abo bleibt bis zum Ende der bezahlten Laufzeit aktiv. Danach wird der Zugang automatisch beendet. Du kannst ein Abo jederzeit neu abschließen, falls du deine Meinung änderst. Für weitere Informationen oder Unterstützung besuche unsere Webseite fredi-shop.com.',
+                ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
+                queStyle: TextStyle(color: AppColors.primary, fontSize: 20),
+                queDecoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                ansDecoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+              ),
+              /*FAQ(
                 question:
                     "Wird ein kleineres Abo automatisch gekündigt wenn ich ein größeres abschließe welche das kleinere beinhaltet?",
                 answer:
@@ -64,7 +77,7 @@ class FAQPage extends StatelessWidget {
                 ansDecoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
-              ),
+              ),*/
             ],
           ),
         ));

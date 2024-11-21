@@ -193,7 +193,7 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   hasActivePackages() && !_premiumIsActive
                       ? const SansCentered(
-                          'Wenn du noch weitere Abonnements aktiviert hast, werden diese nicht automatisch gekündigt und laufen weiterhin. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                          'Du hast noch weitere aktive Abonnements, die bereits im Premium-Abo enthalten sind. Diese werden nicht automatisch gekündigt und laufen weiterhin. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -281,7 +281,7 @@ class _ShopPageState extends State<ShopPage> {
                                     side: const BorderSide(
                                         color: AppColors.primary)),
                                 child: const SansBoldCentered(
-                                    'Abo anpassen', 20, AppColors.primary)),
+                                    'Abo ändern', 20, AppColors.primary)),
                           ],
                         )
                       : ElevatedButton(
@@ -342,7 +342,7 @@ class _ShopPageState extends State<ShopPage> {
                                     side: const BorderSide(
                                         color: AppColors.primary)),
                                 child: const SansBoldCentered(
-                                    'Abo anpassen', 20, AppColors.primary)),
+                                    'Abo ändern', 20, AppColors.primary)),
                           ],
                         )
                       : ElevatedButton(
@@ -404,7 +404,7 @@ class _ShopPageState extends State<ShopPage> {
                                     side: const BorderSide(
                                         color: AppColors.green)),
                                 child: const SansBoldCentered(
-                                    'Abo anpassen', 20, AppColors.green)),
+                                    'Abo ändern', 20, AppColors.green)),
                           ],
                         )
                       : ElevatedButton(
@@ -465,7 +465,7 @@ class _ShopPageState extends State<ShopPage> {
                                     side: const BorderSide(
                                         color: AppColors.green)),
                                 child: const SansBoldCentered(
-                                    'Abo anpassen', 20, AppColors.green)),
+                                    'Abo ändern', 20, AppColors.green)),
                           ],
                         )
                       : ElevatedButton(
@@ -526,8 +526,8 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.complementary)),
-                                child: const SansBoldCentered('Abo anpassen',
-                                    20, AppColors.complementary)),
+                                child: const SansBoldCentered(
+                                    'Abo ändern', 20, AppColors.complementary)),
                           ],
                         )
                       : ElevatedButton(
