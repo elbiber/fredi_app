@@ -7,12 +7,40 @@ import 'package:url_launcher/url_launcher.dart';
 import '../components/app_colors.dart';
 import '../components/font_components.dart';
 
-class AboutPage extends StatelessWidget {
+class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
 
+  @override
+  State<AboutPage> createState() => _AboutPageState();
+}
+
+class _AboutPageState extends State<AboutPage> {
   Future<void> _launchUrl(url) async {
     if (!await launchUrl(Uri.parse(url))) {
       throw Exception('Could not launch $url');
+    }
+  }
+
+  // URL zur Datenschutzrichtlinie
+  final Uri websiteUrl = Uri.https('fredi-shop.com', '', {'limit': '10'});
+  final Uri contactURL =
+      Uri.https('fredi-shop.com', 'kontakt', {'limit': '10'});
+  final Uri privacyPolicyUrl =
+      Uri.https('fredi-shop.com', 'datenschutzerklaerung', {'limit': '10'});
+
+  // URL zu den Nutzungsbedingungen
+  final Uri termsUrlApple = Uri.https('www.apple.com',
+      'legal/internet-services/itunes/dev/stdeula', {'limit': '10'});
+
+  final Uri termsUrlGoogle = Uri.https(
+      'play.google.com', '/about/play-terms/index.html', {'limit': '10'});
+
+  // Funktion zum Öffnen von URLs
+  void _launchURL(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw "Die URL konnte nicht geöffnet werden: $url";
     }
   }
 
@@ -38,14 +66,22 @@ class AboutPage extends StatelessWidget {
                   18,
                   AppColors.black),
               const SizedBox(
-                height: 5.0,
+                height: 25.0,
               ),
-              TextButton(
-                  onPressed: () {
-                    _launchUrl('https://fredi-shop.com');
-                  },
-                  child: const SansBoldCentered(
-                      'www.fredi-shop.de', 20, AppColors.complementary)),
+              GestureDetector(
+                onTap: () => _launchURL(websiteUrl),
+                child: const Text(
+                  "Zu unserer Webseite",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: AppColors.primary,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 25.0,
+              ),
               const Divider(),
               const SizedBox(
                 height: 25.0,
@@ -62,14 +98,20 @@ class AboutPage extends StatelessWidget {
               const SizedBox(
                 height: 25.0,
               ),
-              TextButton(
-                  onPressed: () {
-                    _launchUrl('https://fredi-shop.com/kontakt');
-                  },
-                  child: const SansBoldCentered(
-                      'www.fredi-shop.de/datenschutzerklaerung',
-                      20,
-                      AppColors.complementary)),
+              GestureDetector(
+                onTap: () => _launchURL(privacyPolicyUrl),
+                child: const Text(
+                  "Zu unserer Datenschutzerklärung",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: AppColors.primary,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 25.0,
+              ),
               const Divider(),
               const SizedBox(
                 height: 25.0,
@@ -89,15 +131,20 @@ class AboutPage extends StatelessWidget {
                         const SizedBox(
                           height: 25.0,
                         ),
-                        TextButton(
-                            onPressed: () {
-                              _launchUrl(
-                                  'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/');
-                            },
-                            child: const SansBoldCentered(
-                                'Standard Apple Terms of Use (EULA)',
-                                20,
-                                AppColors.complementary)),
+                        GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Zu den Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25.0,
+                        ),
                         const Divider(),
                         const SizedBox(
                           height: 25.0,
@@ -113,19 +160,21 @@ class AboutPage extends StatelessWidget {
                         const SizedBox(
                           height: 25.0,
                         ),
-                        TextButton(
-                            onPressed: () {
-                              _launchUrl(
-                                  'https://play.google.com/about/play-terms/index.html');
-                            },
-                            child: const SansBoldCentered(
-                                'Google Play-Nutzungsbedingungen',
-                                20,
-                                AppColors.complementary)),
-                        const Divider(),
+                        GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Zu den Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                         const SizedBox(
                           height: 25.0,
                         ),
+                        const Divider(),
                       ],
                     ),
               const SansBoldCentered('Kontakt', 24, AppColors.primary),
@@ -139,12 +188,20 @@ class AboutPage extends StatelessWidget {
               const SizedBox(
                 height: 25.0,
               ),
-              TextButton(
-                  onPressed: () {
-                    _launchUrl('https://fredi-shop.com/kontakt');
-                  },
-                  child: const SansBoldCentered('www.fredi-shop.de/kontakt', 20,
-                      AppColors.complementary)),
+              GestureDetector(
+                onTap: () => _launchURL(contactURL),
+                child: const Text(
+                  "Zu unserer Kontaktseite",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: AppColors.primary,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 25.0,
+              ),
             ]),
           ),
         ));

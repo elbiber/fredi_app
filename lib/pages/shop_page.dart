@@ -103,9 +103,6 @@ class _ShopPageState extends State<ShopPage> {
               case 'Pferd Grundprogramm':
                 _horseBasicIsActive = true;
                 break;
-              case 'Mensch Grundprogramm':
-                _humanBasicIsActive = true;
-                break;
               case 'Hund Grundprogramm':
                 _dogBasicIsActive = true;
                 break;
@@ -211,7 +208,7 @@ class _ShopPageState extends State<ShopPage> {
                     height: 5.0,
                   ),
                   const SansCentered(
-                      "24,90 € / 1 Monat\n199,00 € / 6 Monate\n199,00 € / 1 Jahr",
+                      "24,90 € / 1 Monat\n119,00 € / 6 Monate\n199,00 € / 1 Jahr",
                       20,
                       AppColors.black),
                   const SizedBox(
