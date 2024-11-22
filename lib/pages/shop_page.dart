@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../components/app_colors.dart';
 import '../components/font_components.dart';
@@ -27,6 +28,26 @@ class _ShopPageState extends State<ShopPage> {
   @override
   void initState() {
     updateEntitlementStatus();
+  }
+
+  // URL zur Datenschutzrichtlinie
+  final Uri privacyPolicyUrl =
+      Uri.https('fredi-shop.com', 'datenschutzerklaerung', {'limit': '10'});
+
+  // URL zu den Nutzungsbedingungen
+  final Uri termsUrlApple = Uri.https('www.apple.com',
+      'legal/internet-services/itunes/dev/stdeula', {'limit': '10'});
+
+  final Uri termsUrlGoogle = Uri.https(
+      'play.google.com', '/about/play-terms/index.html', {'limit': '10'});
+
+  // Funktion zum Öffnen von URLs
+  void _launchURL(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw "Die URL konnte nicht geöffnet werden: $url";
+    }
   }
 
   void updateEntitlementStatus() {
@@ -184,6 +205,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "24,90 € / 1 Monat\n199,00 € / 6 Monate\n199,00 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       "Mit diesem Abo sind alle Programme/Frequenzen der Fredi App freigeschaltet.",
                       20,
@@ -198,6 +231,40 @@ class _ShopPageState extends State<ShopPage> {
                           AppColors.complementary)
                       : const SizedBox(
                           height: 0.0,
+                        ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
                         ),
                   const SizedBox(
                     height: 25.0,
@@ -245,6 +312,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       'Mit diesem Abo werden 16 Frequenzreihen für Pferde freigeschaltet.',
                       20,
@@ -252,6 +331,40 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                   _premiumIsActive && !_horseBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -307,6 +420,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "9,90 € / 1 Monat\n49,90 € / 6 Monate\n89,90 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Atemwege und Haut\n- Stoffwechsel und Organe,\n- Emotion und Traumata',
                       20,
@@ -314,6 +439,40 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                   _premiumIsActive && !_horseIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -368,6 +527,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       'Mit diesem Abo werden 16 Frequenzreihen für Hunde freigeschaltet.',
                       20,
@@ -375,6 +546,40 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                   _premiumIsActive && !_dogBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -430,6 +635,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "7,90 € / 1 Monat\n39,90 € / 6 Monate\n69,90 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Haut Darm Ohren\n- Emotion und Traumata',
                       20,
@@ -437,6 +654,40 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                   _premiumIsActive && !_dogIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -491,6 +742,18 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  const SansBoldCentered(
+                      "Preis / Laufzeit", 20, AppColors.black),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const SansCentered(
+                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                      20,
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   const SansCentered(
                       'Mit diesem Abo werden 16 Frequenzreihen für Dich freigeschaltet.',
                       20,
@@ -498,6 +761,40 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  GestureDetector(
+                    onTap: () => _launchURL(privacyPolicyUrl),
+                    child: const Text(
+                      "Datenschutzrichtlinie",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                  Platform.isIOS
+                      ? GestureDetector(
+                          onTap: () => _launchURL(termsUrlApple),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () => _launchURL(termsUrlGoogle),
+                          child: const Text(
+                            "Nutzungsbedingungen",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                   _premiumIsActive && !_humanBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',

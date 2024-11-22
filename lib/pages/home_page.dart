@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                         WidgetStateProperty.all(AppColors.complementary),
                   ),
                   child: const SansBoldCentered(
-                      'Alle Frequenzpakette im Shop', 18.0, AppColors.white),
+                      'Alle Frequenzpakete im Shop', 18.0, AppColors.white),
                 ),
                 const SizedBox(
                   height: 5.0,

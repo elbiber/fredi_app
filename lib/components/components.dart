@@ -300,7 +300,7 @@ class FrequencyPackages extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => const ProgrammsOverviewPage(
                     jsonFile: 'frequencies_humans.json',
-                    titel: 'Frequenzwelt für Menschen',
+                    titel: 'Frequenzwelt für Dich',
                     titelImage: 'humans.png',
                     packageColor: AppColors.complementary),
               ),
@@ -317,7 +317,7 @@ class FrequencyPackages extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SansBold('Frequenzwelt\nfür Menschen', 18.0, Colors.white),
+                  SansBold('Frequenzwelt\nfür Dich', 18.0, Colors.white),
                   Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,
