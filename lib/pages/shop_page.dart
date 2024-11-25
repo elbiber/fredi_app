@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fredi_app/components/components.dart';
+import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -47,6 +48,18 @@ class _ShopPageState extends State<ShopPage> {
       await launchUrl(url);
     } else {
       throw "Die URL konnte nicht geöffnet werden: $url";
+    }
+  }
+
+  void _restorePurchases() async {
+    try {
+      CustomerInfo customerInfo = await Purchases.restorePurchases();
+      debugPrint('$customerInfo');
+      if (!mounted) return;
+      context.go('/restore-success');
+      // ... check restored purchaserInfo to see if entitlement is now active
+    } on PlatformException catch (e) {
+      // Error restoring purchases
     }
   }
 
@@ -176,17 +189,38 @@ class _ShopPageState extends State<ShopPage> {
           padding: const EdgeInsets.all(28.0),
           child: Column(
             children: [
-              const Column(
+              Column(
                 children: [
-                  SansBoldCentered('Herzlich Willkommen im Fredi Shop!', 28.0,
-                      AppColors.primary),
-                  SizedBox(
+                  const SansBoldCentered('Herzlich Willkommen im Fredi Shop!',
+                      28.0, AppColors.primary),
+                  const SizedBox(
                     height: 25.0,
                   ),
-                  SansCentered(
+                  const SansCentered(
                       'Hier findest du alle verfügbaren Abos für dein Fredi Produkt',
                       18,
-                      AppColors.black)
+                      AppColors.black),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  const SansCentered(
+                      'Falls du bereits laufende Abos hast und diese App auf einem neuen Gerät installiert hast oder deine Abos aus irgendeinem Grund fehlen, kannst du sie hier wiederherstellen.',
+                      14,
+                      AppColors.complementary),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  GestureDetector(
+                    onTap: () => _restorePurchases(),
+                    child: const Text(
+                      "Einkäufe wiederherstellen",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: AppColors.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(
@@ -229,6 +263,9 @@ class _ShopPageState extends State<ShopPage> {
                       : const SizedBox(
                           height: 0.0,
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
                     child: const Text(
