@@ -399,6 +399,9 @@ class _ShopPageState extends State<ShopPage> {
                             ),
                           ),
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   _premiumIsActive && !_horseBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -507,6 +510,9 @@ class _ShopPageState extends State<ShopPage> {
                             ),
                           ),
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   _premiumIsActive && !_horseIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -614,6 +620,9 @@ class _ShopPageState extends State<ShopPage> {
                             ),
                           ),
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   _premiumIsActive && !_dogBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -722,6 +731,9 @@ class _ShopPageState extends State<ShopPage> {
                             ),
                           ),
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   _premiumIsActive && !_dogIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
@@ -829,6 +841,9 @@ class _ShopPageState extends State<ShopPage> {
                             ),
                           ),
                         ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
                   _premiumIsActive && !_humanBasicIsActive
                       ? const SansCentered(
                           'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',

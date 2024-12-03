@@ -69,21 +69,54 @@ class FAQPage extends StatelessWidget {
                           color: AppColors.white,
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
-
-              /*FAQ(
-                question:
-                    "Wird ein kleineres Abo automatisch gekündigt wenn ich ein größeres abschließe welche das kleinere beinhaltet?",
-                answer:
-                    'Nein, du musst das kleinere wie in der obigen Frage selber kündigen. Ansonsten läuft es parallel zum größeren weiter und du zahlst doppelt',
-                ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
-                queStyle: TextStyle(color: AppColors.primary, fontSize: 20),
-                queDecoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                ansDecoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-              ),*/
+              Platform.isAndroid
+                  ? const FAQ(
+                      question:
+                          "Wie löse ich einen Promocode bzw. Gutschein ein?",
+                      answer:
+                          '* Öffne die Google Play Store App auf deinem Gerät.\n* Tippe oben rechts auf dein Profilbild.\n* Wähle Zahlungen und Abos.\n* Klicke anschließend auf Abonnements.\n* Dann auf Code einlösen.\n* Code manuell eingeben.',
+                      ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
+                      queStyle:
+                          TextStyle(color: AppColors.primary, fontSize: 20),
+                      queDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      ansDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    )
+                  : const FAQ(
+                      question:
+                          "Wie löse ich einen Promocode bzw. Gutschein ein?",
+                      answer:
+                          '* Öffne den App Store. Suche auf das Icon für den App Store und tippe darauf.\n* Tippe auf deinen Apple-ID-Namen oben im Menü.\n* Tippe auf „Karte oder Code einlösen“.\n* Code manuell eingeben.',
+                      ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
+                      queStyle:
+                          TextStyle(color: AppColors.primary, fontSize: 20),
+                      queDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      ansDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ),
+              Platform.isAndroid
+                  ? const FAQ(
+                      question:
+                          "Wie aktiviere ich die NFC-Übertragung auf meinem Gerät?",
+                      answer:
+                          '* Falls NFC auf deinem Gerät nicht aktiviert ist, sollte die App dich automatisch zu den Einstellungen führen. Falls nicht:\n* Tippe auf das Zahnrad-Symbol auf deinem Startbildschirm oder in der App-Übersicht, um das Einstellungsmenü zu öffnen.\n* Je nach Gerät kann dieser Bereich anders benannt sein. Suche nach "Verbindungen" oder "Verbundene Geräte".\n* In den "Verbindungen" oder "Verbundene Geräte"-Optionen findest du den Punkt "NFC" (Near Field Communication).\n* Schiebe den Schalter, um NFC zu aktivieren. Der Schalter sollte auf "Ein" springen.\n* Nachdem NFC aktiviert ist, kannst du die Einstellungen verlassen. NFC ist nun auf deinem Gerät aktiv.',
+                      ansStyle: TextStyle(color: AppColors.black, fontSize: 18),
+                      queStyle:
+                          TextStyle(color: AppColors.primary, fontSize: 20),
+                      queDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      ansDecoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    )
+                  : const SizedBox(),
             ],
           ),
         ));

@@ -1064,6 +1064,10 @@
       ]
     }
   ],
+  "subscriptionOffersKeyPair" : {
+    "id" : "1F40A769",
+    "privateKey" : "MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgzB6/4XzYb+AMhcNjrTsLFXTIT+mNXClZIoAKvLq+uPOgCgYIKoZIzj0DAQehRANCAASblQBRqPGOG3YBpREuZNF8xslL3f2xXFAKIhbsY66TYyiZQXz+OCrBfb4JT30kKo5FDLlnJtDvkR3i0+uemHzO"
+  },
   "version" : {
     "major" : 4,
     "minor" : 0

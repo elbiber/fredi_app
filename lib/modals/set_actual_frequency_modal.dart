@@ -160,7 +160,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
                                 height: 30.0,
                               ),
                               SansCentered(
-                                'Halte Dein Smartphone für ca. 1 Minute an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                'Halte Dein Smartphone für ca. 30 Sekunden an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
                                 18,
                                 Colors.black,
                               ),
