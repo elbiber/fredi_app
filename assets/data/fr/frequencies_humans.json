@@ -1,0 +1,75 @@
+{
+  "package_id": "humans",
+  "programms": [
+    {
+      "name": "Programme de base",
+      "program_name": "grundprogramm",
+      "frequencies": [
+        {
+          "name": "Harmoniser les peurs",
+          "audio_file": "Aengste_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Équitation sans peur",
+          "audio_file": "Angstfrei_Reiten_30.mp3"
+        },
+        {
+          "name": "Harmoniser le stress au travail",
+          "audio_file": "Arbeitsstress_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Trouver l'équilibre",
+          "audio_file": "Balance_finden_30.mp3"
+        },
+        {
+          "name": "Favoriser la relaxation",
+          "audio_file": "Entspannung_foerdern_30.mp3"
+        },
+        {
+          "name": "Favoriser la sérénité (stress au travail)",
+          "audio_file": "Gelassenheit_foerdern_30.mp3"
+        },
+        {
+          "name": "Bon sommeil",
+          "audio_file": "Guter_Schlaf_30.mp3"
+        },
+        {
+          "name": "Soutenir le système immunitaire",
+          "audio_file": "Immunsystem_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Recharger l'énergie vitale",
+          "audio_file": "Lebensenergie_tanken_30.mp3"
+        },
+        {
+          "name": "Gagner en joie de vivre",
+          "audio_file": "Lebensfreude_gewinnen_30.mp3"
+        },
+        {
+          "name": "Renforcer le dos",
+          "audio_file": "Ruecken_staerken_30.mp3"
+        },
+        {
+          "name": "Trouver le calme",
+          "audio_file": "Ruhe_finden_30.mp3"
+        },
+        {
+          "name": "Gestion sécurisée des chiens",
+          "audio_file": "Sichere_Hundefuehrung_30.mp3"
+        },
+        {
+          "name": "Harmoniser les traumatismes",
+          "audio_file": "Traumata_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Stimuler l'activité cellulaire",
+          "audio_file": "Zellaktivitaet_anregen_30.mp3"
+        },
+        {
+          "name": "Activer la glande pinéale",
+          "audio_file": "Zirbeldruese_aktivieren_30.mp3"
+        }
+      ]
+    }
+  ]
+}

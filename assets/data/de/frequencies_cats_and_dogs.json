@@ -1,0 +1,225 @@
+{
+  "package_id": "cats_and_dogs",
+  "programms": [
+    {
+      "name": "Grundprogramm",
+      "program_name": "grundprogramm",
+      "frequencies": [
+        {
+          "name": "Beruhigung und Entspannung",
+          "audio_file": "Beruhigung_Entspannung_30.mp3"
+        },
+        {
+          "name": "Bewegungsfreude erhöhen",
+          "audio_file": "Bewegungsfreude_erhoehen_30.mp3"
+        },
+        {
+          "name": "Durchblutung fördern",
+          "audio_file": "Durchblutung_foerdern_30.mp3"
+        },
+        {
+          "name": "Ellenbogen stärken",
+          "audio_file": "Ellenbogen_staerken_30.mp3"
+        },
+        {
+          "name": "Futterverträglichkeit fördern",
+          "audio_file": "Futtervertraeglichkeit_foerdern_30.mp3"
+        },
+        {
+          "name": "Hüfte stärken",
+          "audio_file": "Huefte_staerken_30.mp3"
+        },
+        {
+          "name": "Innere Harmonie finden",
+          "audio_file": "Innere_Harmonie_finden_30.mp3"
+        },
+        {
+          "name": "Konzentrationsfähigkeit fördern",
+          "audio_file": "Konzentrationsfaehigkeit_foerdern_30.mp3"
+        },
+        {
+          "name": "Notfall-Helfer",
+          "audio_file": "Notfall_Helfer_30.mp3"
+        },
+        {
+          "name": "Pubertät begleiten",
+          "audio_file": "Pubertaet_begleiten_30.mp3"
+        },
+        {
+          "name": "Rudelverhalten harmonisieren",
+          "audio_file": "Rudelverhalten_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Senior-Fit",
+          "audio_file": "Senior_Fit_30.mp3"
+        },
+        {
+          "name": "Stoffwechselaktivierung",
+          "audio_file": "Stoffwechselaktivierung_30.mp3"
+        },
+        {
+          "name": "Zahnpflege unterstützen",
+          "audio_file": "Zahnpflege_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Zeckenschutz verstaerken",
+          "audio_file": "Zeckenschutz_verstaerken_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Bewegungsapparat",
+      "program_name": "bewegungsapparat",
+      "frequencies": [
+        {
+          "name": "Arthritis Pflege",
+          "audio_file": "Arthritis_Pflege_30.mp3"
+        },
+        {
+          "name": "Arthrose Pflege",
+          "audio_file": "Arthrose_Pflege_30.mp3"
+        },
+        {
+          "name": "Bandscheiben stärken",
+          "audio_file": "Bandscheiben_staerken_30.mp3"
+        },
+        {
+          "name": "Bewegung erleichtern",
+          "audio_file": "Bewegung_erleichtern_30.mp3"
+        },
+        {
+          "name": "Bindegewebe stärken",
+          "audio_file": "Bindegewebe_staerken_30.mp3"
+        },
+        {
+          "name": "Gelenke unterstützenn",
+          "audio_file": "Gelenke_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Kniebänder unterstützen",
+          "audio_file": "Kniebaender_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Kniegelenk unterstützen",
+          "audio_file": "Kniegelenk_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Lymphfluss anregen",
+          "audio_file": "Lymphfluss_anregen_30.mp3"
+        },
+        {
+          "name": "Muskulatur unterstützen",
+          "audio_file": "Muskulatur_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Pfotengelenk Pflege",
+          "audio_file": "Pfotengelenk_Pflege_30.mp3"
+        },
+        {
+          "name": "Regeneration fördern",
+          "audio_file": "Regeneration_foerdern_30.mp3"
+        },
+        {
+          "name": "Rückenmuskulatur fördern",
+          "audio_file": "Rueckenmuskulatur_foerdern_30.mp3"
+        },
+        {
+          "name": "Spondylose Pflege",
+          "audio_file": "Spondylose_Pflege_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Haut Ohren Darm",
+      "program_name": "haut_ohren_darm",
+      "frequencies": [
+        {
+          "name": "Anaplasmen schwächen",
+          "audio_file": "Anaplasmen_schwaechen_30.mp3"
+        },
+        {
+          "name": "Detoxprozesse fördern",
+          "audio_file": "Detoxprozesse_foerdern_30.mp3"
+        },
+        {
+          "name": "Flohschutz verbessern",
+          "audio_file": "Flohschutz_verbessern_30.mp3"
+        },
+        {
+          "name": "Giardien schwächen",
+          "audio_file": "Giardien_schwaechen_30.mp3"
+        },
+        {
+          "name": "Juckreiz lindern",
+          "audio_file": "Juckreiz_lindern_30.mp3"
+        },
+        {
+          "name": "Leberstoffwechsel anregen",
+          "audio_file": "Leberstoffwechsel_anregen_30.mp3"
+        },
+        {
+          "name": "Magen-Darmtrakt harmonisieren",
+          "audio_file": "Magen_Darmtrakt_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Magenschleimhaut pflegen",
+          "audio_file": "Magenschleimhaut_pflegen_30.mp3"
+        },
+        {
+          "name": "Milbenschutz verbessern ",
+          "audio_file": "Milbenschutz_verbessern_30.mp3"
+        },
+        {
+          "name": "Nierenstoffwechsel anregen",
+          "audio_file": "Nierenstoffwechsel_anregen_30.mp3"
+        },
+        {
+          "name": "Ohrenpflege",
+          "audio_file": "Ohrenpflege_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Emotionen und Traumata",
+      "program_name": "emotionen_und_traumata",
+      "frequencies": [
+        {
+          "name": "Ängstlichkeit harmonisieren",
+          "audio_file": "Aengstlichkeit_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Autofahrt begleiten",
+          "audio_file": "Autofahrt_begleiten_30.mp3"
+        },
+        {
+          "name": "Dominanzverhalten harmonisieren",
+          "audio_file": "Dominanzverhalten_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Lebensfreude gewinnen",
+          "audio_file": "Lebensfreude_gewinnen_30.mp3"
+        },
+        {
+          "name": "Ortswechsel begleiten",
+          "audio_file": "Ortswechsel_begleiten_30.mp3"
+        },
+        {
+          "name": "Ruhe finden",
+          "audio_file": "Ruhe_finden_30.mp3"
+        },
+        {
+          "name": "Stressbewältigung verbessern",
+          "audio_file": "Stressbewaeltigung_verbessern_30.mp3"
+        },
+        {
+          "name": "Traumata harmonisieren",
+          "audio_file": "Trauma_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Verlassensängste harmonisieren",
+          "audio_file": "Verlassensaengste_harmonisieren_30.mp3"
+        }
+      ]
+    }
+  ]
+}

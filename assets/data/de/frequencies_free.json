@@ -1,0 +1,23 @@
+{
+  "package_id": "free",
+  "programms": [
+    {
+      "name": "Testprogramm",
+      "program_name": "testprogramm",
+      "frequencies": [
+        {
+          "name": "Ausgleich für Körper und Geist",
+          "audio_file": "Ausgleich_fuer_Koerper_und_Geist_30.mp3"
+        },
+        {
+          "name": "Energiezentren öffnen",
+          "audio_file": "Energiezentren_oeffnen_30.mp3"
+        },
+        {
+          "name": "Meridiane harmonisieren",
+          "audio_file": "Meridiane_harmonisieren_30.mp3"
+        }
+      ]
+    }
+  ]
+}

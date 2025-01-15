@@ -1,0 +1,279 @@
+{
+  "package_id": "horses",
+  "programms": [
+    {
+      "name": "Programme de base",
+      "program_name": "grundprogramm",
+      "frequencies": [
+        {
+          "name": "Trouver l'équilibre",
+          "audio_file": "Balance_finden_30.mp3"
+        },
+        {
+          "name": "Harmonie du ventre",
+          "audio_file": "Bauchharmonie_30.mp3"
+        },
+        {
+          "name": "Trouver la détente",
+          "audio_file": "Entspannung_finden_30.mp3"
+        },
+        {
+          "name": "Relâcher les fascias",
+          "audio_file": "Faszien_lockern_30.mp3"
+        },
+        {
+          "name": "Renforcer les articulations",
+          "audio_file": "Gelenke_staerken_30.mp3"
+        },
+        {
+          "name": "Favoriser la souplesse de la nuque",
+          "audio_file": "Genicklockerheit_foerdern_30.mp3"
+        },
+        {
+          "name": "Renforcer l'arrière-main",
+          "audio_file": "Hinterhand_staerken_30.mp3"
+        },
+        {
+          "name": "Recharger l'énergie vitale",
+          "audio_file": "Lebensenergie_tanken_30.mp3"
+        },
+        {
+          "name": "Relaxation musculaire",
+          "audio_file": "Muskelentspannung_30.mp3"
+        },
+        {
+          "name": "Relaxation",
+          "audio_file": "Relaxing_30.mp3"
+        },
+        {
+          "name": "Renforcer le dos",
+          "audio_file": "Ruecken_staerken_30.mp3"
+        },
+        {
+          "name": "Générateur d'élan",
+          "audio_file": "Schwunggenerator_30.mp3"
+        },
+        {
+          "name": "Renforcer les tendons",
+          "audio_file": "Sehnen_staerken_30.mp3"
+        },
+        {
+          "name": "Stimuler le métabolisme",
+          "audio_file": "Stoffwechsel_anregen_30.mp3"
+        },
+        {
+          "name": "Harmoniser les problèmes des juments",
+          "audio_file": "Stutenprobleme_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Renforcer l'avant-main",
+          "audio_file": "Vorhand_staerken_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Système musculo-squelettique",
+      "program_name": "bewegungsapparat",
+      "frequencies": [
+        {
+          "name": "Soins de l'arthrite",
+          "audio_file": "Arthritis_Pflege_30.mp3"
+        },
+        {
+          "name": "Soins de l'arthrose",
+          "audio_file": "Arthrose_Pflege_30.mp3"
+        },
+        {
+          "name": "Renforcer la colonne thoracique",
+          "audio_file": "Brustwirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Favoriser la circulation",
+          "audio_file": "Durchblutung_foerdern_30.mp3"
+        },
+        {
+          "name": "Harmoniser la vésicule biliaire",
+          "audio_file": "Gallen_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Renforcer la colonne cervicale",
+          "audio_file": "Halswirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Favoriser la régénération des sabots",
+          "audio_file": "Hufregeneration_foerdern_30.mp3"
+        },
+        {
+          "name": "Soins du rouleau du sabot",
+          "audio_file": "Hufrollenpflege_30.mp3"
+        },
+        {
+          "name": "Renforcer l'articulation sacro-iliaque",
+          "audio_file": "ISG_staerken_30.mp3"
+        },
+        {
+          "name": "Renforcer les ligaments du genou",
+          "audio_file": "Kniebaender_staerken_30.mp3"
+        },
+        {
+          "name": "Soutenir l'articulation du genou",
+          "audio_file": "Kniegelenk_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Renforcer la colonne lombaire",
+          "audio_file": "Lendenwirbelsaeule_staerken_30.mp3"
+        },
+        {
+          "name": "Favoriser les muscles du dos",
+          "audio_file": "Rueckenmuskulatur_foerdern_30.mp3"
+        },
+        {
+          "name": "Soins de l'éparvin",
+          "audio_file": "Spatpflege_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Système respiratoire et peau",
+      "program_name": "atemwege_und_haut",
+      "frequencies": [
+        {
+          "name": "Accompagner la BPCO",
+          "audio_file": "COPD_begleiten_30.mp3"
+        },
+        {
+          "name": "Stimuler les processus de détox",
+          "audio_file": "Detoxprozesse_anregen_30.mp3"
+        },
+        {
+          "name": "Accompagner l'asthme équin",
+          "audio_file": "Equines_Asthma_begleiten_30.mp3"
+        },
+        {
+          "name": "Soutenir la mue",
+          "audio_file": "Fellwechseln_unterstuetzen_30.mp3"
+        },
+        {
+          "name": "Soins de la toux",
+          "audio_file": "Husten_Pflege_30.mp3"
+        },
+        {
+          "name": "Stimuler le système immunitaire",
+          "audio_file": "Immunsystem_anregen_30.mp3"
+        },
+        {
+          "name": "Harmoniser les démangeaisons",
+          "audio_file": "Juckreiz_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Renforcer la structure pulmonaire",
+          "audio_file": "Lungenstruktur_staerken_30.mp3"
+        },
+        {
+          "name": "Soins contre la gale de boue",
+          "audio_file": "Mauke_Pflege_30.mp3"
+        },
+        {
+          "name": "Stimuler le dégagement de mucus",
+          "audio_file": "Schleimloesen_anregen_30.mp3"
+        },
+        {
+          "name": "Harmoniser la dermite estivale",
+          "audio_file": "Sommerekzem_harmonisieren_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Métabolisme et organes",
+      "program_name": "stoffwechsel_und_organe",
+      "frequencies": [
+        {
+          "name": "Soins du ventre après une colique",
+          "audio_file": "Bauchpflege_nach_einer_Kolik_30.mp3"
+        },
+        {
+          "name": "Harmoniser le syndrome de Cushing",
+          "audio_file": "Cushing_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Soins intestinaux",
+          "audio_file": "Darmpflege_30.mp3"
+        },
+        {
+          "name": "Harmoniser le syndrome métabolique équin",
+          "audio_file": "EMS_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Relaxation pour l'estomac",
+          "audio_file": "Entspannung_fuer_den_Magen_30.mp3"
+        },
+        {
+          "name": "Réduire l'inflammation",
+          "audio_file": "Entzuendung_eindaemmen_30.mp3"
+        },
+        {
+          "name": "Stimuler le métabolisme hépatique",
+          "audio_file": "Leberstoffwechsel_anregen_30.mp3"
+        },
+        {
+          "name": "Harmoniser les ulcères d'estomac",
+          "audio_file": "Magengeschwuer_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Soins de la muqueuse gastrique",
+          "audio_file": "Magenschleimhaut_pflegen_30.mp3"
+        },
+        {
+          "name": "Harmoniser le syndrome inflammatoire systémique",
+          "audio_file": "MIM_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Stimuler le métabolisme rénal",
+          "audio_file": "Nierenstoffwechsel_anregen_30.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Émotions et traumatismes",
+      "program_name": "emotionen_und_traumata",
+      "frequencies": [
+        {
+          "name": "Harmoniser le comportement dominant",
+          "audio_file": "Dominanzverhalten_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Accompagner les trajets en van",
+          "audio_file": "Haengerfahrt_begleiten_30.mp3"
+        },
+        {
+          "name": "Gagner en joie de vivre",
+          "audio_file": "Lebensfreude_gewinnen_30.mp3"
+        },
+        {
+          "name": "Trouver le calme",
+          "audio_file": "Ruhe_finden_30.mp3"
+        },
+        {
+          "name": "Gagner en confiance",
+          "audio_file": "Sicherheit_gewinnen_30.mp3"
+        },
+        {
+          "name": "Accompagner les changements de box",
+          "audio_file": "Stallwechsel_begleiten_30.mp3"
+        },
+        {
+          "name": "Améliorer la gestion du stress",
+          "audio_file": "Stressbewaeltigung_verbessern_30.mp3"
+        },
+        {
+          "name": "Harmoniser les traumatismes",
+          "audio_file": "Traumata_harmonisieren_30.mp3"
+        },
+        {
+          "name": "Harmoniser les angoisses d'abandon",
+          "audio_file": "Verlassensaengste_harmonisieren_30.mp3"
+        }
+      ]
+    }
+  ]
+}
