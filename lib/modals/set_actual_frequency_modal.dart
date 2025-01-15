@@ -40,7 +40,6 @@ class _SetActualFreqState extends State<SetActualFreq> {
     NfcManager.instance.startSession(
       onDiscovered: (NfcTag badge) async {
         var ndef = Ndef.from(badge);
-        debugPrint('--------------Delayed---------------');
 
         if (ndef != null && ndef.isWritable) {
           NdefRecord ndefRecord = NdefRecord.createText(
@@ -57,7 +56,6 @@ class _SetActualFreqState extends State<SetActualFreq> {
               transferring = true;
             });
             await player.play(AssetSource(widget.audioAsset));
-
             timer = Timer(const Duration(seconds: 30), () {
               setState(() {
                 transferring = false;
@@ -106,7 +104,7 @@ class _SetActualFreqState extends State<SetActualFreq> {
             : Column(
                 mainAxisAlignment: Platform.isIOS
                     ? MainAxisAlignment.start
-                    : MainAxisAlignment.center,
+                    : MainAxisAlignment.start,
                 children: [
                   const SizedBox(
                     height: 25,
@@ -154,15 +152,32 @@ class _SetActualFreqState extends State<SetActualFreq> {
                             children: [
                               Icon(
                                 Icons.phonelink_ring_rounded,
-                                size: 50.0,
+                                size: 75.0,
+                                color: AppColors.primary,
+                              ),
+                              SizedBox(
+                                height: 30.0,
+                              ),
+                              SansBoldCentered(
+                                'Halte Dein Smartphone für ca. 30 Sekunden an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                20,
+                                AppColors.primary,
+                              ),
+                              SizedBox(
+                                height: 30.0,
+                              ),
+                              Icon(
+                                Icons.volume_down_outlined,
+                                size: 75.0,
+                                color: AppColors.black,
                               ),
                               SizedBox(
                                 height: 30.0,
                               ),
                               SansCentered(
-                                'Halte Dein Smartphone für ca. 30 Sekunden an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                'Während des Übertragungsvorgang empfehlen wir, die Lautstärke am Smartphone auf ca 30% zu reduzieren.',
                                 18,
-                                Colors.black,
+                                AppColors.black,
                               ),
                             ],
                           )),
