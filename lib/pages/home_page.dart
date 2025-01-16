@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
@@ -62,12 +63,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
                   child: SansCentered(
-                      'Herzlich willkommen in der APP von Fredi! Du möchtest dich und dein Tier mit der feinsten Art der Bioresonanzregulation unterstützen? Dann bist du hier genau richtig! Hier findest du alle Programme für dein Fredi-Produkt.',
-                      16.0,
-                      Colors.black),
+                      AppLocalizations.of(context)!.intro, 16.0, Colors.black),
                 ),
                 OutlinedButton(
                   onPressed: () {
@@ -85,8 +84,10 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor:
                         WidgetStateProperty.all(AppColors.complementary),
                   ),
-                  child: const SansBoldCentered(
-                      'Aktuelle Frequenz anzeigen', 18.0, AppColors.white),
+                  child: SansBoldCentered(
+                      AppLocalizations.of(context)!.getFrequencyButton,
+                      18.0,
+                      AppColors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -95,10 +96,10 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 25.0,
                 ),
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 30.0),
                   child: SansBoldCentered(
-                      'Du hast noch keine Frequenzen für dein Fredi Produkt?',
+                      AppLocalizations.of(context)!.noFrequencyText,
                       22.0,
                       AppColors.primary),
                 ),
@@ -113,8 +114,10 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor:
                         WidgetStateProperty.all(AppColors.complementary),
                   ),
-                  child: const SansBoldCentered(
-                      'Alle Frequenzpakete im Shop', 18.0, AppColors.white),
+                  child: SansBoldCentered(
+                      AppLocalizations.of(context)!.allPackagesInTheShopButton,
+                      18.0,
+                      AppColors.white),
                 ),
                 const SizedBox(
                   height: 5.0,

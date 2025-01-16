@@ -1,0 +1,16 @@
+{
+    "language": "English",
+    "@language": {
+        "description": "The current Language"
+    },
+    "intro": "Welcome to Fredi's APP! Would you like to support yourself and your pet with the finest form of bioresonance regulation? Then you've come to the right place! Here you will find all the programs for your Fredi product.",
+    "getFrequencyButton": "Display current frequency",
+    "noFrequencyText": "You don't have any frequencies for your Fredi product yet?",
+    "allPackagesInTheShopButton": "All frequencies in the store",
+    "newFrequencyText": "You want to transmit a new frequency?",
+    "yourFrequncyPackagesText": "Your frequency packages",
+    "forYouTitle": "Frequency world\nfor you",
+    "forHorseTitle": "Frequency world\nfor horses",
+    "forCatsAndDogsTitle": "Frequency world\nfor dogs and cats",
+    "forFreeTitle": "Free frequency\nworld for testing"
+}

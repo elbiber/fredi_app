@@ -27,7 +27,7 @@ class _ProgrammsOverviewPageState extends State<ProgrammsOverviewPage> {
 
   Future<void> readJson() async {
     final String response =
-        await rootBundle.loadString('assets/data/${widget.jsonFile}');
+        await rootBundle.loadString('assets/data/en/${widget.jsonFile}');
     final data = await json.decode(response);
     setState(() {
       _packageID = data["package_id"];

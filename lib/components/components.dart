@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_open_app_settings/flutter_open_app_settings.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
@@ -197,18 +198,61 @@ class FrequencyPackages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.all(30.0),
-          child: SansBoldCentered('Du willst eine neue Frequenz übertragen?',
-              25.0, AppColors.primary),
+        Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: SansBoldCentered(
+              AppLocalizations.of(context)!.newFrequencyText,
+              25.0,
+              AppColors.primary),
         ),
-        const Sans(
-          'Dein(e)FrediFrequenzpaket(e)',
+        Sans(
+          AppLocalizations.of(context)!.yourFrequncyPackagesText,
           18.0,
           Colors.black,
         ),
         const SizedBox(
           height: 15,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+            //Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProgrammsOverviewPage(
+                    jsonFile: 'frequencies_humans.json',
+                    titel: 'Frequenzwelt für Dich',
+                    titelImage: 'humans.png',
+                    packageColor: AppColors.complementary),
+              ),
+            );
+          },
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/humans.png'),
+              fit: BoxFit.cover,
+            )),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SansBold(AppLocalizations.of(context)!.forYouTitle, 18.0,
+                      Colors.white),
+                  const Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.orange,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 5.0,
         ),
         GestureDetector(
           onTap: () {
@@ -231,13 +275,14 @@ class FrequencyPackages extends StatelessWidget {
               image: AssetImage('assets/images/horses.png'),
               fit: BoxFit.cover,
             )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SansBold('Frequenzwelt\nfür Pferde', 18.0, Colors.white),
-                  Icon(
+                  SansBold(AppLocalizations.of(context)!.forHorseTitle, 18.0,
+                      Colors.white),
+                  const Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,
                     size: 50.0,
@@ -271,54 +316,14 @@ class FrequencyPackages extends StatelessWidget {
               image: AssetImage('assets/images/cats_and_dogs.png'),
               fit: BoxFit.cover,
             )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SansBold(
-                      'Frequenzwelt\nfür Hunde und Katzen', 18.0, Colors.white),
-                  Icon(
-                    Icons.arrow_circle_right,
-                    color: Colors.orange,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 5.0,
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
-            //Navigator.pop(context);
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
-                    jsonFile: 'frequencies_humans.json',
-                    titel: 'Frequenzwelt für Dich',
-                    titelImage: 'humans.png',
-                    packageColor: AppColors.complementary),
-              ),
-            );
-          },
-          child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage('assets/images/humans.png'),
-              fit: BoxFit.cover,
-            )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SansBold('Frequenzwelt\nfür Dich', 18.0, Colors.white),
-                  Icon(
+                  SansBold(AppLocalizations.of(context)!.forCatsAndDogsTitle,
+                      18.0, Colors.white),
+                  const Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,
                     size: 50.0,
@@ -352,14 +357,14 @@ class FrequencyPackages extends StatelessWidget {
               image: AssetImage('assets/images/free.png'),
               fit: BoxFit.cover,
             )),
-            child: const Padding(
-              padding: EdgeInsets.all(15.0),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SansBold('Kostenlose Frequenzwelt\nzum testen', 18.0,
+                  SansBold(AppLocalizations.of(context)!.forFreeTitle, 18.0,
                       Colors.white),
-                  Icon(
+                  const Icon(
                     Icons.arrow_circle_right,
                     color: Colors.orange,
                     size: 50.0,
