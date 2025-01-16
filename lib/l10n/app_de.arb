@@ -1,5 +1,6 @@
 {
     "language": "Deutsch",
+    "languageCode": "de",
     "intro": "Herzlich willkommen in der APP von Fredi! Du möchtest dich und dein Tier mit der feinsten Art der Bioresonanzregulation unterstützen? Dann bist du hier genau richtig! Hier findest du alle Programme für dein Fredi-Produkt.",
     "getFrequencyButton": "Aktuelle Frequenz anzeigen",
     "noFrequencyText": "Du hast noch keine Frequenzen für dein Fredi Produkt?",
@@ -9,6 +10,9 @@
     "forYouTitle": "Frequenzwelt\nfür Dich",
     "forHorseTitle": "Frequenzwelt\nfür Pferde",
     "forCatsAndDogsTitle": "Frequenzwelt\nfür Hunde und Katzen",
-    "forFreeTitle": "Kostenlose Frequenzwelt\nzum testen"
+    "forFreeTitle": "Kostenlose Frequenzwelt\nzum testen",
+    "notInPossesionOfProgrammText": "Du bist leider nicht im Besitz dieses Programmes",
+    "notInPossesionOfProgrammHintText": "Du findest alle Abos zu den Frequenzen in unserem Shop",
+    "toShopButton": "Zum Shop"
 
 }

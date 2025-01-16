@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
@@ -128,16 +129,18 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
               child: !_programmAvailable
                   ? Column(
                       children: [
-                        const SansCentered(
-                          'Du bist leider nicht im Besitz dieses Programmes',
+                        SansCentered(
+                          AppLocalizations.of(context)!
+                              .notInPossesionOfProgrammText,
                           23,
                           AppColors.complementary,
                         ),
                         const SizedBox(
                           height: 25.0,
                         ),
-                        const SansCentered(
-                          'Du findest alle Abos zu den Frequenzen in unserem Shop',
+                        SansCentered(
+                          AppLocalizations.of(context)!
+                              .notInPossesionOfProgrammHintText,
                           19,
                           AppColors.black,
                         ),
@@ -148,7 +151,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
                           onPressed: () {
                             context.go('/shop');
                           },
-                          text: 'Zum Shop',
+                          text: AppLocalizations.of(context)!.toShopButton,
                           bgColor: AppColors.complementary,
                         ),
                       ],

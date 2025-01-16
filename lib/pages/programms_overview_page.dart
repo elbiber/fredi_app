@@ -7,7 +7,7 @@ import 'package:fredi_app/components/font_components.dart';
 import 'package:fredi_app/pages/frequencies_overview_page.dart';
 
 class ProgrammsOverviewPage extends StatefulWidget {
-  final String titel, jsonFile, titelImage;
+  final String titel, jsonFile, titelImage, languageCode;
   final Color packageColor;
 
   const ProgrammsOverviewPage(
@@ -15,7 +15,8 @@ class ProgrammsOverviewPage extends StatefulWidget {
       required this.jsonFile,
       required this.titel,
       required this.titelImage,
-      required this.packageColor});
+      required this.packageColor,
+      required this.languageCode});
 
   @override
   State<ProgrammsOverviewPage> createState() => _ProgrammsOverviewPageState();
@@ -26,8 +27,8 @@ class _ProgrammsOverviewPageState extends State<ProgrammsOverviewPage> {
   String _packageID = '';
 
   Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/data/en/${widget.jsonFile}');
+    final String response = await rootBundle
+        .loadString('assets/data/${widget.languageCode}/${widget.jsonFile}');
     final data = await json.decode(response);
     setState(() {
       _packageID = data["package_id"];

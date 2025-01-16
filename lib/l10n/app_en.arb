@@ -1,5 +1,6 @@
 {
     "language": "English",
+    "languageCode": "en",
     "@language": {
         "description": "The current Language"
     },
@@ -12,5 +13,9 @@
     "forYouTitle": "Frequency world\nfor you",
     "forHorseTitle": "Frequency world\nfor horses",
     "forCatsAndDogsTitle": "Frequency world\nfor dogs and cats",
-    "forFreeTitle": "Free frequency\nworld for testing"
+    "forFreeTitle": "Free frequency\nworld for testing",
+    "notInPossesionOfProgrammText": "Unfortunately, you do not own this program",
+    "notInPossesionOfProgrammHintText": "You can find all subscriptions to the frequencies in our shop",
+    "toShopButton": "To the Shop"
+
 }

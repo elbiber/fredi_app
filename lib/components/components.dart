@@ -220,10 +220,11 @@ class FrequencyPackages extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
+                builder: (context) => ProgrammsOverviewPage(
                     jsonFile: 'frequencies_humans.json',
-                    titel: 'Frequenzwelt für Dich',
+                    titel: AppLocalizations.of(context)!.forYouTitle,
                     titelImage: 'humans.png',
+                    languageCode: AppLocalizations.of(context)!.languageCode,
                     packageColor: AppColors.complementary),
               ),
             );
@@ -261,10 +262,11 @@ class FrequencyPackages extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
+                builder: (context) => ProgrammsOverviewPage(
                     jsonFile: 'frequencies_horses.json',
-                    titel: 'Frequenzwelt für Pferde',
+                    titel: AppLocalizations.of(context)!.forHorseTitle,
                     titelImage: 'horses.png',
+                    languageCode: AppLocalizations.of(context)!.languageCode,
                     packageColor: AppColors.primary),
               ),
             );
@@ -302,10 +304,11 @@ class FrequencyPackages extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
+                builder: (context) => ProgrammsOverviewPage(
                     jsonFile: 'frequencies_cats_and_dogs.json',
-                    titel: 'Frequenzwelt für Hunde und Katzen',
+                    titel: AppLocalizations.of(context)!.forCatsAndDogsTitle,
                     titelImage: 'cats_and_dogs.png',
+                    languageCode: AppLocalizations.of(context)!.languageCode,
                     packageColor: AppColors.green),
               ),
             );
@@ -343,10 +346,11 @@ class FrequencyPackages extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProgrammsOverviewPage(
+                builder: (context) => ProgrammsOverviewPage(
                     jsonFile: 'frequencies_free.json',
-                    titel: 'Frequenzwelt zum Testen',
+                    titel: AppLocalizations.of(context)!.forFreeTitle,
                     titelImage: 'free.png',
+                    languageCode: AppLocalizations.of(context)!.languageCode,
                     packageColor: AppColors.black),
               ),
             );
