@@ -20,6 +20,14 @@
     "whichFrequencyText": "Do you want to know which frequency is currently transferred to your Fredi?",
     "whichFrequencyInstructionText": "Briefly hold your smartphone near the Fredi product to display your current program.",
     "wrongFrequencyText": "Your Fredi product currently does not have a valid frequency. Please transfer a frequency first!",
-    "whichFrequencyIsSetText": "You currently have the following frequency transferred to your Fredi:"
+    "whichFrequencyIsSetText": "You currently have the following frequency transferred to your Fredi:",
+    "setFrequencyInstructionText": "Hold your smartphone close to your Fredi product for about 30 seconds. Your Fredi product will then be reprogrammed.",
+    "setFrequencyText": "During the transmission process, we recommend reducing the smartphone volume to about 30%.",
+    "setFrequencyErrorText": "There was an error during the transmission. Please try again.",
+    "setFrequencyTransmissionText": "The following frequency is now being transmitted:",
+    "setFrequencyWaitText": "Please wait until the transmission is complete.",
+    "setFrequencyCongratutlationText": "Congratulations!",
+    "setFrequencySuccessText": "The following frequency has been successfully transferred to your Fredi:"
+
 
 }

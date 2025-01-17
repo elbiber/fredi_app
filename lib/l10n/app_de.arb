@@ -17,5 +17,12 @@
     "whichFrequencyText": "Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?",
     "whichFrequencyInstructionText": "Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.",
     "wrongFrequencyText": "'Auf Deinem Fredi Produkt befindet sich im Moment keine gültige Frequenz. Bitte übertrage erst eine Frequenz!'",
-    "whichFrequencyIsSetText": "Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:"
+    "whichFrequencyIsSetText": "Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:",
+    "setFrequencyInstructionText": "Halte Dein Smartphone für ca. 30 Sekunden an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.",
+    "setFrequencyText": "Während des Übertragungsvorgang empfehlen wir, die Lautstärke am Smartphone auf ca 30% zu reduzieren.",
+    "setFrequencyErrorText": "Es gab einen Fehler bei der Übtragung. Bitte versuche es noch einmal.",
+    "setFrequencyTransmissionText": "Folgende Frequenz wird jetzt übertragen:",
+    "setFrequencyWaitText": "Bitte warten, bist die Übertragung abgeschlossen ist.",
+    "setFrequencyCongratutlationText": "Herzlichen Glückwunsch!",
+    "setFrequencySuccessText": "Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:"
 }

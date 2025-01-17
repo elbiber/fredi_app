@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
@@ -115,8 +116,9 @@ class _SetActualFreqState extends State<SetActualFreq> {
                           color: widget.packageColor,
                           child: Column(
                             children: [
-                              const SansCentered(
-                                'Folgende Frequenz wird jetzt übertragen:',
+                              SansCentered(
+                                AppLocalizations.of(context)!
+                                    .setFrequencyTransmissionText,
                                 18,
                                 AppColors.white,
                               ),
@@ -138,44 +140,46 @@ class _SetActualFreqState extends State<SetActualFreq> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              const SansBoldCentered(
-                                'Bitte warten, bist die Übertragung abgeschlossen ist.',
+                              SansBoldCentered(
+                                AppLocalizations.of(context)!
+                                    .setFrequencyWaitText,
                                 18,
                                 AppColors.white,
                               ),
                             ],
                           ),
                         )
-                      : const Padding(
-                          padding: EdgeInsets.all(30.0),
+                      : Padding(
+                          padding: const EdgeInsets.all(30.0),
                           child: Column(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.phonelink_ring_rounded,
                                 size: 75.0,
                                 color: AppColors.primary,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30.0,
                               ),
                               SansBoldCentered(
-                                'Halte Dein Smartphone für ca. 30 Sekunden an Dein Fredi-Produkt. Dein Fredi-Produkt wird dann neu programmiert.',
+                                AppLocalizations.of(context)!
+                                    .setFrequencyInstructionText,
                                 20,
                                 AppColors.primary,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30.0,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.volume_down_outlined,
                                 size: 75.0,
                                 color: AppColors.black,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30.0,
                               ),
                               SansCentered(
-                                'Während des Übertragungsvorgang empfehlen wir, die Lautstärke am Smartphone auf ca 30% zu reduzieren.',
+                                AppLocalizations.of(context)!.setFrequencyText,
                                 18,
                                 AppColors.black,
                               ),
@@ -205,12 +209,15 @@ class TransferViewFinished extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SansBoldCentered('Herzlichen Glückwunsch!', 20, packageColor),
+              SansBoldCentered(
+                  AppLocalizations.of(context)!.setFrequencyCongratutlationText,
+                  20,
+                  packageColor),
               const SizedBox(
                 height: 25,
               ),
-              const SansCentered(
-                  'Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:',
+              SansCentered(
+                  AppLocalizations.of(context)!.setFrequencySuccessText,
                   20,
                   AppColors.black),
               const SizedBox(
