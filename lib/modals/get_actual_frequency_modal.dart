@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
@@ -39,15 +40,21 @@ class _GetActualFreqState extends State<GetActualFreq> {
           for (int i = 0; i < rawRecordTemp.length; i++) {
             rawRecord.add(rawRecordTemp[i]);
           }
-          debugPrint('----$rawRecord');
+          debugPrint('----$rawRecord-----------------------');
           for (int i = 0; i < rawRecord.length; i++) {
             if (rawRecord[i] == 195) {
+              //german
               if (rawRecord[i + 1] == 132) rawRecord[i + 1] = 0x00C4;
               if (rawRecord[i + 1] == 164) rawRecord[i + 1] = 0x00E4;
               if (rawRecord[i + 1] == 150) rawRecord[i + 1] = 0x00D6;
               if (rawRecord[i + 1] == 182) rawRecord[i + 1] = 0x00F6;
               if (rawRecord[i + 1] == 156) rawRecord[i + 1] = 0x00DC;
               if (rawRecord[i + 1] == 188) rawRecord[i + 1] = 0x00FC;
+              //french
+              if (rawRecord[i + 1] == 169) rawRecord[i + 1] = 0x00E8;
+              if (rawRecord[i + 1] == 137) rawRecord[i + 1] = 0x00C8;
+              if (rawRecord[i + 1] == 162) rawRecord[i + 1] = 0x00E2;
+
               rawRecord.removeAt(i);
             }
           }
@@ -66,25 +73,29 @@ class _GetActualFreqState extends State<GetActualFreq> {
               finalRecord = prefixRemoved.substring(5);
               setState(() {
                 resultColor = AppColors.black;
-                resultPackage = '(Kostenlose Frequenzwelt)';
+                resultPackage =
+                    '(${AppLocalizations.of(context)!.forFreeTitle})';
               });
             } else if (RegExp(r'^horses_').hasMatch(prefixRemoved)) {
               finalRecord = prefixRemoved.substring(7);
               setState(() {
                 resultColor = AppColors.primary;
-                resultPackage = '(Frequenzwelt für Pferde)';
+                resultPackage =
+                    '(${AppLocalizations.of(context)!.forHorseTitle})';
               });
             } else if (RegExp(r'^cats_and_dogs_').hasMatch(prefixRemoved)) {
               finalRecord = prefixRemoved.substring(14);
               setState(() {
                 resultColor = AppColors.green;
-                resultPackage = '(Frequenzwelt für Hunde und Katzen)';
+                resultPackage =
+                    '(${AppLocalizations.of(context)!.forCatsAndDogsTitle})';
               });
             } else if (RegExp(r'^humans_').hasMatch(prefixRemoved)) {
               finalRecord = prefixRemoved.substring(7);
               setState(() {
                 resultColor = AppColors.complementary;
-                resultPackage = '(Frequenzwelt für Dich)';
+                resultPackage =
+                    '(${AppLocalizations.of(context)!.forYouTitle})';
               });
             }
 
@@ -135,25 +146,27 @@ class _GetActualFreqState extends State<GetActualFreq> {
                       children: [
                         Container(
                           color: AppColors.primary,
-                          child: const Column(
+                          child: Column(
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(30.0),
+                                padding: const EdgeInsets.all(30.0),
                                 child: SansCentered(
-                                  'Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?',
+                                  AppLocalizations.of(context)!
+                                      .whichFrequencyText,
                                   18,
                                   AppColors.white,
                                 ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.phonelink_ring_rounded,
                                 size: 50.0,
                                 color: AppColors.white,
                               ),
                               Padding(
-                                padding: EdgeInsets.all(30.0),
+                                padding: const EdgeInsets.all(30.0),
                                 child: SansCentered(
-                                  'Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.',
+                                  AppLocalizations.of(context)!
+                                      .whichFrequencyInstructionText,
                                   18,
                                   AppColors.white,
                                 ),
@@ -177,8 +190,9 @@ class _GetActualFreqState extends State<GetActualFreq> {
                                   const SizedBox(
                                     height: 25,
                                   ),
-                                  const SansCentered(
-                                    'Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:',
+                                  SansCentered(
+                                    AppLocalizations.of(context)!
+                                        .whichFrequencyIsSetText,
                                     18,
                                     AppColors.white,
                                   ),
@@ -200,9 +214,10 @@ class _GetActualFreqState extends State<GetActualFreq> {
                             : Container(
                                 padding: const EdgeInsets.all(30.0),
                                 color: AppColors.complementary,
-                                child: const Column(children: [
+                                child: Column(children: [
                                   SansBoldCentered(
-                                    'Auf Deinem Fredi Produkt befindet sich im Moment keine gültige Frequenz. Bitte übertrage erst eine Frequenz!',
+                                    AppLocalizations.of(context)!
+                                        .noFrequencyText,
                                     20,
                                     AppColors.white,
                                   ),

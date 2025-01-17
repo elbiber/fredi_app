@@ -16,6 +16,10 @@
     "forFreeTitle": "Free frequency\nworld for testing",
     "notInPossesionOfProgrammText": "Unfortunately, you do not own this program",
     "notInPossesionOfProgrammHintText": "You can find all subscriptions to the frequencies in our shop",
-    "toShopButton": "To the Shop"
+    "toShopButton": "To the Shop",
+    "whichFrequencyText": "Do you want to know which frequency is currently transferred to your Fredi?",
+    "whichFrequencyInstructionText": "Briefly hold your smartphone near the Fredi product to display your current program.",
+    "wrongFrequencyText": "Your Fredi product currently does not have a valid frequency. Please transfer a frequency first!",
+    "whichFrequencyIsSetText": "You currently have the following frequency transferred to your Fredi:"
 
 }

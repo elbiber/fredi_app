@@ -13,6 +13,11 @@
     "forFreeTitle": "Un monde de fréquences\ngratuit à tester",
     "notInPossesionOfProgrammText": "Malheureusement, vous ne possédez pas ce programme",
     "notInPossesionOfProgrammHintText": "Vous trouverez tous les abonnements aux fréquences dans notre boutique",
-    "toShopButton": "Vers la boutique"
+    "toShopButton": "Vers la boutique",
+    "whichFrequencyText": "Vous voulez savoir quelle fréquence est actuellement transférée à votre Fredi ?",
+    "whichFrequencyInstructionText": "Tenez brièvement votre smartphone près du produit Fredi pour afficher votre programme actuel.",
+    "wrongFrequencyText": "Votre produit Fredi ne contient actuellement aucune fréquence valide. Veuillez d'abord transférer une fréquence !",
+    "whichFrequencyIsSetText": "Vous avez actuellement la fréquence suivante transférée à votre Fredi :"
+
 
 }

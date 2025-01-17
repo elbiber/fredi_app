@@ -49,6 +49,15 @@ class MyApp extends StatelessWidget {
       routerConfig: router,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        if (supportedLocales
+            .map((e) => e.languageCode)
+            .contains(deviceLocale?.languageCode)) {
+          return deviceLocale;
+        } else {
+          return const Locale('en', '');
+        }
+      },
       //supportedLocales: L10n.all,
     );
   }

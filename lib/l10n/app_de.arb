@@ -13,6 +13,9 @@
     "forFreeTitle": "Kostenlose Frequenzwelt\nzum testen",
     "notInPossesionOfProgrammText": "Du bist leider nicht im Besitz dieses Programmes",
     "notInPossesionOfProgrammHintText": "Du findest alle Abos zu den Frequenzen in unserem Shop",
-    "toShopButton": "Zum Shop"
-
+    "toShopButton": "Zum Shop",
+    "whichFrequencyText": "Du willst wissen welche Frequenz aktuell auf deinen Fredi übertragen ist?",
+    "whichFrequencyInstructionText": "Halte Dein Smartphone kurz an das Fredi Produkt um dein aktuelles Programm anzuzeigen.",
+    "wrongFrequencyText": "'Auf Deinem Fredi Produkt befindet sich im Moment keine gültige Frequenz. Bitte übertrage erst eine Frequenz!'",
+    "whichFrequencyIsSetText": "Du hast aktuell folgende Frequenz auf deinen Fredi übertragen:"
 }
