@@ -24,5 +24,21 @@
     "setFrequencyTransmissionText": "Folgende Frequenz wird jetzt übertragen:",
     "setFrequencyWaitText": "Bitte warten, bist die Übertragung abgeschlossen ist.",
     "setFrequencyCongratutlationText": "Herzlichen Glückwunsch!",
-    "setFrequencySuccessText": "Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:"
+    "setFrequencySuccessText": "Folgende Frequenz wurde erfolgreich auf deinen Fredi übertragen:",
+    "menuAboutUsButton": "Über Uns",
+    "menuContactButton": "Kontakt",
+    "titleAboutUs": "Über uns",
+    "descriptionAboutUs": "Alle Information über uns, die Fredi App und alle ihre Produkte findest du unter:",
+    "linkWebsite": "Zu unserer Webseite",
+    "titlePrivacyPolicy": "Datenschutzerklärung",
+    "descriptionPrivacyPolicy": "Unsere Datenschutzerklärung findest du unter:",
+    "linkPrivacyPolicy": "Zu unserer Datenschutzerklärung",
+    "titleTerms": "Nutzungsbedingungen",
+    "descriptionTermsApple": "Unsere Nutzungsbedingungen basieren auf der Standard-EULA von Apple:",
+    "linkTermsApple": "Zu den Nutzungsbedingungen",
+    "descriptionTermsGoogle": "Unsere Nutzungsbedingungen basieren auf Google Play-Nutzngsbedingungen:",
+    "titleContact": "Kontakt",
+    "descriptionContact": "Falls du Ünterstützung bezüglich deines Fredi Produktes bzw. Abos hast findest du unseren Support unter:",
+    "linkContact": "Zu unserer Kontaktseite"
+
 }

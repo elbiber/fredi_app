@@ -100,8 +100,8 @@ class FredAppBarDrawer extends StatelessWidget {
           const SizedBox(
             height: 20.0,
           ),
-          const TabsMobile(
-            'Über Uns',
+          TabsMobile(
+            AppLocalizations.of(context)!.menuAboutUsButton,
             '/about',
           ),
           const SizedBox(
@@ -114,8 +114,8 @@ class FredAppBarDrawer extends StatelessWidget {
           const SizedBox(
             height: 20.0,
           ),
-          const TabsMobile(
-            'Kontakt',
+          TabsMobile(
+            AppLocalizations.of(context)!.menuContactButton,
             '/contact',
           ),
           const SizedBox(

@@ -27,7 +27,24 @@
     "setFrequencyTransmissionText": "The following frequency is now being transmitted:",
     "setFrequencyWaitText": "Please wait until the transmission is complete.",
     "setFrequencyCongratutlationText": "Congratulations!",
-    "setFrequencySuccessText": "The following frequency has been successfully transferred to your Fredi:"
+    "setFrequencySuccessText": "The following frequency has been successfully transferred to your Fredi:",
+    "menuAboutUsButton": "About Us",
+    "menuContactButton": "Contact",
+    "titleAboutUs": "About Us",
+    "descriptionAboutUs": "All information about us, the Fredi app, and all its products can be found at:",
+    "linkWebsite": "To our website",
+    "titlePrivacyPolicy": "Privacy Policy",
+    "descriptionPrivacyPolicy": "Our privacy policy can be found at:",
+    "linkPrivacyPolicy": "To our Privacy Policy",
+    "titleTerms": "Terms of Use",
+    "descriptionTermsApple": "Our terms of use are based on Apple's Standard EULA:",
+    "linkTermsApple": "To the Terms of Use",
+    "descriptionTermsGoogle": "Our terms of use are based on Google Play's Terms of Use:",
+    "titleContact": "Contact",
+    "descriptionContact": "If you need support for your Fredi product or subscription, you can find our support at:",
+    "linkContact": "To our Contact Page"
+
+
 
 
 }
