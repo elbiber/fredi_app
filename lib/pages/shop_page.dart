@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
@@ -47,7 +48,7 @@ class _ShopPageState extends State<ShopPage> {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      throw "Die URL konnte nicht geöffnet werden: $url";
+      throw 'Die URL konnte nicht geöffnet werden: $url';
     }
   }
 
@@ -191,30 +192,26 @@ class _ShopPageState extends State<ShopPage> {
             children: [
               Column(
                 children: [
-                  const SansBoldCentered('Herzlich Willkommen im Fredi Shop!',
+                  SansBoldCentered(AppLocalizations.of(context)!.welcomeText,
                       28.0, AppColors.primary),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Hier findest du alle verfügbaren Abos für dein Fredi Produkt',
-                      18,
-                      AppColors.black),
+                  SansCentered(AppLocalizations.of(context)!.productInfoText,
+                      18, AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Falls du bereits laufende Abos hast und diese App auf einem neuen Gerät installiert hast oder deine Abos aus irgendeinem Grund fehlen, kannst du sie hier wiederherstellen.',
-                      14,
-                      AppColors.complementary),
+                  SansCentered(AppLocalizations.of(context)!.restoreInfoText,
+                      14, AppColors.complementary),
                   const SizedBox(
                     height: 25.0,
                   ),
                   GestureDetector(
                     onTap: () => _restorePurchases(),
-                    child: const Text(
-                      "Einkäufe wiederherstellen",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.restorePurchasesButton,
+                      style: const TextStyle(
                         fontSize: 20,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -232,32 +229,34 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered('Fredi Premimum', 24, AppColors.gold),
+                  SansBoldCentered(AppLocalizations.of(context)!.premiumTitle,
+                      24, AppColors.gold),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "24,90 € / 1 Monat\n119,00 € / 6 Monate\n199,00 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.premiumPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      "Mit diesem Abo sind alle Programme/Frequenzen der Fredi App freigeschaltet.",
-                      20,
-                      AppColors.black),
+                  SansCentered(AppLocalizations.of(context)!.premiumDescription,
+                      20, AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
                   hasActivePackages() && !_premiumIsActive
-                      ? const SansCentered(
-                          'Du hast noch weitere aktive Abonnements, die bereits im Premium-Abo enthalten sind. Diese werden nicht automatisch gekündigt und laufen weiterhin. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!
+                              .additionalActiveSubscriptionsText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -268,9 +267,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -280,9 +279,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -291,9 +291,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -306,8 +307,9 @@ class _ShopPageState extends State<ShopPage> {
                   _premiumIsActive
                       ? Column(
                           children: [
-                            const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                            SansCentered(
+                                AppLocalizations.of(context)!
+                                    .alreadySubscribedText,
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -319,8 +321,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.gold)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.gold)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.gold)),
                           ],
                         )
                       : ElevatedButton(
@@ -328,8 +333,10 @@ class _ShopPageState extends State<ShopPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(color: AppColors.gold)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.gold)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.gold)),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -341,25 +348,29 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      'Grundprogramm Pferd', 24, AppColors.primary),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.horseBasicTitle,
+                      24,
+                      AppColors.primary),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.horseBasicPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Mit diesem Abo werden 16 Frequenzreihen für Pferde freigeschaltet.',
+                  SansCentered(
+                      AppLocalizations.of(context)!.horseBasicDescription,
                       20,
                       AppColors.black),
                   const SizedBox(
@@ -367,9 +378,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -379,9 +390,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -390,9 +402,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -403,8 +416,8 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive && !_horseBasicIsActive
-                      ? const SansCentered(
-                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!.premiumActiveInfoText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -416,8 +429,9 @@ class _ShopPageState extends State<ShopPage> {
                   _horseBasicIsActive
                       ? Column(
                           children: [
-                            const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                            SansCentered(
+                                AppLocalizations.of(context)!
+                                    .alreadySubscribedText,
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -430,8 +444,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.primary)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.primary)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.primary)),
                           ],
                         )
                       : ElevatedButton(
@@ -439,8 +456,10 @@ class _ShopPageState extends State<ShopPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(color: AppColors.primary)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.primary)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.primary)),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -452,25 +471,29 @@ class _ShopPageState extends State<ShopPage> {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      'Zusatzprogramme Pferd', 24, AppColors.primary),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.horseAdditionalTitle,
+                      24,
+                      AppColors.primary),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "9,90 € / 1 Monat\n49,90 € / 6 Monate\n89,90 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.horseAdditionalPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Atemwege und Haut\n- Stoffwechsel und Organe,\n- Emotion und Traumata',
+                  SansCentered(
+                      AppLocalizations.of(context)!.horseAdditionalDescription,
                       20,
                       AppColors.black),
                   const SizedBox(
@@ -478,9 +501,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -490,9 +513,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -501,9 +525,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -514,8 +539,8 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive && !_horseIsActive
-                      ? const SansCentered(
-                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!.premiumActiveInfoText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -528,7 +553,7 @@ class _ShopPageState extends State<ShopPage> {
                       ? Column(
                           children: [
                             const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                                "Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.",
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -540,8 +565,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.primary)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.primary)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.primary)),
                           ],
                         )
                       : ElevatedButton(
@@ -549,8 +577,10 @@ class _ShopPageState extends State<ShopPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(color: AppColors.primary)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.primary)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.primary)),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -562,25 +592,27 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Column(
                 children: [
-                  const SansBoldCentered(
-                      'Grundprogramm Hund', 24, AppColors.green),
+                  SansBoldCentered(AppLocalizations.of(context)!.dogBasicTitle,
+                      24, AppColors.green),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.horseBasicPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Mit diesem Abo werden 16 Frequenzreihen für Hunde freigeschaltet.',
+                  SansCentered(
+                      AppLocalizations.of(context)!.dogBasicDescription,
                       20,
                       AppColors.black),
                   const SizedBox(
@@ -588,9 +620,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -600,9 +632,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -611,9 +644,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -624,8 +658,8 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive && !_dogBasicIsActive
-                      ? const SansCentered(
-                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!.premiumActiveInfoText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -637,8 +671,9 @@ class _ShopPageState extends State<ShopPage> {
                   _dogBasicIsActive
                       ? Column(
                           children: [
-                            const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                            SansCentered(
+                                AppLocalizations.of(context)!
+                                    .alreadySubscribedText,
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -651,8 +686,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.green)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.green)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.green)),
                           ],
                         )
                       : ElevatedButton(
@@ -660,8 +698,10 @@ class _ShopPageState extends State<ShopPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(color: AppColors.green)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.green)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.green)),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -673,25 +713,29 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Column(
                 children: [
-                  const SansBoldCentered(
-                      'Zusatzprogramme Hund', 24, AppColors.green),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.dogAdditionalTitle,
+                      24,
+                      AppColors.green),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "7,90 € / 1 Monat\n39,90 € / 6 Monate\n69,90 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.dogAdditionalPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Frequenzreihen freigeschaltet:\n- Bewegungsapparat\n- Haut Darm Ohren\n- Emotion und Traumata',
+                  SansCentered(
+                      AppLocalizations.of(context)!.dogAdditionalDescription,
                       20,
                       AppColors.black),
                   const SizedBox(
@@ -699,9 +743,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -711,9 +755,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -722,9 +767,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -735,8 +781,8 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive && !_dogIsActive
-                      ? const SansCentered(
-                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!.premiumActiveInfoText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -748,8 +794,9 @@ class _ShopPageState extends State<ShopPage> {
                   _dogIsActive
                       ? Column(
                           children: [
-                            const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                            SansCentered(
+                                AppLocalizations.of(context)!
+                                    .alreadySubscribedText,
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -761,8 +808,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.green)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.green)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.green)),
                           ],
                         )
                       : ElevatedButton(
@@ -770,8 +820,10 @@ class _ShopPageState extends State<ShopPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.white,
                               side: const BorderSide(color: AppColors.green)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.green)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.green)),
                   const SizedBox(
                     height: 25.0,
                   ),
@@ -783,25 +835,29 @@ class _ShopPageState extends State<ShopPage> {
               ),
               Column(
                 children: [
-                  const SansBoldCentered(
-                      'Fredi Für Dich', 24, AppColors.complementary),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.humanBasicTitle,
+                      24,
+                      AppColors.complementary),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansBoldCentered(
-                      "Preis / Laufzeit", 20, AppColors.black),
+                  SansBoldCentered(
+                      AppLocalizations.of(context)!.priceDurationLabel,
+                      20,
+                      AppColors.black),
                   const SizedBox(
                     height: 5.0,
                   ),
-                  const SansCentered(
-                      "4,90 € / 1 Monat\n24,90 € / 6 Monate\n39,90 € / 1 Jahr",
+                  SansCentered(
+                      AppLocalizations.of(context)!.humanBasicPriceDetails,
                       20,
                       AppColors.black),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  const SansCentered(
-                      'Mit diesem Abo werden 16 Frequenzreihen für Dich freigeschaltet.',
+                  SansCentered(
+                      AppLocalizations.of(context)!.humanBasicDescription,
                       20,
                       AppColors.black),
                   const SizedBox(
@@ -809,9 +865,9 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   GestureDetector(
                     onTap: () => _launchURL(privacyPolicyUrl),
-                    child: const Text(
-                      "Datenschutzrichtlinie",
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context)!.privacyPolicyLabel,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.primary,
                         decoration: TextDecoration.underline,
@@ -821,9 +877,10 @@ class _ShopPageState extends State<ShopPage> {
                   Platform.isIOS
                       ? GestureDetector(
                           onTap: () => _launchURL(termsUrlApple),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -832,9 +889,10 @@ class _ShopPageState extends State<ShopPage> {
                         )
                       : GestureDetector(
                           onTap: () => _launchURL(termsUrlGoogle),
-                          child: const Text(
-                            "Nutzungsbedingungen",
-                            style: TextStyle(
+                          child: Text(
+                            AppLocalizations.of(context)!
+                                .termsAndConditionsLabel,
+                            style: const TextStyle(
                               fontSize: 16,
                               color: AppColors.primary,
                               decoration: TextDecoration.underline,
@@ -845,8 +903,8 @@ class _ShopPageState extends State<ShopPage> {
                     height: 25.0,
                   ),
                   _premiumIsActive && !_humanBasicIsActive
-                      ? const SansCentered(
-                          'Du bist bereits durch dein Premium-Abo in Besitz dieses Programmes. Wenn du jedoch auf dieses Programm wechseln willst, solltest du dein Premium-Abo kündigen um doppelte Zahlungen zu vermeiden. Eine Anleitung zur Kündigung deiner Abonnements, um doppelte Zahlungen zu vermeiden, findest du in der App unter den FAQs.',
+                      ? SansCentered(
+                          AppLocalizations.of(context)!.premiumActiveInfoText,
                           16,
                           AppColors.complementary)
                       : const SizedBox(
@@ -858,8 +916,9 @@ class _ShopPageState extends State<ShopPage> {
                   _humanBasicIsActive
                       ? Column(
                           children: [
-                            const SansCentered(
-                                'Du bist bereits im Besitz dieses Abos! Du kannst aber dieses Abo anpassen.',
+                            SansCentered(
+                                AppLocalizations.of(context)!
+                                    .alreadySubscribedText,
                                 16,
                                 AppColors.complementary),
                             const SizedBox(
@@ -872,8 +931,11 @@ class _ShopPageState extends State<ShopPage> {
                                     backgroundColor: AppColors.white,
                                     side: const BorderSide(
                                         color: AppColors.complementary)),
-                                child: const SansBoldCentered(
-                                    'Abo ändern', 20, AppColors.complementary)),
+                                child: SansBoldCentered(
+                                    AppLocalizations.of(context)!
+                                        .changeSubscriptionButton,
+                                    20,
+                                    AppColors.complementary)),
                           ],
                         )
                       : ElevatedButton(
@@ -882,8 +944,10 @@ class _ShopPageState extends State<ShopPage> {
                               backgroundColor: AppColors.white,
                               side: const BorderSide(
                                   color: AppColors.complementary)),
-                          child: const SansBoldCentered(
-                              'Zum Angebot', 20, AppColors.complementary)),
+                          child: SansBoldCentered(
+                              AppLocalizations.of(context)!.subscribeButton,
+                              20,
+                              AppColors.complementary)),
                   const SizedBox(
                     height: 25.0,
                   ),

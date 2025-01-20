@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -27,39 +28,40 @@ class ContactPage extends StatelessWidget {
               const SizedBox(
                 height: 25.0,
               ),
-              const SansBoldCentered('Kontakt', 32, AppColors.primary),
+              SansBoldCentered(AppLocalizations.of(context)!.contactTitle, 32,
+                  AppColors.primary),
               const SizedBox(
                 height: 25.0,
               ),
-              const SansCentered(
-                  'Alle Information über uns, die Fredi App und alle ihre Produkte findest du unter:',
-                  18,
+              SansCentered(AppLocalizations.of(context)!.contactInfo, 18,
                   AppColors.black),
               const SizedBox(
                 height: 25.0,
               ),
               TextButton(
                   onPressed: () {
-                    _launchUrl('https://fredi-shop.com');
+                    _launchUrl(AppLocalizations.of(context)!.contactWebsiteUrl);
                   },
-                  child: const SansBoldCentered(
-                      'www.fredi-shop.de', 24, AppColors.primary)),
+                  child: SansBoldCentered(
+                      AppLocalizations.of(context)!.contactWebsiteText,
+                      24,
+                      AppColors.primary)),
               const SizedBox(
                 height: 25.0,
               ),
-              const SansCentered(
-                  'Falls du Ünterstützung bezüglich deines Fredi Produktes bzw. Abos hast findest du unseren Support unter:',
-                  18,
+              SansCentered(AppLocalizations.of(context)!.supportInfo, 18,
                   AppColors.black),
               const SizedBox(
                 height: 25.0,
               ),
               TextButton(
                   onPressed: () {
-                    _launchUrl('https://fredi-shop.com/kontakt');
+                    _launchUrl(AppLocalizations.of(context)!.supportContactUrl);
                   },
-                  child: const SansBoldCentered(
-                      'www.fredi-shop.de/kontakt', 24, AppColors.primary)),
+                  child: SansBoldCentered(
+                      AppLocalizations.of(context)!.supportContactText,
+                      24,
+                      AppColors.primary)),
             ]),
           ),
         ));
