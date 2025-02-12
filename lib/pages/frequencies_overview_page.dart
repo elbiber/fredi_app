@@ -98,7 +98,7 @@ class _FrequenciesOverviewPageState extends State<FrequenciesOverviewPage> {
         });
       }
       // access latest customerInfo
-    } on PlatformException catch (e) {
+    } on PlatformException {
       // Error fetching customer info
     }
   }

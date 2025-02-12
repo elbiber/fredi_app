@@ -59,7 +59,7 @@ class _ShopPageState extends State<ShopPage> {
       if (!mounted) return;
       context.go('/restore-success');
       // ... check restored purchaserInfo to see if entitlement is now active
-    } on PlatformException catch (e) {
+    } on PlatformException {
       // Error restoring purchases
     }
   }
@@ -90,7 +90,7 @@ class _ShopPageState extends State<ShopPage> {
         if (!mounted) return;
         // context.go('/');
       }
-    } on PlatformException catch (e) {
+    } on PlatformException {
       // optional error handling
     }
   }
@@ -126,7 +126,7 @@ class _ShopPageState extends State<ShopPage> {
         debugPrint(
             'INFO: ${customerInfo.entitlements.all[entitlementID]?.isActive}');
         // access latest customerInfo
-      } on PlatformException catch (e) {
+      } on PlatformException {
         // Error fetching customer info
       }
     } else if (Platform.isIOS) {
