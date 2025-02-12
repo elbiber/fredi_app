@@ -19,20 +19,20 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (8.2.0):
+  - purchases_flutter (8.4.5):
     - Flutter
-    - PurchasesHybridCommon (= 13.7.0)
-  - purchases_ui_flutter (8.2.0):
+    - PurchasesHybridCommon (= 13.17.0)
+  - purchases_ui_flutter (8.4.5):
     - Flutter
-    - PurchasesHybridCommonUI (= 13.7.0)
-  - PurchasesHybridCommon (13.7.0):
-    - RevenueCat (= 5.7.0)
-  - PurchasesHybridCommonUI (13.7.0):
-    - PurchasesHybridCommon (= 13.7.0)
-    - RevenueCatUI (= 5.7.0)
-  - RevenueCat (5.7.0)
-  - RevenueCatUI (5.7.0):
-    - RevenueCat (= 5.7.0)
+    - PurchasesHybridCommonUI (= 13.17.0)
+  - PurchasesHybridCommon (13.17.0):
+    - RevenueCat (= 5.16.0)
+  - PurchasesHybridCommonUI (13.17.0):
+    - PurchasesHybridCommon (= 13.17.0)
+    - RevenueCatUI (= 5.16.0)
+  - RevenueCat (5.16.0)
+  - RevenueCatUI (5.16.0):
+    - RevenueCat (= 5.16.0)
   - url_launcher_ios (0.0.1):
     - Flutter
   - video_player_avfoundation (0.0.1):
@@ -93,15 +93,15 @@ SPEC CHECKSUMS:
   open_settings_plus: 4bd848866fea2becc124581d868a6164cf768831
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  purchases_flutter: ef97cff49141ba88105dd937e91817392d32ab4b
-  purchases_ui_flutter: ef64e724d0dc7fcc15ef830aab804568c9650f65
-  PurchasesHybridCommon: cfcbc24de93b4fd30181233f83814e29b87c48b5
-  PurchasesHybridCommonUI: d4fe9a816da5bed8a07b9038574c372a50295207
-  RevenueCat: f4d2291de0fa400f7880e62283fb19a148567a6a
-  RevenueCatUI: b6f1f34b78fde7fd2cd0fe000bbc32adff73ce06
+  purchases_flutter: 6342bb387dc7c7bb595b6d8f763dcd2d61712fd2
+  purchases_ui_flutter: 9600c9d4bc8045847c93eb78cb1b0a9b7fe10b93
+  PurchasesHybridCommon: 8f8ae5a747a62e252fc271bb5c36932c5877b8e5
+  PurchasesHybridCommonUI: e367e2b92474cf3745ffb571e4e1c3fa83b0e1b2
+  RevenueCat: b7c34cdc66e4eaa854e56a56d0266261ed0822ca
+  RevenueCatUI: 4c09230cc81382edff00c889419eb1b0a0d4c2e7
   url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
   video_player_avfoundation: 7c6c11d8470e1675df7397027218274b6d2360b3
 
-PODFILE CHECKSUM: 2b93a3b1c94ece3e50d3c7744e7d79fb1eae7565
+PODFILE CHECKSUM: b8d1dbfa456a55379183fa5c3702b28b1b997947
 
 COCOAPODS: 1.15.2
