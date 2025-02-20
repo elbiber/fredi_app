@@ -1,1 +1,0 @@
--dontwarn com.josephcrowell.flutter_open_app_settings.FlutterOpenAppSettingsPlugin
