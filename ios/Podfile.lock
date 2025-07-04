@@ -1,6 +1,7 @@
 PODS:
   - audioplayers_darwin (0.0.1):
     - Flutter
+    - FlutterMacOS
   - Flutter (1.0.0)
   - flutter_inappwebview_ios (0.0.1):
     - Flutter
@@ -19,20 +20,20 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (8.4.5):
+  - purchases_flutter (8.10.5):
     - Flutter
-    - PurchasesHybridCommon (= 13.17.0)
-  - purchases_ui_flutter (8.4.5):
+    - PurchasesHybridCommon (= 14.0.2)
+  - purchases_ui_flutter (8.10.5):
     - Flutter
-    - PurchasesHybridCommonUI (= 13.17.0)
-  - PurchasesHybridCommon (13.17.0):
-    - RevenueCat (= 5.16.0)
-  - PurchasesHybridCommonUI (13.17.0):
-    - PurchasesHybridCommon (= 13.17.0)
-    - RevenueCatUI (= 5.16.0)
-  - RevenueCat (5.16.0)
-  - RevenueCatUI (5.16.0):
-    - RevenueCat (= 5.16.0)
+    - PurchasesHybridCommonUI (= 14.0.2)
+  - PurchasesHybridCommon (14.0.2):
+    - RevenueCat (= 5.30.0)
+  - PurchasesHybridCommonUI (14.0.2):
+    - PurchasesHybridCommon (= 14.0.2)
+    - RevenueCatUI (= 5.30.0)
+  - RevenueCat (5.30.0)
+  - RevenueCatUI (5.30.0):
+    - RevenueCat (= 5.30.0)
   - url_launcher_ios (0.0.1):
     - Flutter
   - video_player_avfoundation (0.0.1):
@@ -40,7 +41,7 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/ios`)
+  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/darwin`)
   - Flutter (from `Flutter`)
   - flutter_inappwebview_ios (from `.symlinks/plugins/flutter_inappwebview_ios/ios`)
   - flutter_open_app_settings (from `.symlinks/plugins/flutter_open_app_settings/ios`)
@@ -62,7 +63,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   audioplayers_darwin:
-    :path: ".symlinks/plugins/audioplayers_darwin/ios"
+    :path: ".symlinks/plugins/audioplayers_darwin/darwin"
   Flutter:
     :path: Flutter
   flutter_inappwebview_ios:
@@ -85,23 +86,23 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/video_player_avfoundation/darwin"
 
 SPEC CHECKSUMS:
-  audioplayers_darwin: 877d9a4d06331c5c374595e46e16453ac7eafa40
+  audioplayers_darwin: 4f9ca89d92d3d21cec7ec580e78ca888e5fb68bd
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_inappwebview_ios: 6f63631e2c62a7c350263b13fa5427aedefe81d4
-  flutter_open_app_settings: 4b43abd61edc27ee4b6bee2dbc5ccc9033861d0f
-  nfc_manager: d7da7cb781f7744b94df5fe9dbca904ac4a0939e
-  open_settings_plus: 4bd848866fea2becc124581d868a6164cf768831
+  flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
+  flutter_open_app_settings: 3f7cd9449fcbc21665f54ddea1b71a4729ddcca7
+  nfc_manager: 9c40fe22528ab871ca11e52ea8b95790e9d92ca2
+  open_settings_plus: d19f91e8a04649358a51c19b484ce2e637149d70
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  purchases_flutter: 6342bb387dc7c7bb595b6d8f763dcd2d61712fd2
-  purchases_ui_flutter: 9600c9d4bc8045847c93eb78cb1b0a9b7fe10b93
-  PurchasesHybridCommon: 8f8ae5a747a62e252fc271bb5c36932c5877b8e5
-  PurchasesHybridCommonUI: e367e2b92474cf3745ffb571e4e1c3fa83b0e1b2
-  RevenueCat: b7c34cdc66e4eaa854e56a56d0266261ed0822ca
-  RevenueCatUI: 4c09230cc81382edff00c889419eb1b0a0d4c2e7
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
-  video_player_avfoundation: 7c6c11d8470e1675df7397027218274b6d2360b3
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  purchases_flutter: cdbf8b0a0fcb110437c46be4b64515005452bd31
+  purchases_ui_flutter: 3315f949aa98cad0d5b32a5c99c939275c2a5bad
+  PurchasesHybridCommon: e1dbc7e7105c0845444cf82cf9d7c85eb9dbf918
+  PurchasesHybridCommonUI: e53fcdae687abb7ea9814bd2dac6aa85c19af54a
+  RevenueCat: 16058ecaa0b868e04cc7cf53a5de3fe0b96ca7d1
+  RevenueCatUI: 4fc22b69bc9fcec8bf37fb71396e7b31e819921b
+  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
+  video_player_avfoundation: 2cef49524dd1f16c5300b9cd6efd9611ce03639b
 
 PODFILE CHECKSUM: b8d1dbfa456a55379183fa5c3702b28b1b997947
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
