@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_faq/flutter_faq.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
 
 import '../components/app_colors.dart';
+import '../l10n/app_localizations.dart';
 
 class FAQPage extends StatelessWidget {
   const FAQPage({super.key});

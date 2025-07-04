@@ -1,0 +1,2 @@
+/Users/whw/Development/Clients/Fredi App/fredi_app/android/app/.cxx/Debug/45w1o5y2/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/whw/Development/Clients/Fredi App/fredi_app/android/app/.cxx/Debug/45w1o5y2/armeabi-v7a/CMakeFiles/rebuild_cache.dir

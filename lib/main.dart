@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/routes.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:url_strategy/url_strategy.dart';
+
+import 'l10n/app_localizations.dart';
 
 void main() async {
   setPathUrlStrategy();

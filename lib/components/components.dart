@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_open_app_settings/flutter_open_app_settings.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fredi_app/components/app_colors.dart';
@@ -8,6 +8,8 @@ import 'package:fredi_app/pages/programms_overview_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:video_player/video_player.dart';
+
+import '../l10n/app_localizations.dart';
 
 class FrediAppBarMain extends StatelessWidget implements PreferredSizeWidget {
   const FrediAppBarMain({super.key});

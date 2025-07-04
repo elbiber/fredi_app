@@ -3,11 +3,13 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fredi_app/components/app_colors.dart';
 import 'package:fredi_app/components/components.dart';
 import 'package:fredi_app/components/font_components.dart';
 import 'package:nfc_manager/nfc_manager.dart';
+
+import '../l10n/app_localizations.dart';
 
 class SetActualFreq extends StatefulWidget {
   final String packageID;
